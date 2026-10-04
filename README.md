@@ -1,3 +1,5 @@
+---
+
 ```markdown
 # DeltaGraphRAG: Modularity-Gated Incremental Graph Updates
 
