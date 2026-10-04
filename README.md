@@ -30,16 +30,17 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(
 * **Interactive Multi-Hop CLI**: Standalone command-line inference engine (`query.py`) for live querying across multi-hop reasoning chains.
 
 ---
-
 ## 📸 Visualizations & Benchmarks
 
 ### Empirical Evaluation Dashboard
+![Benchmark Dashboard](data/benchmark_dashboard.png)
 
 *Figure 1: Empirical evaluation across 50 multi-hop HotpotQA queries showing compute reduction (-42.0%), Token F1 density, error taxonomy breakdown, and scale-free Louvain cluster cardinality.*
 
 ### Community Topology Distribution
+![Graph Topology](data/graph_topology.png)
 
-*Figure 2: Knowledge graph topology across 435 connected entity nodes partitioned via Louvain modularity optimization ($Q \approx 0.9413$). Nodes are colored by detected semantic community.*
+*Figure 2: Knowledge graph topology across 435 connected entity nodes partitioned via Louvain modularity optimization (\(Q \approx 0.9413\)). Nodes are colored by detected semantic community.*
 
 ---
 
