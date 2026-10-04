@@ -1,20 +1,22 @@
 {
   "efficiency_ablation": {
-    "full_rebuild_calls_required": 257,
-    "deltagraphrag_calls_used": 1,
-    "reduction_pct": 99.61
+    "full_rebuild_calls_required": 253,
+    "deltagraphrag_calls_used": 0,
+    "reduction_pct": 100.0
   },
   "graph_verification": {
     "nodes_match": true,
     "edges_match": true,
-    "verified": true
+    "weights_match": true,
+    "partition_nmi": 0.9948
   },
   "metrics": {
     "final_nodes": 731,
     "final_edges": 516,
     "final_modularity": 0.943,
-    "total_communities": 257,
-    "fast_path_patches": 72,
-    "targeted_resynthesis_calls": 1
+    "total_incremental_communities": 257,
+    "rebuild_baseline_communities": 253,
+    "fast_path_patches": 73,
+    "targeted_resynthesis_calls": 0
   }
 }
