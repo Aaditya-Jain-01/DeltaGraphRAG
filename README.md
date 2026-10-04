@@ -33,11 +33,12 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(
 ### Empirical Evaluation Dashboard
 
 *Figure 1: Empirical evaluation across 50 multi-hop HotpotQA queries showing compute reduction (-99.6%), Token F1 density, error taxonomy breakdown, and scale-free Louvain cluster cardinality.*
+![DeltaGraphRAG Benchmark Dashboard](data/benchmark_dashboard.png)
 
 ### Community Topology Distribution
 
 *Figure 2: Knowledge graph topology across 731 entity nodes partitioned via Louvain modularity optimization ($Q \approx 0.9430$). Nodes are colored by detected semantic community.*
-
+![Louvain Community Topology](data/graph_topology.png)
 ---
 
 ## 📊 Empirical Evaluation & Benchmarks
