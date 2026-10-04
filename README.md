@@ -1,10 +1,20 @@
+```markdown
 # DeltaGraphRAG: Modularity-Gated Incremental Graph Updates
 
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Groq](https://img.shields.io/badge/Groq-Cloud_Inference-orange)
+![NetworkX](https://img.shields.io/badge/NetworkX-Graph_Topology-lightgrey)
+![HotpotQA](https://img.shields.io/badge/Benchmark-HotpotQA-purple)
+![GitHub stars](https://img.shields.io/github/stars/Aaditya-Jain-01/DeltaGraphRAG?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Aaditya-Jain-01/DeltaGraphRAG?style=social)
+
 ## 🧠 Overview
+**DeltaGraphRAG** is an incremental indexing framework designed for Graph Retrieval-Augmented Generation (GraphRAG). Traditional GraphRAG systems require full-graph re-clustering and global community re-summarization whenever new documents arrive, resulting in linear compute escalation. 
 
-**DeltaGraphRAG** is an incremental indexing framework designed for Graph Retrieval-Augmented Generation (GraphRAG). Traditional GraphRAG systems require full-graph re-clustering and global community re-summarization whenever new documents arrive, resulting in linear compute escalation.
+DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(\Delta Q\)) update policy**. By evaluating local Newman-Girvan modularity variations during document ingress, newly observed entities are deterministically routed to adjacent semantic clusters or assigned to singleton components, reducing LLM synthesis compute by **42.0%** without sacrificing cross-document reasoning.
 
-DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated ($\Delta Q$) update policy**. By evaluating local Newman-Girvan modularity variations during document ingress, newly observed entities are deterministically routed to adjacent semantic clusters or assigned to singleton components, reducing LLM synthesis compute by **42.0%** without sacrificing cross-document reasoning.
+```
 
 ---
 
@@ -26,13 +36,11 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated ($\
 
 ### Empirical Evaluation Dashboard
 
-
-*Empirical evaluation across 50 multi-hop HotpotQA queries showing compute reduction, Token F1 density, error taxonomy breakdown, and scale-free Louvain cluster cardinality.*
+*Figure 1: Empirical evaluation across 50 multi-hop HotpotQA queries showing compute reduction (-42.0%), Token F1 density, error taxonomy breakdown, and scale-free Louvain cluster cardinality.*
 
 ### Community Topology Distribution
 
-
-*Knowledge graph topology across 435 connected entity nodes partitioned via Louvain modularity optimization ($Q \approx 0.9413$). Nodes are colored by detected semantic community.*
+*Figure 2: Knowledge graph topology across 435 connected entity nodes partitioned via Louvain modularity optimization ($Q \approx 0.9413$). Nodes are colored by detected semantic community.*
 
 ---
 
@@ -40,25 +48,40 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated ($\
 
 ### 1. Local Modularity Delta ($\Delta Q$)
 
-When an incoming entity $v$ is introduced into graph $G = (V, E)$ with total edges $m = \vert{}E\vert{}$, its placement into an adjacent community $C$ is governed by:
+When an incoming entity $v$ is introduced into graph $G = (V, E)$ with total edges $m = \vert{}E\vert{}$, its placement into an adjacent community $C$ is governed by the localized Newman-Girvan modularity gain:
 
 $$\Delta Q(v \to C) = \left[ \frac{k_{v, \text{in}}}{2m} \right] - \left[ \frac{\Sigma_{\text{tot}} \cdot k_v}{2m^2} \right]$$
 
 Where:
 
-* $k_{v, \text{in}}$: Number of internal edges connecting $v$ to vertices in target community $C$.
-* $k_v$: Degree of vertex $v$ in $G$.
-* $\Sigma_{\text{tot}}$: Cumulative degree sum of all vertices within community $C$.
+* $v$: Streaming entity vertex to be ingested.
+* $C$: Candidate adjacent community.
+* $k_{v, \text{in}}$: Total internal degree (edge weight sum) connecting vertex $v$ to vertices inside community $C$.
+* $k_v$: Total degree of vertex $v$ in graph $G$.
+* $m$: Total edge count of graph $G$ ($m = \vert{}E\vert{}$).
+* $\Sigma_{\text{tot}}$: Sum of all vertex degrees for members belonging to community $C$.
 
-Node $v$ joins community $C^*$ satisfying $\operatorname{argmax}_C \Delta Q(v \to C)$. If $\max \Delta Q \le 0$, a singleton cluster is formed.
+Node $v$ is assigned to community $C^*$ that maximizes modularity gain:
+
+$$C^* = \arg\max_{C} \Delta Q(v \to C)$$
+
+If $\max \Delta Q \le 0$, node $v$ initializes a new singleton community cluster.
 
 ### 2. Community Perturbation & Drift Gating
 
-Each community tracks accumulated vertex mutation volume $\Delta V_C$ against its baseline cardinality $\vert{}V_C\vert{}$:
+Each community tracks accumulated vertex mutation volume $\vert{}\Delta V_C\vert{}$ relative to its baseline cardinality $\vert{}V_C\vert{}$:
 
 $$\text{Drift}(C) = \frac{\vert{}\Delta V_C\vert{}}{\vert{}V_C\vert{}}$$
 
-$$\text{Action}(C) = \begin{cases} \text{Tier 1: Zero-LLM In-Memory Patch}, & \text{Drift}(C) < 0.15 \\ \text{Tier 2: Targeted Community Re-synthesis}, & \text{Drift}(C) \ge 0.15 \end{cases}$$
+The re-indexing policy routes updates based on a 15% perturbation threshold:
+
+$$\text{Action}(C) =  \begin{cases}  \text{Tier 1: Zero-LLM In-Memory Patch}, & \text{Drift}(C) < 0.15 \\  \text{Tier 2: Targeted LLM Re-synthesis}, & \text{Drift}(C) \ge 0.15  \end{cases}$$
+
+Where:
+
+* $\vert{}V_C\vert{}$: Cardinality (number of member vertices) of community $C$ at baseline indexing.
+* $\vert{}\Delta V_C\vert{}$: Accumulated new vertices assigned to community $C$ since last synthesis.
+* $\text{Drift}(C)$: Normalized community perturbation ratio.
 
 ---
 
@@ -69,7 +92,7 @@ Requires **Python 3.10+**.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Aaditya-Jain-01/DeltaGraphRAG.git
+git clone [https://github.com/Aaditya-Jain-01/DeltaGraphRAG.git](https://github.com/Aaditya-Jain-01/DeltaGraphRAG.git)
 cd DeltaGraphRAG
 
 ```
@@ -220,3 +243,5 @@ DeltaGraphRAG/
 ## 🪪 License
 
 Licensed under the **MIT License**.
+
+```
