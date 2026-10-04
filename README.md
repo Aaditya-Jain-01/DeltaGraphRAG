@@ -16,8 +16,6 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(
 
 ```
 
----
-
 ## ⚙️ Features
 
 * **Local Modularity Delta ($\Delta Q$) Routing**: Deterministically routes streaming entities to optimal clusters using localized edge-degree variation.
