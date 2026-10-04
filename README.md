@@ -241,6 +241,3 @@ DeltaGraphRAG/
 
 Licensed under the **MIT License**.
 
-```
-
-```
