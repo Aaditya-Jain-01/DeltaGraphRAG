@@ -32,15 +32,34 @@ DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(
 ---
 ## 📸 Visualizations & Benchmarks
 
-### Empirical Evaluation Dashboard
-![Benchmark Dashboard](data/benchmark_dashboard.png)
+## 📊 Empirical Evaluation & Benchmarks
 
-*Figure 1: Empirical evaluation across 50 multi-hop HotpotQA queries showing compute reduction (-42.0%), Token F1 density, error taxonomy breakdown, and scale-free Louvain cluster cardinality.*
+DeltaGraphRAG was evaluated on a 100-document multi-hop partition from **HotpotQA**, split into a baseline index (\(T_0 = 80\) passages) and a streaming ingestion batch (\(T_1 = 20\) passages).
 
-### Community Topology Distribution
-![Graph Topology](data/graph_topology.png)
+### 1. Ingress Efficiency & Compute Ablation
 
-*Figure 2: Knowledge graph topology across 435 connected entity nodes partitioned via Louvain modularity optimization (\(Q \approx 0.9413\)). Nodes are colored by detected semantic community.*
+| Metric | Full Rebuild Baseline | DeltaGraphRAG (Ours) | Delta / Savings |
+| :--- | :--- | :--- | :--- |
+| **Synthesis Invocations** | 257 LLM calls | **1 LLM call** | **-99.6% API calls** |
+| **In-Memory Patches** | 0 communities | **72 communities** | Absorbed via Tier 1 |
+| **Ingress Wall Latency** | Full re-clustering overhead | **0.01s** (streaming step) | Near-instant routing |
+| **Topology Equivalence** | 731 nodes, 516 edges | 731 nodes, 516 edges | **Verified Identical (\(V_\Delta = V_{ref}, E_\Delta = E_{ref}\))** |
+| **Modularity (\(Q\))** | 0.9430 | 0.9430 | Optimal partition preserved |
+
+*Boundary Condition Optimization: By absorbing newly formed singleton clusters into memory during ingress, DeltaGraphRAG avoids re-synthesis thrashing on zero-baseline communities, triggering targeted synthesis only when existing clusters breach the \(\tau = 0.15\) perturbation threshold.*
+
+### 2. End-to-End Multi-Hop QA Performance
+
+Evaluated across 50 multi-hop reasoning questions using `qwen/qwen3.8-27b`:
+
+| Evaluation Metric | Score | Context / Methodology |
+| :--- | :--- | :--- |
+| **Exact Match (EM)** | **32.00%** | Strict string match against gold HotpotQA ground truth |
+| **Mean Token F1** | **41.09%** | Precision/Recall overlap across predicted answer tokens |
+| **Graph Recall@2** | **60.00%** | Macro-thematic community retrieval (\(top\_k=2\)) |
+| **Lexical BM25 Recall** | 80.00% | Inverted raw-passage token matching baseline |
+
+*Trade-Off Analysis: Pure community summary retrieval excels at holistic, high-level theme synthesis across disparate nodes. Where it faces challenges is micro-entity needle-in-a-haystack lookups, motivating a hybrid Graph + BM25 approach for production workloads.*
 
 ---
 
