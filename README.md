@@ -1,4 +1,3 @@
-```markdown
 # DeltaGraphRAG: Modularity-Gated Incremental Graph Updates
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
@@ -14,7 +13,6 @@
 
 DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(\Delta Q\)) update policy**. By evaluating local Newman-Girvan modularity variations during document ingress, newly observed entities are deterministically routed to adjacent semantic clusters or assigned to singleton components, reducing LLM synthesis compute by **99.6%** without sacrificing cross-document reasoning.
 
-```
 
 ## ⚙️ Features
 
