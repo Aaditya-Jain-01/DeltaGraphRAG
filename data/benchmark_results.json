@@ -1,0 +1,20 @@
+{
+  "system_metrics": {
+    "final_nodes": 731,
+    "final_edges": 516,
+    "final_communities": 257,
+    "streaming_ingress_time_seconds": 360.09
+  },
+  "efficiency_ablation": {
+    "full_rebuild_calls_required": 257,
+    "deltagraphrag_calls_used": 149,
+    "tier1_fast_path_patches": 5,
+    "tier2_isolated_resummaries": 149,
+    "llm_compute_savings_pct": 42.02
+  },
+  "retrieval_performance": {
+    "eval_queries": 50,
+    "deltagraphrag_recall_at_2_pct": 60.0,
+    "naive_retrieval_recall_at_2_pct": 80.0
+  }
+}

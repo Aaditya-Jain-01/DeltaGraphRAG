@@ -1,0 +1,4 @@
+{
+  "fast_model": "openai/gpt-oss-120b",
+  "heavy_model": "openai/gpt-oss-120b"
+}

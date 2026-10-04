@@ -1,0 +1,864 @@
+{
+  "metadata": {
+    "total_documents": 100,
+    "base_documents_t0": 80,
+    "streaming_documents_t1": 20,
+    "eval_queries": 50
+  },
+  "t0_base": [
+    {
+      "title": "Scott Derrickson",
+      "text": "Scott Derrickson (born July 16, 1966) is an American director, screenwriter and producer.  He lives in Los Angeles, California.  He is best known for directing horror films such as \"Sinister\", \"The Exorcism of Emily Rose\", and \"Deliver Us From Evil\", as well as the 2016 Marvel Cinematic Universe installment, \"Doctor Strange.\""
+    },
+    {
+      "title": "Ed Wood",
+      "text": "Edward Davis Wood Jr. (October 10, 1924 \u2013 December 10, 1978) was an American filmmaker, actor, writer, producer, and director."
+    },
+    {
+      "title": "Shirley Temple",
+      "text": "Shirley Temple Black (April 23, 1928 \u2013 February 10, 2014) was an American actress, singer, dancer, businesswoman, and diplomat who was Hollywood's number one box-office draw as a child actress from 1935 to 1938.  As an adult, she was named United States ambassador to Ghana and to Czechoslovakia and also served as Chief of Protocol of the United States."
+    },
+    {
+      "title": "Kiss and Tell (1945 film)",
+      "text": "Kiss and Tell is a 1945 American comedy film starring then 17-year-old Shirley Temple as Corliss Archer.  In the film, two teenage girls cause their respective parents much concern when they start to become interested in boys.  The parents' bickering about which girl is the worse influence causes more problems than it solves."
+    },
+    {
+      "title": "The Hork-Bajir Chronicles",
+      "text": "The Hork-Bajir Chronicles is the second companion book to the \"Animorphs\" series, written by K. A. Applegate.  With respect to continuity within the series, it takes place before book #23, \"The Pretender\", although the events told in the story occur between the time of \"The Ellimist Chronicles\" and \"The Andalite Chronicles\".  The book is introduced by Tobias, who flies to the valley of the free Hork-Bajir, where Jara Hamee tells him the story of how the Yeerks enslaved the Hork-Bajir, and how Aldrea, an Andalite, and her companion, Dak Hamee, a Hork-Bajir, tried to save their world from the invasion.  Jara Hamee's story is narrated from the points of view of Aldrea, Dak Hamee, and Esplin 9466, alternating in similar fashion to the \"Megamorphs\" books."
+    },
+    {
+      "title": "Animorphs",
+      "text": "Animorphs is a science fantasy series of young adult books written by Katherine Applegate and her husband Michael Grant, writing together under the name K. A. Applegate, and published by Scholastic.  It is told in first person, with all six main characters taking turns narrating the books through their own perspectives.  Horror, war, dehumanization, sanity, morality, innocence, leadership, freedom and growing up are the core themes of the series."
+    },
+    {
+      "title": "Laleli Mosque",
+      "text": "The Laleli Mosque (Turkish: \"Laleli Camii, or Tulip Mosque\" ) is an 18th-century Ottoman imperial mosque located in Laleli, Fatih, Istanbul, Turkey."
+    },
+    {
+      "title": "Esma Sultan Mansion",
+      "text": "The Esma Sultan Mansion (Turkish: \"Esma Sultan Yal\u0131s\u0131\" ), a historical yal\u0131 (English: waterside mansion ) located at Bosphorus in Ortak\u00f6y neighborhood of Istanbul, Turkey and named after its original owner Esma Sultan, is used today as a cultural center after being redeveloped."
+    },
+    {
+      "title": "Adriana Trigiani",
+      "text": "Adriana Trigiani is an Italian American best-selling author of sixteen books, television writer, film director, and entrepreneur based in Greenwich Village, New York City.  Trigiani has published a novel a year since 2000."
+    },
+    {
+      "title": "Big Stone Gap (film)",
+      "text": "Big Stone Gap is a 2014 American drama romantic comedy film written and directed by Adriana Trigiani and produced by Donna Gigliotti for Altar Identity Studios, a subsidiary of Media Society.  Based on Trigiani's 2000 best-selling novel of the same name, the story is set in the actual Virginia town of Big Stone Gap circa 1970s.  The film had its world premiere at the Virginia Film Festival on November 6, 2014."
+    },
+    {
+      "title": "2014 S/S",
+      "text": "2014 S/S is the debut album of South Korean group WINNER.  It was released on August 12, 2014 by the group's record label, YG Entertainment.  The members were credited for writing the lyrics and composing the majority of the album's songs."
+    },
+    {
+      "title": "Winner (band)",
+      "text": "Winner (Hangul: \uc704\ub108), often stylized as WINNER, is a South Korean boy group formed in 2013 by YG Entertainment and debuted in 2014.  It currently consists of four members, Jinwoo, Seunghoon, Mino and Seungyoon.  Originally a five-piece group with Taehyun, who later departed from the group in November 2016."
+    },
+    {
+      "title": "Eenasul Fateh",
+      "text": "Eenasul Fateh (Bengali: \u0988\u09a8\u09be\u09b8\u09c1\u09b2 \u09ab\u09be\u09a4\u09c7\u09b9 ; born 3 April 1959), also known by his stage name Aladin, is a Bangladeshi-British cultural practitioner, magician, live artist and former international management consultant."
+    },
+    {
+      "title": "Management consulting",
+      "text": "Management consulting is the practice of helping organizations to improve their performance, operating primarily through the analysis of existing organizational problems and the development of plans for improvement.  Organizations may draw upon the services of management consultants for a number of reasons, including gaining external (and presumably objective) advice and access to the consultants' specialized expertise."
+    },
+    {
+      "title": "Androscoggin Bank Colis\u00e9e",
+      "text": "The Androscoggin Bank Colis\u00e9e (formerly Central Maine Civic Center and Lewiston Colisee) is a 4,000 capacity (3,677 seated) multi-purpose arena, in Lewiston, Maine, that opened in 1958.  In 1965 it was the location of the World Heavyweight Title fight during which one of the most famous sports photographs of the century was taken of Muhammed Ali standing over Sonny Liston."
+    },
+    {
+      "title": "Lewiston Maineiacs",
+      "text": "The Lewiston Maineiacs were a junior ice hockey team of the Quebec Major Junior Hockey League based in Lewiston, Maine.  The team played its home games at the Androscoggin Bank Colis\u00e9e.  They were the second QMJHL team in the United States, and the only one to play a full season.  They won the President's Cup in 2007."
+    },
+    {
+      "title": "Annie Morton",
+      "text": "Annie Morton (born October 8, 1970) is an American model born in Pennsylvania.  She has appeared on the covers of \"British Vogue\", \"ID\", \"Marie Claire\", and other magazines.  She has been photographed by Helmut Newton; Peter Lindbergh; Annie Leibovitz; Richard Avedon; Juergen Teller; Paul Jasmin, Mary Ellen Mark and Terry Richardson, and modeled for Donna Karan, Givenchy, Guerlain, Chanel, \"Harper's Bazaar\", \"Sports Illustrated\" and Victoria's Secret.  A long time vegetarian, an advocate for organic lifestyle choices and natural healthcare.  She co-founded Tsi-La Organics, a \"Green Luxury\" company that creates and sells vegan, organic perfume and skin care products."
+    },
+    {
+      "title": "Terry Richardson",
+      "text": "Terrence \"Uncle Terry\" Richardson (born August 14, 1965) is an American fashion and portrait photographer who has shot advertising campaigns for Marc Jacobs, Aldo, Supreme, Sisley, Tom Ford, and Yves Saint Laurent among others.  He has also done work for magazines such as \"Rolling Stone\", \"GQ\", \"Vogue\", \"Vanity Fair\", \"Harper's Bazaar\", \"i-D\", and \"Vice\"."
+    },
+    {
+      "title": "Local H",
+      "text": "Local H is an American rock band originally formed by guitarist and vocalist Scott Lucas, bassist Matt Garcia, drummer Joe Daniels, and lead guitarist John Sparkman in Zion, Illinois in 1987.  The members all met in high school in 1987 and founded Local H three years later."
+    },
+    {
+      "title": "For Against",
+      "text": "For Against is a United States post-punk/dream pop band from Lincoln, Nebraska.  Despite numerous lineup shuffles and some periods of dormancy, the band has produced material steadily from its 1984 inception to the present."
+    },
+    {
+      "title": "Kansas Song",
+      "text": "Kansas Song (We\u2019re From Kansas) is a fight song of the University of Kansas."
+    },
+    {
+      "title": "University of Kansas",
+      "text": "The University of Kansas, often referred to as KU or Kansas, is a public research university in the U.S. state of Kansas.  The main campus in Lawrence, one of the largest college towns in Kansas, is on Mount Oread, the highest elevation in Lawrence.  Two branch campuses are in the Kansas City metropolitan area: the Edwards Campus in Overland Park, and the university's medical school and hospital in Kansas City.  There are also educational and research sites in Parsons, Topeka, Garden City, Hays, and Leavenworth, and branches of the medical school in Wichita and Salina.  The university is one of the 62 members of the Association of American Universities."
+    },
+    {
+      "title": "David Weissman",
+      "text": "David Weissman is a screenwriter and director.  His film credits include \"The Family Man\" (2000), \"Evolution\" (2001), and \"\"When in Rome\"\" (2010)."
+    },
+    {
+      "title": "The Family Man",
+      "text": "The Family Man is a 2000 American romantic comedy-drama film directed by Brett Ratner, written by David Diamond and David Weissman, and starring Nicolas Cage and T\u00e9a Leoni.  Cage's production company, Saturn Films, helped produce the film.  The film centers on a man who sees what could have been had he made a different decision 13 years prior."
+    },
+    {
+      "title": "End of Days (film)",
+      "text": "End of Days is a 1999 American fantasy action horror thriller film directed by Peter Hyams and starring Arnold Schwarzenegger, Gabriel Byrne, Robin Tunney, Kevin Pollak, Rod Steiger, CCH Pounder, and Udo Kier.  The film follows former New York Police Department detective Jericho Cane (Schwarzenegger) after he saves a banker (Byrne) from an assassin, finds himself embroiled in a religious conflict, and must protect an innocent young woman (Tunney) who is chosen by evil forces to conceive the Antichrist with Satan."
+    },
+    {
+      "title": "Oh My God (Guns N' Roses song)",
+      "text": "\"Oh My God\" is a song by Guns N' Roses released in 1999 on the soundtrack to the film \"End of Days\".  The song was sent out to radio stations in November 1999 as a promo for the soundtrack and the band.  Despite being the band's first recorded release in almost five years, it was never issued as a stand-alone single for public retail."
+    },
+    {
+      "title": "888 7th Avenue",
+      "text": "888 7th Avenue is a 628 ft (191m) tall modern-style office skyscraper in Midtown Manhattan which was completed in 1969 and has 46 floors.  Emery Roth & Sons designed the building, which is tied with Central Park Place for the 65th tallest building in New York City.  It currently carries the Vornado Realty Trust corporate headquarters.  Previously known as the Arlen Building, its namesake being the company responsible for its construction, Arlen Realty & Development Corporation.  The Red Eye Grill is located in the building at street level."
+    },
+    {
+      "title": "Random House Tower",
+      "text": "The Random House Tower, also known as the Park Imperial Apartments, is a 52-story mixed-use tower in New York City, United States, that is used as the headquarters of book publisher Random House and a luxury apartment complex.  The book publisher entrance is on Broadway and goes up to 27 floors, while the apartment complex entrance is on West 56th Street."
+    },
+    {
+      "title": "1995\u201396 Manchester United F.C. season",
+      "text": "The 1995\u201396 season was Manchester United's fourth season in the Premier League, and their 21st consecutive season in the top division of English football.  United finished the season by becoming the first English team to win the Double (league title and FA Cup) twice.  Their triumph was made all the more remarkable by the fact that Alex Ferguson had sold experienced players Paul Ince, Mark Hughes and Andrei Kanchelskis before the start of the season, and not made any major signings.  Instead, he had drafted in young players like Nicky Butt, David Beckham, Paul Scholes and the Neville brothers, Gary and Phil."
+    },
+    {
+      "title": "Alex Ferguson",
+      "text": "Sir Alexander Chapman Ferguson, CBE (born 31 December 1941) is a Scottish former football manager and player who managed Manchester United from 1986 to 2013.  He is regarded by many players, managers and analysts to be one of the greatest and most successful managers of all time."
+    },
+    {
+      "title": "Brown State Fishing Lake",
+      "text": "Brown State Fishing Lake (sometimes also known as Brown State Fishing Lake And Wildlife Area) is a protected area in Brown County, Kansas in the United States.  The lake is 62 acres (0.25 km\u00b2) in area and up to 13 feet (4 m) deep.  The area was formerly known as Brown County State Park, and is 8 miles (13 km) east of Hiawatha, Kansas."
+    },
+    {
+      "title": "Brown County, Kansas",
+      "text": "Brown County (county code BR) is a county located in the northeast portion of the U.S. state of Kansas.  As of the 2010 census, the county population was 9,984.  Its county seat and most populous city is Hiawatha.  Brown County is the location of the Kickapoo Indian Reservation of Kansas, the majority of the Sac and Fox Reservation and the majority of the Iowa Reservation of Kansas and Nebraska."
+    },
+    {
+      "title": "America East Conference",
+      "text": "The America East Conference is a collegiate athletic conference affiliated with the NCAA Division I, whose members are located mainly in the Northeastern United States.  The conference was known as the Eastern College Athletic Conference-North from 1979 to 1988 and the North Atlantic Conference from 1988 to 1996."
+    },
+    {
+      "title": "Vermont Catamounts men's soccer",
+      "text": "The Vermont Catamounts men's soccer team represents the University of Vermont in all NCAA Division I men's college soccer competitions.  The team competes in the America East Conference."
+    },
+    {
+      "title": "Giuseppe Verdi",
+      "text": "Giuseppe Fortunino Francesco Verdi (] ; 9 or 10 October 1813 \u2013 27 January 1901) was an Italian opera composer."
+    },
+    {
+      "title": "Ambroise Thomas",
+      "text": "Charles Louis Ambroise Thomas (5 August 1811 \u2013 12 February 1896) was a French composer, best known for his operas \"Mignon\" (1866) and \"Hamlet\" (1868, after Shakespeare) and as Director of the Conservatoire de Paris from 1871 till his death."
+    },
+    {
+      "title": "Richard Nixon",
+      "text": "Richard Milhous Nixon (January 9, 1913 \u2013 April 22, 1994) was the 37th President of the United States from 1969 until 1974, when he resigned from office, the only U.S. president to do so.  He had previously served as the 36th Vice President of the United States from 1953 to 1961, and prior to that as a U.S. Representative and also Senator from California."
+    },
+    {
+      "title": "Roger O. Egeberg",
+      "text": "Roger Olaf Egeberg, M.D. (13 November 1902 \u2013 13 September 1997 Washington, D.C.) was an American medical educator, administrator and advocate of public health.  He was General Douglas MacArthur's personal physician during World War II in the Pacific theater.  His other roles included Assistant Secretary for Health and Scientific Affairs in the Department of Health, Education, and Welfare (now the United States Department of Health and Human Services) during the Nixon administration and Dean of the University of Southern California's medical school."
+    },
+    {
+      "title": "Henry Roth",
+      "text": "Henry Roth (February 8, 1906 \u2013 October 13, 1995) was an American novelist and short story writer."
+    },
+    {
+      "title": "Robert Erskine Childers",
+      "text": "Robert Erskine Childers DSC (25 June 1870 \u2013 24 November 1922), universally known as Erskine Childers, was a British writer, whose works included the influential novel \"The Riddle of the Sands\", and a Fenian revolutionary who smuggled guns to Ireland in his sailing yacht \"Asgard\".  He was executed by the authorities of the nascent Irish Free State during the Irish Civil War.  He was the son of British Orientalist scholar Robert Caesar Childers; the cousin of Hugh Childers and Robert Barton; and the father of the fourth President of Ireland, Erskine Hamilton Childers."
+    },
+    {
+      "title": "Sergio P\u00e9rez",
+      "text": "Sergio P\u00e9rez Mendoza (    ; born 26 January 1990) also known as \"Checo\" P\u00e9rez, is a Mexican racing driver, currently driving for Force India."
+    },
+    {
+      "title": "Formula One drivers from Mexico",
+      "text": "There have been six Formula One drivers from Mexico who have taken part in races since the championship began in 1950.  Pedro Rodr\u00edguez is the most successful Mexican driver being the only one to have won a grand prix.  Sergio P\u00e9rez, the only other Mexican to finish on the podium, currently races with Sahara Force India F1 Team ."
+    },
+    {
+      "title": "Jim Cummings",
+      "text": "James Jonah Cummings (born November 3, 1952) is an American voice actor and singer, who has appeared in almost 400 roles.  He is known for voicing the title character from \"Darkwing Duck\", Dr. Robotnik from \"Sonic the Hedgehog\", and Pete.  His other characters include Winnie the Pooh, Tigger, and the Tasmanian Devil.  He has performed in numerous Disney and DreamWorks animations including \"Aladdin\", \"The Lion King\", \"Balto\", \"Antz\", \"The Road to El Dorado\", \"Shrek\", and \"The Princess and the Frog\".  He has also provided voice-over work for video games, such as \"Icewind Dale\", \"Fallout\", \"\", \"Baldur's Gate\", \"Mass Effect 2\", \"\", \"\", \"\", and \"Splatterhouse\"."
+    },
+    {
+      "title": "A Rather Blustery Day",
+      "text": "\"A Rather Blustery Day\" is a whimsical song from the Walt Disney musical film featurette, \"Winnie the Pooh and the Blustery Day\".  It was written by Robert & Richard Sherman and sung by Jim Cummings as \"Pooh\"."
+    },
+    {
+      "title": "Apple Remote",
+      "text": "The Apple Remote is a remote control device released in or after October 2005 by Apple Inc. for use with a number of its products which use infrared capabilities.  The device was originally designed to interact with the Front Row media program on the iSight iMac G5 and is compatible with some later desktop and portable Macintosh computers.  The first three generations of Apple TV used the Apple Remote as their primary control mechanism.  It has now been replaced with the Siri Remote in the fourth generation.  Prior to the Apple Remote, Apple produced several nameless IR remotes for products such as the Macintosh TV, TV tuner expansion boards, and the PowerCD drive."
+    },
+    {
+      "title": "Front Row (software)",
+      "text": "Front Row is a discontinued media center software application for Apple's Macintosh computers and Apple TV for navigating and viewing video, photos, podcasts, and music from a computer, optical disc, or the Internet through a 10-foot user interface (similar to Windows Media Center and Kodi).  The software relies on iTunes and iPhoto and is controlled by an Apple Remote or the keyboard function keys.  The first version was released October 2005, with two major revisions since.  Front Row was removed and discontinued in Mac OS X 10.7."
+    },
+    {
+      "title": "Wolf Alice",
+      "text": "Wolf Alice are a four-piece alternative rock band from North London, formed initially as a two-person band in 2010.  Its members since 2012 are Ellie Rowsell (vocals, guitar), Joff Oddie (guitars, vocals), Theo Ellis (bass), and Joel Amey (drums, vocals)."
+    },
+    {
+      "title": "Badly Drawn Boy",
+      "text": "Damon Michael Gough (born 2 October 1969, in Dunstable, Bedfordshire), known by the stage name Badly Drawn Boy, is an English indie singer-songwriter and multi-instrumentalist."
+    },
+    {
+      "title": "Peter Schmeichel",
+      "text": "Peter Boles\u0142aw Schmeichel MBE (] ; born 18 November 1963) is a Danish former professional footballer who played as a goalkeeper, and was voted the IFFHS World's Best Goalkeeper in 1992 and 1993.  He is best remembered for his most successful years at English club Manchester United, whom he captained to the 1999 UEFA Champions League to complete the Treble, and for winning UEFA Euro 1992 with Denmark."
+    },
+    {
+      "title": "Kasper Schmeichel",
+      "text": "Kasper Peter Schmeichel (] ; born 5 November 1986) is a Danish professional footballer who plays as a goalkeeper for Premier League club Leicester City and the Denmark national team.  He is the son of former Manchester United and Danish international goalkeeper Peter Schmeichel."
+    },
+    {
+      "title": "These Boots Are Made for Walkin'",
+      "text": "\"These Boots Are Made for Walkin' is a hit song written by Lee Hazlewood and recorded by Nancy Sinatra.  It charted January 22, 1966 and reached No. 1 in the United States \"Billboard\" Hot 100 and in the UK Singles Chart."
+    },
+    {
+      "title": "Lee Hazlewood",
+      "text": "Barton Lee Hazlewood (July 9, 1929 \u2013 August 4, 2007) was an American country and pop singer, songwriter, and record producer, most widely known for his work with guitarist Duane Eddy during the late 1950s and singer Nancy Sinatra in the 1960s."
+    },
+    {
+      "title": "Virginia Commonwealth University",
+      "text": "Virginia Commonwealth University (VCU) is a public research university located in Richmond, Virginia.  VCU was founded in 1838 as the medical department of Hampden\u2013Sydney College, becoming the Medical College of Virginia in 1854.  In 1968, the Virginia General Assembly merged MCV with the Richmond Professional Institute, founded in 1917, to create Virginia Commonwealth University.  In 2015, more than 31,000 students pursue 226 degree and certificate programs through VCU's 13 schools and one college.  The VCU Health System supports the university's health care education, research and patient care mission."
+    },
+    {
+      "title": "2011\u201312 VCU Rams men's basketball team",
+      "text": "The 2011\u201312 VCU Rams men's basketball team represented Virginia Commonwealth University during the 2011\u201312 NCAA Division I men's basketball season.  It was the 44th season of the University fielding a men's basketball program.  Led by third-year head coach Shaka Smart, the Rams were coming off a season marked by a run to the Final Four.  Expected to finish lower in the CAA regular season standings, the Rams finished as regular season runners-up with a 15\u20133 conference record, before winning the 2012 CAA Men's Basketball Championship against Drexel, 59\u201356, earning their 11th ever berth into the NCAA Tournament.  It was also the first season since 1984\u201385 that the Rams consecutively qualified for the NCAA Tournament."
+    },
+    {
+      "title": "Dictyosperma",
+      "text": "Dictyosperma is a monotypic genus of flowering plant in the palm family found in the Mascarene Islands in the Indian Ocean (Mauritius, R\u00e9union and Rodrigues).  The sole species, Dictyosperma album, is widely cultivated in the tropics but has been farmed to near extinction in its native habitat.  It is commonly called princess palm or hurricane palm, the latter owing to its ability to withstand strong winds by easily shedding leaves.  It is closely related to, and resembles, palms in the \"Archontophoenix\" genus.  The genus is named from two Greek words meaning \"net\" and \"seed\" and the epithet is Latin for \"white\", the common color of the crownshaft at the top of the trunk."
+    },
+    {
+      "title": "Huernia",
+      "text": "The genus Huernia (family Apocynaceae, subfamily Asclepiadoideae) consists of stem succulents from Eastern and Southern Africa, first described as a genus in 1810.  The flowers are five-lobed, usually somewhat more funnel- or bell-shaped than in the closely related genus \"Stapelia\", and often striped vividly in contrasting colours or tones, some glossy, others matt and wrinkled depending on the species concerned.  To pollinate, the flowers attract flies by emitting a scent similar to that of carrion.  The genus is considered close to the genera \"Stapelia\" and \"Hoodia\".  The name is in honour of Justin Heurnius (1587\u20131652) a Dutch missionary who is reputed to have been the first collector of South African Cape plants.  His name was actually mis-spelt by the collector."
+    },
+    {
+      "title": "Kaiser Ventures",
+      "text": "Kaiser Ventures (formerly Kaiser Steel) corporation, headquartered in Ontario, California.  It was founded by Henry J. Kaiser to provide steel plate for the Pacific Coast shipbuilding industry, which expanded during World War II, then shrank, then expanded again during the Korean War.  California Shipbuilding Corporation on Terminal Island, California, was one of these shipyards which built hundreds of Liberty ships and Victory ships in World War II, and was also a project of Henry Kaiser.  Kaiser Steel was noted for making the most of its costly steelmaking inputs, and it captured, along with the U.S. Steel plant in Utah, much of the Pacific Coast steel market by the late 1950s.  Its assets included steelmaking plants in Napa, California (that it acquired from Basalt Rock Company in 1955) and Fontana, California (now operated by California Steel Industries), and a former open-pit iron ore mine at Eagle Mountain, California.  Steel manufactured was also used in Kaiser Motors."
+    },
+    {
+      "title": "Henry J. Kaiser",
+      "text": "Henry John Kaiser (May 9, 1882 \u2013 August 24, 1967) was an American industrialist who became known as the father of modern American shipbuilding.  He established the Kaiser Shipyards, which built Liberty ships during World War II, after which he formed Kaiser Aluminum and Kaiser Steel.  Kaiser organized Kaiser Permanente health care for his workers and their families.  He led Kaiser-Frazer followed by Kaiser Motors, automobile companies known for the safety of their designs.  Kaiser was involved in large construction projects such as civic centers and dams, and invested in real estate.  With his wealth, he established the Kaiser Family Foundation, a nonprofit, non-partisan, charitable organization."
+    },
+    {
+      "title": "Tunnels &amp; Trolls",
+      "text": "Tunnels & Trolls (abbreviated \"T&T\") is a fantasy role-playing game designed by Ken St. Andre and first published in 1975 by Flying Buffalo.  The second modern role-playing game published, it was written by Ken St. Andre to be a more accessible alternative to \"Dungeons & Dragons\" and is suitable for solitaire, group, and play-by-mail gameplay."
+    },
+    {
+      "title": "Arena of Khazan",
+      "text": "Arena of Khazan is a 1979 role-playing game adventure for \"Tunnels & Trolls\" published by Flying Buffalo."
+    },
+    {
+      "title": "Poison (American band)",
+      "text": "Poison is an American rock band that achieved great commercial success in the mid-1980s to the mid-1990s.  Poison has sold over 40 million records worldwide and has sold 15 million records in the United States alone.  The band has also charted ten singles to the Top 40 of the \"Billboard\" Hot 100, including six Top 10 singles and the Hot 100 number-one, \"Every Rose Has Its Thorn\".  The band's breakthrough debut album, the multi-platinum \"Look What the Cat Dragged In\", was released in 1986 and they hit their peak with the second album, \"Open Up and Say... Ahh! \", which became the band's most successful album, being certified 5x platinum in the US.  The popularity continued into the new decade with their third consecutive multi-platinum selling album, \"Flesh & Blood\"."
+    },
+    {
+      "title": "Shut Up, Make Love",
+      "text": "\"Shut Up, Make Love\" is a song by American rock band Poison; released in 2000, it was the first single presented to radio stations from their 2000 \"Crack a Smile...and More! \" album.  The song also appears on the second promo single \"Be the One\" as a B-side.  \"Crack a Smile\" is Poison's fifth studio album, released on March 14, 2000, and charting at #131 on The Billboard 200.  The song was the first Poison single with lead guitarist Blues Saraceno."
+    },
+    {
+      "title": "Hayden (musician)",
+      "text": "Paul Hayden Desser (born February 12, 1971) who records as Hayden, is a Canadian singer-songwriter from Thornhill, Ontario."
+    },
+    {
+      "title": "Buck-Tick",
+      "text": "Buck-Tick (stylized as BUCK-TICK) is a Japanese rock band, formed in Fujioka, Gunma in 1983.  The group has consisted of Atsushi Sakurai (lead vocals), Hisashi Imai (guitar), Hidehiko Hoshino (guitar), Yutaka Higuchi (bass) and Toll Yagami (drums) since 1985.  In their three decade career, the band has released 20 studio albums, nearly all reaching the top ten on the charts, of which three in the late eighties and early nineties topped them.  They are commonly credited as one of the founders of the visual kei movement."
+    },
+    {
+      "title": "Charles Nungesser",
+      "text": "Charles Eug\u00e8ne Jules Marie Nungesser, MC (15 March 1892 \u2013 presumably on or after 8 May 1927) was a French ace pilot and adventurer, best remembered as a rival of Charles Lindbergh.  Nungesser was a renowned ace in France, ranking third highest in the country with 43 air combat victories during World War I."
+    },
+    {
+      "title": "L'Oiseau Blanc",
+      "text": "L'Oiseau Blanc (commonly known in the English-speaking world as The White Bird ) was a French Levasseur PL.8 biplane that disappeared in 1927, during an attempt to make the first non-stop transatlantic flight between Paris and New York City to compete for the Orteig Prize.  The aircraft was flown by French World War I aviation heroes, Charles Nungesser and Fran\u00e7ois Coli.  The aircraft took off from Paris on 8 May 1927 and was last seen over Ireland.  Less than two weeks later, Charles Lindbergh successfully made the New York\u2013Paris journey and claimed the prize, flying the \"Spirit of St. Louis\"."
+    },
+    {
+      "title": "In the Realm of the Hackers",
+      "text": "In The Realm of the Hackers is a 2003 Australian documentary directed by Kevin Anderson about the prominent hacker community, centered in Melbourne, Australia in the late 1980s until early 1990.  The storyline is centered on the Australian teenagers going by the hacker names \"Electron\" and \"Phoenix\", who were members of an elite computer hacking group called 'The Realm' and hacked into some of the most secure computer networks in the world, including those of the US Naval Research Laboratory, Lawrence Livermore National Laboratory, a government lab charged with the security of the US nuclear stockpile, and NASA.  The film runs for 55 minutes and was inspired by the book \"Underground\", by Melbourne-based writer and academic Suelette Dreyfus."
+    },
+    {
+      "title": "Freakonomics (film)",
+      "text": "Freakonomics: The Movie is a 2010 American documentary film based on the 2005 book \"Freakonomics: A Rogue Economist Explores the Hidden Side of Everything\" by economist Steven D. Levitt and writer Stephen J. Dubner.  The film premiered at the Tribeca Film Festival in April 2010 with a theatrical release later in the year.  The film received a lukewarm reception and a 65% fresh rating at Rottentomatoes."
+    },
+    {
+      "title": "Letters to Cleo",
+      "text": "Letters to Cleo are an alternative rock band from Boston, Massachusetts, best known for the 1994 single, \"Here & Now\", from their full-length debut album, \"Aurora Gory Alice\".  The band's members are Kay Hanley, Greg McKenna, Michael Eisenstein, Stacy Jones, Scott Riebling, and later, Tom Polce."
+    },
+    {
+      "title": "Screaming Trees",
+      "text": "Screaming Trees was an American rock band formed in Ellensburg, Washington in 1985 by vocalist Mark Lanegan, guitarist Gary Lee Conner, bass player Van Conner and drummer Mark Pickerel.  Pickerel had been replaced by Barrett Martin by the time the band reached its most successful period.  Although widely associated with grunge, the band's sound incorporated hard rock and psychedelic elements.  During Screaming Trees' existence the band released seven studio albums, five EPs, and three compilations."
+    },
+    {
+      "title": "Socialist Revolutionary Party",
+      "text": "The Socialist Revolutionary Party, or Party of Socialists-Revolutionaries (the SRs; Russian: \u041f\u0430\u0440\u0442\u0438\u044f \u0441\u043e\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u043e\u0432-\u0440\u0435\u0432\u043e\u043b\u044e\u0446\u0438\u043e\u043d\u0435\u0440\u043e\u0432 (\u041f\u0421\u0420), \u044d\u0441\u0435\u0440\u044b , \"esery\") was a major political party in early 20th century Russia and a key player in the Russian Revolution.  Its general ideology was revolutionary socialism of democratic socialist and agrarian socialist forms.  After the February Revolution of 1917, it shared power with other liberal and democratic socialist forces within the Russian Provisional Government.  In November 1917, it won a plurality of the national vote in Russia's first-ever democratic elections (to the Russian Constituent Assembly), but the October Revolution had changed the political landscape and the Bolsheviks disbanded the Constituent Assembly in January 1918.  The SRs soon split into pro-Bolshevik and anti-Bolshevik factions.  The anti-Bolshevik faction of this party, known as the Right SRs, which remained loyal to the Provisional Government leader Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of the Russian Civil War and subsequent persecution."
+    },
+    {
+      "title": "Russian Civil War",
+      "text": "The Russian Civil War (Russian: \u0413\u0440\u0430\u0436\u0434\u0430\u0301\u043d\u0441\u043a\u0430\u044f \u0432\u043e\u0439\u043d\u0430\u0301 \u0432 \u0420\u043e\u0441\u0441\u0438\u0301\u0438 , \"Grazhdanskaya voyna v Rossiyi\" ; November 1917 \u2013 October 1922) was a multi-party war in the former Russian Empire immediately after the Russian Revolutions of 1917, as many factions vied to determine Russia's political future.  The two largest combatant groups were the Red Army, fighting for the Bolshevik form of socialism led by Vladimir Lenin, and the loosely allied forces known as the White Army, which included diverse interests favoring monarchism, capitalism and alternative forms of socialism, each with democratic and antidemocratic variants.  In addition, rival militant socialists and nonideological Green armies fought against both the Bolsheviks and the Whites.  Eight foreign nations intervened against the Red Army, notably the Allied Forces and the pro-German armies.  The Red Army defeated the White Armed Forces of South Russia in Ukraine and the army led by Admiral Aleksandr Kolchak in Siberia in 1919.  The remains of the White forces commanded by Pyotr Nikolayevich Wrangel were beaten in Crimea and evacuated in late 1920.  Lesser battles of the war continued on the periphery for two more years, and minor skirmishes with the remnants of the White forces in the Far East continued well into 1923.  The war ended in 1923 in the sense that Red control of the newly formed Soviet Union was now assured, although armed national resistance in Central Asia was not completely crushed until 1934.  There were an estimated 7,000,000\u201312,000,000 casualties during the war, mostly civilians.  The Russian Civil War has been described by some as the greatest national catastrophe that Europe had yet seen."
+    },
+    {
+      "title": "Carlo Rovelli",
+      "text": "Carlo Rovelli (born 3 May 1956) is an Italian theoretical physicist and writer who has worked in Italy, the United States and since 2000, in France.  His work is mainly in the field of quantum gravity, where he is among the founders of the loop quantum gravity theory.  He has also worked in the history and philosophy of science.  He collaborates regularly with several Italian newspapers, in particular the cultural supplements of \"Il Corriere della Sera\", \"Il Sole 24 Ore\" and \"La Repubblica\"."
+    },
+    {
+      "title": "Seven Brief Lessons on Physics",
+      "text": "Seven Brief Lessons on Physics (Italian: \"\" ) is a short book by the Italian physicist Carlo Rovelli.  Originally published in Italian in 2014, the book has been translated into 41 languages.  It is an Italian bestseller, with more than 300,000 copies sold in Rovelli's home country."
+    },
+    {
+      "title": "Livesey Hall War Memorial",
+      "text": "The Livesey Hall War Memorial commemorates the fallen of World War I and World War II who had been employed by the South Suburban Gas Company of London.  It is also a tribute to those employees who served in the wars.  The monument was designed and executed by British sculptor Sydney March, of the March family of artists."
+    },
+    {
+      "title": "World War II casualties",
+      "text": "World War II was the deadliest military conflict in history in absolute terms of total casualties.  Over 60 million people were killed, which was about 3% of the 1940 world population (est. 2.3 billion).  The tables below give a detailed country-by-country count of human losses.  World War II fatality statistics vary, with estimates of total deaths ranging from 50 million to more than 80 million.  The higher figure of over 80 million includes deaths from war-related disease and famine.  Civilians killed totalled 50 to 55 million, including 19 to 28 million from war-related disease and famine.  Military deaths from all causes totalled 21 to 25 million, including deaths in captivity of about 5 million prisoners of war."
+    },
+    {
+      "title": "Elko Regional Airport",
+      "text": "Elko Regional Airport (IATA: EKO, ICAO: KEKO, FAA LID: EKO) , formerly Elko Municipal Airport, is a mile west of downtown Elko, in Elko County, Nevada."
+    },
+    {
+      "title": "Gerald R. Ford International Airport",
+      "text": "Gerald R. Ford International Airport (IATA: GRR, ICAO: KGRR, FAA LID: GRR) is a commercial airport in Cascade Township approximately 13 mi southeast of Grand Rapids, Michigan.  The facility is owned by the Kent County Board of Commissioners and managed by an independent authority.  The Federal Aviation Administration (FAA) National Plan of Integrated Airport Systems for 2017\u20132021 categorized it as a small hub primary commercial service facility."
+    },
+    {
+      "title": "Ralph Hefferline",
+      "text": "Ralph Franklin Hefferline (15 February 1910 in Muncie, Indiana \u2013 16 March 1974) was a psychology professor at Columbia University."
+    },
+    {
+      "title": "Columbia University",
+      "text": "Columbia University (Columbia; officially Columbia University in the City of New York), established in 1754, is a private Ivy League research university in Upper Manhattan, New York City, often cited as one of the world's most prestigious universities."
+    }
+  ],
+  "t1_streaming": [
+    {
+      "title": "Manchester Terrier",
+      "text": "The Manchester Terrier is a breed of dog of the smooth-haired terrier type."
+    },
+    {
+      "title": "Scotch Collie",
+      "text": "The Scotch Collie is a landrace breed of dog which originated from the highland regions of Scotland.  The breed consisted of both the long-haired (now known as Rough) Collie and the short-haired (now known as Smooth) Collie.  It is generally believed to have descended from a variety of ancient herding dogs, some dating back to the Roman occupation, which may have included Roman Cattle Dogs, Native Celtic Dogs and Viking Herding Spitzes.  Other ancestors include the Gordon and Irish Setters."
+    },
+    {
+      "title": "Sachin Warrier",
+      "text": "Sachin Warrier is a playback singer and composer in the Malayalam cinema industry from Kerala.  He became notable with the song \"Muthuchippi Poloru\" from the film Thattathin Marayathu.  He made his debut with the movie Malarvaadi Arts Club.  He was working as a software engineer in Tata Consultancy Services in Kochi.  Later he resigned from the job to concentrate more on music.  His latest work is as a composer for the movie Aanandam."
+    },
+    {
+      "title": "Tata Consultancy Services",
+      "text": "Tata Consultancy Services Limited (TCS) is an Indian multinational information technology (IT) service, consulting and business solutions company Headquartered in Mumbai, Maharashtra.  It is a subsidiary of the Tata Group and operates in 46 countries."
+    },
+    {
+      "title": "Masakazu Katsura",
+      "text": "Masakazu Katsura (\u6842 \u6b63\u548c , Katsura Masakazu , born December 10, 1962) is a Japanese manga artist, known for several works of manga, including \"Wing-man\", \"Shadow Lady\", \"DNA\u00b2\", \"Video Girl Ai\", \"I\"s\", and \"Zetman\".  He has also worked as character designer for \"\", \"Tiger & Bunny\" and \"\"."
+    },
+    {
+      "title": "I&quot;s",
+      "text": "I\"s (\u30a2\u30a4\u30ba , Aizu ) is a Japanese manga series written and illustrated by Masakazu Katsura.  The story's main character is 16-year-old high school student Ichitaka Seto who is in love with his classmate Iori Yoshizuki, but too shy to tell her.  Again and again he plans to tell her his true feelings, but each time something (usually a misunderstanding of some kind) gets in the way.  Things become even more complicated when Itsuki Akiba returns to Japan; she is a girl Ichitaka was friends with in their childhood before she moved to the United States, and who had a huge crush on him."
+    },
+    {
+      "title": "Battle of Adwa",
+      "text": "The Battle of Adwa (Amharic: \u12a0\u12f5\u12cb; Amharic translated: Adowa, or sometimes by the Italian name \"Adua\") was fought on 2 March 1896/Yekatit 23, 1889 according to Ethiopian calendar between the Ethiopian Empire and the Kingdom of Italy near the town of Adwa, Ethiopia, in Tigray.  This climactic battle of the First Italo-Ethiopian War, was a decisive defeat for Italy and secured Ethiopian sovereignty."
+    },
+    {
+      "title": "Giuseppe Arimondi",
+      "text": "Giuseppe Edoardo Arimondi, OSML, OMS, OCI (Savigliano, 26 April 1846 \u2013 Adwa, 1 March 1896) was an Italian general, mostly known for his role during the First Italo-Ethiopian War.  He was one of the few European commanders who gained a victory over the Mahdists before Kitchener's Expedition, soundly defeating them at Agordat in 1893.  After a long and successfull colonial service, he died in combat at Adwa, and was posthumously awarded the Gold Medal of Military Valor."
+    },
+    {
+      "title": "Nelson Rockefeller",
+      "text": "Nelson Aldrich Rockefeller (July 8, 1908 \u2013 January 26, 1979) was an American businessman and politician.  He served as the 41st Vice President of the United States from 1974 to 1977, and previously as the 49th Governor of New York (1959\u20131973).  He also served as Assistant Secretary of State for American Republic Affairs for Presidents Franklin D. Roosevelt and Harry S. Truman as well as Under Secretary of Health, Education and Welfare under Dwight D. Eisenhower.  A member of the wealthy Rockefeller family, he was also a noted art collector, as well as administrator of Rockefeller Center in Manhattan, New York."
+    },
+    {
+      "title": "Alfred Balk",
+      "text": "Alfred Balk (July 24, 1930 \u2013 November 25, 2010) was an American reporter, nonfiction author and magazine editor who wrote groundbreaking articles about housing segregation, the Nation of Islam, the environment and Illinois politics.  His refusal to identify a confidential source led to a landmark court case.  During a career-long emphasis on media improvement, he served on the Twentieth Century Fund's task force that established a National News Council, consulted for several foundations, served as secretary of New York Governor Nelson Rockefeller's Committee on the Employment of Minority Groups in the News Media, and produced a film, \"That the People Shall Know: The Challenge of Journalism\", narrated by Walter Cronkite.  He wrote and co-authored books on a variety of topics, ranging from the tax exempt status of religious organizations to globalization to the history of radio."
+    },
+    {
+      "title": "Yellowcraigs",
+      "text": "Yellowcraig, less commonly known as Broad Sands Bay, is a coastal area of forest, beach and grassland in East Lothian, south-east Scotland.  Yellowcraig is partly within the Firth of Forth Site of Special Scientific Interest (SSSI).  It is bordered to the north by the Firth of Forth, to the south by the village of Dirleton and Dirleton Castle, to the east by the North Berwick West Links golf course, and to the west by the Archerfield Estate and Links golf courses."
+    },
+    {
+      "title": "Dirleton Castle",
+      "text": "Dirleton Castle is a medieval fortress in the village of Dirleton, East Lothian, Scotland.  It lies around 2 mi west of North Berwick, and around 19 mi east of Edinburgh.  The oldest parts of the castle date to the 13th century, and it was abandoned by the end of the 17th century."
+    },
+    {
+      "title": "Back to Mono (1958\u20131969)",
+      "text": "Back to Mono (1958\u20131969) is a box set (4 compact discs or 5 vinyl LPs) compilation of the recorded work of record producer Phil Spector, through the 1960s, released in 1991 by ABKCO as #7118-2.  The first track, \"To Know Him Is to Love Him,\" released in 1958, features Spector performing as part of the group the Teddy Bears.  Initially a vinyl album-sized package, the box contained a booklet with photographs, complete song lyrics, discographical information, and a reproduction of the essay on Spector by Tom Wolfe, \"The First Tycoon of Teen.\"  The package also contained a small, round, red \"Back to Mono\" pin."
+    },
+    {
+      "title": "To Know Him Is to Love Him",
+      "text": "\"To Know Him Is to Love Him\" is a song written by Phil Spector, inspired by words on his father's tombstone, \"To Know Him Was To Love Him.\"  It was first recorded by the only vocal group of which he was a member, the Teddy Bears.  Their recording spent three weeks at No. 1 on the \"Billboard\" Hot 100 singles chart in 1958, while reaching No. 2 on UK's \"New Musical Express\" chart.  Peter & Gordon and Bobby Vinton later had hits with the song, with its title and lyrics changed to \"To Know You Is to Love You\".  In 1987, the song was resurrected by Dolly Parton, Linda Ronstadt and Emmylou Harris, whose \"Trio\" recording topped the U.S. country singles charts.  The song is in 12/8 time."
+    },
+    {
+      "title": "World Summit of Nobel Peace Laureates",
+      "text": "The World Summit of Nobel Peace Laureates was initiated by Mikhail Gorbachev in the 90s, as a forum in which the Nobel Peace Laureates and the Peace Laureate Organizations could come together to address global issues with a view to encourage and support peace and human well being in the world.  Its Permanent Secretariat is an independent, non-profit, ECOSOC non-governmental organization, based in Rome, operating on a permanent basis.  A permanent staff, mainly composed of volunteers, promotes the work of the Nobel Peace Prize Winners and organizes the World Summit of Nobel Peace Laureates on a yearly basis.  To date, the Permanent Secretariat has organized 16 Summits, the most recent having been held in February 2017 in the city of Bogota, Colombia.  This was the first time that the Summit took place in Latin America."
+    },
+    {
+      "title": "Mikhail Gorbachev",
+      "text": "Mikhail Sergeyevich Gorbachev, ( ; Russian: \u041c\u0438\u0445\u0430\u0438\u0301\u043b \u0421\u0435\u0440\u0433\u0435\u0301\u0435\u0432\u0438\u0447 \u0413\u043e\u0440\u0431\u0430\u0447\u0451\u0432 ; ] ; born 2 March 1931) is a former Soviet statesman.  He was the eighth and last leader of the Soviet Union, having been General Secretary of the Communist Party of the Soviet Union from 1985 until 1991.  He was the country's head of state from 1988 until 1991 (titled as Chairman of the Presidium of the Supreme Soviet from 1988 to 1989, as Chairman of the from 1989 to 1990, and as Soviet Union]] from 1990 to 1991)."
+    },
+    {
+      "title": "Silene",
+      "text": "Silene is a genus of flowering plants in the family Caryophyllaceae.  Containing approximately 700 species, it is the largest genus in the family.  Common names include campion (which is shared with the related genus \"Lychnis\") and catchfly.  Many \"Silene\" species are widely distributed, particularly in the northern hemisphere."
+    },
+    {
+      "title": "Ferocactus",
+      "text": "Ferocactus is a genus of large barrel-shaped cacti, mostly with large spines and small flowers.  There are about 30 species included in the genus.  They are found in the southwestern United States and northwestern Mexico."
+    },
+    {
+      "title": "No. 2 Squadron RAAF",
+      "text": "No. 2 Squadron is a Royal Australian Air Force (RAAF) squadron that operates from RAAF Base Williamtown, near Newcastle, New South Wales.  From its formation in 1916 as part of the Australian Flying Corps, it has flown a variety of aircraft types including fighters, bombers, and Airborne Early Warning & Control (AEW&C).  During World War I, the squadron operated on the Western Front conducting fighter sweeps and ground-attack missions.  It was disbanded in mid-1919, following the end of hostilities.  The squadron was briefly re-raised in 1922 as part of the newly independent RAAF, but was disbanded after only a couple of months and not reformed until 1937.  It saw action as a bomber unit in the South West Pacific theatre of World War II and, equipped with English Electric Canberra jets, in the Malayan Emergency and the Vietnam War.  The squadron was again disbanded in 1982, following the retirement of the Canberra.  It was re-formed in 2000 to operate the Boeing 737 AEW&C \"Wedgetail\".  One of the six Boeing 737s was deployed to the Middle East in September 2014, as part of Australia's contribution to the military coalition against ISIS."
+    },
+    {
+      "title": "English Electric Canberra",
+      "text": "The English Electric Canberra is a British first-generation jet-powered medium bomber that was manufactured during the 1950s.  It was developed by English Electric during the mid-to-late 1940s in response to a 1944 Air Ministry requirement for a successor to the wartime de Havilland Mosquito fast-bomber.  Amongst the performance requirements for the type was the demand for an outstanding high altitude bombing capability in addition to flying at high speeds.  These were partly accomplished by making use of newly developed jet propulsion technology.  When the Canberra was introduced to service with the Royal Air Force (RAF), the type's first operator, in May 1951, it became the service's first jet-powered bomber aircraft."
+    }
+  ],
+  "qa_benchmark": [
+    {
+      "id": "5a8b57f25542995d1e6f1371",
+      "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+      "answer": "yes",
+      "gold_titles": [
+        "Ed Wood",
+        "Scott Derrickson"
+      ]
+    },
+    {
+      "id": "5a8c7595554299585d9e36b6",
+      "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+      "answer": "Chief of Protocol",
+      "gold_titles": [
+        "Kiss and Tell (1945 film)",
+        "Shirley Temple"
+      ]
+    },
+    {
+      "id": "5a85ea095542994775f606a8",
+      "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+      "answer": "Animorphs",
+      "gold_titles": [
+        "The Hork-Bajir Chronicles",
+        "Animorphs"
+      ]
+    },
+    {
+      "id": "5adbf0a255429947ff17385a",
+      "question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+      "answer": "no",
+      "gold_titles": [
+        "Laleli Mosque",
+        "Esma Sultan Mansion"
+      ]
+    },
+    {
+      "id": "5a8e3ea95542995a26add48d",
+      "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+      "answer": "Greenwich Village, New York City",
+      "gold_titles": [
+        "Big Stone Gap (film)",
+        "Adriana Trigiani"
+      ]
+    },
+    {
+      "id": "5abd94525542992ac4f382d2",
+      "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+      "answer": "YG Entertainment",
+      "gold_titles": [
+        "2014 S/S",
+        "Winner (band)"
+      ]
+    },
+    {
+      "id": "5a85b2d95542997b5ce40028",
+      "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+      "answer": "Eenasul Fateh",
+      "gold_titles": [
+        "Management consulting",
+        "Eenasul Fateh"
+      ]
+    },
+    {
+      "id": "5a87ab905542996e4f3088c1",
+      "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+      "answer": "3,677 seated",
+      "gold_titles": [
+        "Lewiston Maineiacs",
+        "Androscoggin Bank Colis\u00e9e"
+      ]
+    },
+    {
+      "id": "5a7bbb64554299042af8f7cc",
+      "question": "Who is older, Annie Morton or Terry Richardson?",
+      "answer": "Terry Richardson",
+      "gold_titles": [
+        "Annie Morton",
+        "Terry Richardson"
+      ]
+    },
+    {
+      "id": "5a8db19d5542994ba4e3dd00",
+      "question": "Are Local H and For Against both from the United States?",
+      "answer": "yes",
+      "gold_titles": [
+        "Local H",
+        "For Against"
+      ]
+    },
+    {
+      "id": "5a7166395542994082a3e814",
+      "question": "What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",
+      "answer": "Kansas Song",
+      "gold_titles": [
+        "Kansas Song",
+        "University of Kansas"
+      ]
+    },
+    {
+      "id": "5a877e5d5542993e715abf7d",
+      "question": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and T\u00e9a Leoni?",
+      "answer": "David Weissman",
+      "gold_titles": [
+        "The Family Man",
+        "David Weissman"
+      ]
+    },
+    {
+      "id": "5ab3b0bf5542992ade7c6e39",
+      "question": "What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?",
+      "answer": "1999",
+      "gold_titles": [
+        "Oh My God (Guns N' Roses song)",
+        "End of Days (film)"
+      ]
+    },
+    {
+      "id": "5ab56e32554299637185c594",
+      "question": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+      "answer": "no",
+      "gold_titles": [
+        "Random House Tower",
+        "888 7th Avenue"
+      ]
+    },
+    {
+      "id": "5ab6d09255429954757d337d",
+      "question": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
+      "answer": "from 1986 to 2013",
+      "gold_titles": [
+        "1995\u201396 Manchester United F.C. season",
+        "Alex Ferguson"
+      ]
+    },
+    {
+      "id": "5a75e05c55429976ec32bc5f",
+      "question": "Brown State Fishing Lake is in a country that has a population of how many inhabitants ?",
+      "answer": "9,984",
+      "gold_titles": [
+        "Brown County, Kansas",
+        "Brown State Fishing Lake"
+      ]
+    },
+    {
+      "id": "5ab3e45655429976abd1bcd4",
+      "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
+      "answer": "the North Atlantic Conference",
+      "gold_titles": [
+        "America East Conference",
+        "Vermont Catamounts men's soccer"
+      ]
+    },
+    {
+      "id": "5ab29c24554299449642c932",
+      "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+      "answer": "yes",
+      "gold_titles": [
+        "Giuseppe Verdi",
+        "Ambroise Thomas"
+      ]
+    },
+    {
+      "id": "5ae0d4c9554299603e418468",
+      "question": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
+      "answer": "1969 until 1974",
+      "gold_titles": [
+        "Roger O. Egeberg",
+        "Richard Nixon"
+      ]
+    },
+    {
+      "id": "5a8133725542995ce29dcbdb",
+      "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
+      "answer": "Robert Erskine Childers DSC",
+      "gold_titles": [
+        "Henry Roth",
+        "Robert Erskine Childers"
+      ]
+    },
+    {
+      "id": "5ae7a8175542993210983ed8",
+      "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
+      "answer": "Pedro Rodr\u00edguez",
+      "gold_titles": [
+        "Sergio P\u00e9rez",
+        "Formula One drivers from Mexico"
+      ]
+    },
+    {
+      "id": "5ae6050f55429929b0807a5e",
+      "question": "This singer of A Rather Blustery Day also voiced what hedgehog?",
+      "answer": "Sonic",
+      "gold_titles": [
+        "Jim Cummings",
+        "A Rather Blustery Day"
+      ]
+    },
+    {
+      "id": "5adddccd5542997dc7907069",
+      "question": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
+      "answer": "keyboard function keys",
+      "gold_titles": [
+        "Apple Remote",
+        "Front Row (software)"
+      ]
+    },
+    {
+      "id": "5ae2070a5542994d89d5b313",
+      "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+      "answer": "Badly Drawn Boy",
+      "gold_titles": [
+        "Badly Drawn Boy",
+        "Wolf Alice"
+      ]
+    },
+    {
+      "id": "5ae22b8d554299234fd0440f",
+      "question": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+      "answer": "World's Best Goalkeeper",
+      "gold_titles": [
+        "Kasper Schmeichel",
+        "Peter Schmeichel"
+      ]
+    },
+    {
+      "id": "5a722b8655429971e9dc9329",
+      "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
+      "answer": "Barton Lee Hazlewood",
+      "gold_titles": [
+        "These Boots Are Made for Walkin'",
+        "Lee Hazlewood"
+      ]
+    },
+    {
+      "id": "5adf37a95542995ec70e8f97",
+      "question": "The 2011\u201312 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
+      "answer": "1838",
+      "gold_titles": [
+        "Virginia Commonwealth University",
+        "2011\u201312 VCU Rams men's basketball team"
+      ]
+    },
+    {
+      "id": "5abd259d55429924427fcf1a",
+      "question": "Are both Dictyosperma, and Huernia described as a genus?",
+      "answer": "yes",
+      "gold_titles": [
+        "Dictyosperma",
+        "Huernia"
+      ]
+    },
+    {
+      "id": "5a828c8355429966c78a6a50",
+      "question": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
+      "answer": "Henry J. Kaiser",
+      "gold_titles": [
+        "Henry J. Kaiser",
+        "Kaiser Ventures"
+      ]
+    },
+    {
+      "id": "5a8a3e745542996c9b8d5e70",
+      "question": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
+      "answer": "Arena of Khazan",
+      "gold_titles": [
+        "Tunnels &amp; Trolls",
+        "Arena of Khazan"
+      ]
+    },
+    {
+      "id": "5ac23ff0554299636651994d",
+      "question": "When was Poison's album \"Shut Up, Make Love\" released?",
+      "answer": "2000",
+      "gold_titles": [
+        "Shut Up, Make Love",
+        "Poison (American band)"
+      ]
+    },
+    {
+      "id": "5ae4a3265542995ad6573de5",
+      "question": "Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?",
+      "answer": "Fujioka, Gunma",
+      "gold_titles": [
+        "Buck-Tick",
+        "Hayden (musician)"
+      ]
+    },
+    {
+      "id": "5ae0361155429925eb1afc2c",
+      "question": "Which  French ace pilot and adventurer fly L'Oiseau Blanc",
+      "answer": "Charles Eug\u00e8ne",
+      "gold_titles": [
+        "L'Oiseau Blanc",
+        "Charles Nungesser"
+      ]
+    },
+    {
+      "id": "5abc0a5d5542993f40c73c64",
+      "question": "Are Freakonomics and In the Realm of the Hackers both American documentaries?",
+      "answer": "no",
+      "gold_titles": [
+        "Freakonomics (film)",
+        "In the Realm of the Hackers"
+      ]
+    },
+    {
+      "id": "5a7cc50e554299452d57ba3e",
+      "question": "Which band, Letters to Cleo or Screaming Trees, had more members?",
+      "answer": "Letters to Cleo",
+      "gold_titles": [
+        "Screaming Trees",
+        "Letters to Cleo"
+      ]
+    },
+    {
+      "id": "5abf63f15542997ec76fd3ea",
+      "question": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+      "answer": "October 1922",
+      "gold_titles": [
+        "Socialist Revolutionary Party",
+        "Russian Civil War"
+      ]
+    },
+    {
+      "id": "5a8ef2a75542995a26add583",
+      "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
+      "answer": "2000",
+      "gold_titles": [
+        "Seven Brief Lessons on Physics",
+        "Carlo Rovelli"
+      ]
+    },
+    {
+      "id": "5a80721b554299485f5985ef",
+      "question": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+      "answer": "World War II",
+      "gold_titles": [
+        "World War II casualties",
+        "Livesey Hall War Memorial"
+      ]
+    },
+    {
+      "id": "5ab51dae5542991779162d82",
+      "question": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
+      "answer": "no",
+      "gold_titles": [
+        "Elko Regional Airport",
+        "Gerald R. Ford International Airport"
+      ]
+    },
+    {
+      "id": "5a7571135542992d0ec05f98",
+      "question": "Ralph Hefferline was a psychology professor at a university that is located in what city?",
+      "answer": "New York City",
+      "gold_titles": [
+        "Columbia University",
+        "Ralph Hefferline"
+      ]
+    },
+    {
+      "id": "5a7a0e1e5542990783324e1a",
+      "question": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?",
+      "answer": "Scotch Collie",
+      "gold_titles": [
+        "Scotch Collie",
+        "Manchester Terrier"
+      ]
+    },
+    {
+      "id": "5a74106b55429979e288289e",
+      "question": "Where is the company that Sachin Warrier worked for as a software engineer headquartered? ",
+      "answer": "Mumbai",
+      "gold_titles": [
+        "Sachin Warrier",
+        "Tata Consultancy Services"
+      ]
+    },
+    {
+      "id": "5a79311755429970f5fffe67",
+      "question": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
+      "answer": "1962",
+      "gold_titles": [
+        "Masakazu Katsura",
+        "I&quot;s"
+      ]
+    },
+    {
+      "id": "5ab2d3df554299194fa9352c",
+      "question": "The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?",
+      "answer": "sovereignty",
+      "gold_titles": [
+        "Giuseppe Arimondi",
+        "Battle of Adwa"
+      ]
+    },
+    {
+      "id": "5a760ab65542994ccc918697",
+      "question": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?",
+      "answer": "Nelson Rockefeller",
+      "gold_titles": [
+        "Alfred Balk",
+        "Nelson Rockefeller"
+      ]
+    },
+    {
+      "id": "5a7d54165542995f4f402256",
+      "question": "A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",
+      "answer": "Yellowcraig",
+      "gold_titles": [
+        "Dirleton Castle",
+        "Yellowcraigs"
+      ]
+    },
+    {
+      "id": "5ab859a955429934fafe6d7b",
+      "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
+      "answer": "Phil Spector",
+      "gold_titles": [
+        "Back to Mono (1958\u20131969)",
+        "To Know Him Is to Love Him"
+      ]
+    },
+    {
+      "id": "5add61d65542995b365fab21",
+      "question": "What type of forum did a former Soviet statesman initiate?",
+      "answer": "Organizations could come together to address global issues",
+      "gold_titles": [
+        "Mikhail Gorbachev",
+        "World Summit of Nobel Peace Laureates"
+      ]
+    },
+    {
+      "id": "5a8e068b5542995085b37384",
+      "question": "Are Ferocactus and Silene both types of plant?",
+      "answer": "yes",
+      "gold_titles": [
+        "Ferocactus",
+        "Silene"
+      ]
+    },
+    {
+      "id": "5abbf698554299114383a0b5",
+      "question": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
+      "answer": "English Electric Canberra",
+      "gold_titles": [
+        "No. 2 Squadron RAAF",
+        "English Electric Canberra"
+      ]
+    }
+  ]
+}

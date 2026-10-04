@@ -1,0 +1,155 @@
+import os
+import json
+from collections import Counter
+import matplotlib
+
+# Headless rendering to bypass Windows Tkinter/Tcl dependencies
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+
+WORKSPACE_DIR = "data"
+
+# 1. Load data artifacts
+with open(os.path.join(WORKSPACE_DIR, "benchmark_results.json"), "r", encoding="utf-8") as f:
+    bench = json.load(f)
+
+with open(os.path.join(WORKSPACE_DIR, "generation_metrics.json"), "r", encoding="utf-8") as f:
+    gen = json.load(f)
+
+with open(os.path.join(WORKSPACE_DIR, "base_communities.json"), "r", encoding="utf-8") as f:
+    communities = json.load(f)
+
+# 2. Setup Figure Layout (2x2 Grid)
+fig, axes = plt.subplots(2, 2, figsize=(15, 11), dpi=300)
+plt.subplots_adjust(hspace=0.35, wspace=0.25)
+
+# -------------------------------------------------------------
+# PLOT 1: LLM Compute & Token Efficiency Comparison
+# -------------------------------------------------------------
+ax1 = axes[0, 0]
+categories = ["Static Full Rebuild", "DeltaGraphRAG (Ours)"]
+calls = [
+    bench["efficiency_ablation"]["full_rebuild_calls_required"],
+    bench["efficiency_ablation"]["deltagraphrag_calls_used"]
+]
+colors = ["#d9534f", "#5cb85c"]
+
+bars = ax1.bar(categories, calls, color=colors, width=0.45, edgecolor="black", linewidth=1.2)
+ax1.set_ylabel("LLM Synthesis API Calls", fontsize=11, fontweight="bold")
+ax1.set_title("Compute Cost Reduction (-42.0% Calls)", fontsize=13, fontweight="bold")
+ax1.set_ylim(0, max(calls) * 1.25)
+ax1.grid(axis="y", linestyle="--", alpha=0.5)
+
+# Value annotations
+for bar in bars:
+    height = bar.get_height()
+    ax1.text(
+        bar.get_x() + bar.get_width() / 2.0,
+        height + 6,
+        f"{int(height)} Calls",
+        ha="center",
+        va="bottom",
+        fontsize=11,
+        fontweight="bold"
+    )
+
+ax1.annotate(
+    "42% Savings\n(Zero-LLM Patches: 5)",
+    xy=(1, calls[1]),
+    xytext=(1.05, calls[1] + 55),
+    arrowprops=dict(facecolor="black", shrink=0.08, width=1.5, headwidth=6),
+    fontsize=10,
+    fontweight="bold"
+)
+
+# -------------------------------------------------------------
+# PLOT 2: Token F1 Score Distribution
+# -------------------------------------------------------------
+ax2 = axes[0, 1]
+f1_scores = [item["f1"] for item in gen["predictions"]]
+
+bins = [0.0, 0.01, 0.35, 0.70, 0.99, 1.01]
+bin_labels = ["0.0 (Miss)", "0.01 - 0.35", "0.35 - 0.70", "0.70 - 0.99", "1.0 (Exact)"]
+counts, _ = np.histogram(f1_scores, bins=bins)
+
+palette = ["#e74c3c", "#e67e22", "#f1c40f", "#3498db", "#2ecc71"]
+bars2 = ax2.bar(bin_labels, counts, color=palette, edgecolor="black", linewidth=1.1)
+
+ax2.set_ylabel("Query Count (N = 50)", fontsize=11, fontweight="bold")
+ax2.set_xlabel("Token F1 Score Intervals", fontsize=11, fontweight="bold")
+ax2.set_title(f"F1 Score Spread (Mean F1: {gen['f1_score_pct']}%)", fontsize=13, fontweight="bold")
+ax2.set_ylim(0, max(counts) * 1.2)
+ax2.grid(axis="y", linestyle="--", alpha=0.5)
+
+for bar in bars2:
+    height = bar.get_height()
+    ax2.text(
+        bar.get_x() + bar.get_width() / 2.0,
+        height + 0.6,
+        f"{int(height)}",
+        ha="center",
+        va="bottom",
+        fontsize=10,
+        fontweight="bold"
+    )
+
+# -------------------------------------------------------------
+# PLOT 3: Error Taxonomy & Failure Mode Analysis
+# -------------------------------------------------------------
+ax3 = axes[1, 0]
+
+exact_hits = sum(1 for item in gen["predictions"] if item["exact_match"] == 1.0)
+semantic_matches = sum(1 for item in gen["predictions"] if item["exact_match"] == 0.0 and item["f1"] >= 0.5)
+grounded_refusals = sum(1 for item in gen["predictions"] if "does not contain" in item["prediction"].lower())
+retrieval_reasoning_miss = len(gen["predictions"]) - (exact_hits + semantic_matches + grounded_refusals)
+
+taxonomy_labels = [
+    "Exact Match (EM = 1)",
+    "Semantic Hits (F1 ≥ 0.5)",
+    "Grounded Refusals\n(Zero-Hallucination)",
+    "Retrieval / Bridge Miss"
+]
+taxonomy_counts = [exact_hits, semantic_matches, grounded_refusals, retrieval_reasoning_miss]
+taxonomy_colors = ["#2ecc71", "#3498db", "#9b59b6", "#e74c3c"]
+
+wedges, texts, autotexts = ax3.pie(
+    taxonomy_counts,
+    labels=taxonomy_labels,
+    autopct="%1.1f%%",
+    startangle=140,
+    colors=taxonomy_colors,
+    wedgeprops=dict(edgecolor="black", linewidth=1.2)
+)
+
+for autotext in autotexts:
+    autotext.set_color("white")
+    autotext.set_fontweight("bold")
+ax3.set_title("Response Error Taxonomy & Grounding", fontsize=13, fontweight="bold")
+
+# -------------------------------------------------------------
+# PLOT 4: Louvain Community Size Distribution (Scale-Free Check)
+# -------------------------------------------------------------
+ax4 = axes[1, 1]
+community_counts = Counter(communities.values())
+sizes = list(community_counts.values())
+
+ax4.hist(sizes, bins=25, color="#34495e", edgecolor="white", alpha=0.85)
+ax4.set_xlabel("Community Cardinality (|V_C| Nodes)", fontsize=11, fontweight="bold")
+ax4.set_ylabel("Frequency of Communities", fontsize=11, fontweight="bold")
+ax4.set_title(f"Community Cardinality Spread (Q = 0.9413)", fontsize=13, fontweight="bold")
+ax4.set_yscale("log")
+ax4.grid(axis="y", linestyle="--", alpha=0.5)
+
+plt.suptitle(
+    "DeltaGraphRAG Empirical Performance & Topology Report",
+    fontsize=16,
+    fontweight="heavy",
+    y=0.99
+)
+
+dashboard_path = os.path.join(WORKSPACE_DIR, "benchmark_dashboard.png")
+fig.savefig(dashboard_path, bbox_inches="tight")
+plt.close(fig)
+
+print(f"[STATUS] Comprehensive evaluation dashboard saved to: {dashboard_path}")

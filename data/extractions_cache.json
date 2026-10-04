@@ -1,0 +1,6609 @@
+{
+  "90a1c78df63324bcfdd842e4232378841d12d2116ff021a82fbb9c916eb40fdf": {
+    "title": "Scott Derrickson",
+    "entities": [
+      {
+        "name": "Scott Derrickson",
+        "type": "Person"
+      },
+      {
+        "name": "Los Angeles, California",
+        "type": "Location"
+      },
+      {
+        "name": "Sinister",
+        "type": "Work"
+      },
+      {
+        "name": "The Exorcism of Emily Rose",
+        "type": "Work"
+      },
+      {
+        "name": "Deliver Us From Evil",
+        "type": "Work"
+      },
+      {
+        "name": "Doctor Strange",
+        "type": "Work"
+      },
+      {
+        "name": "Marvel Cinematic Universe",
+        "type": "Concept"
+      },
+      {
+        "name": "director",
+        "type": "Concept"
+      },
+      {
+        "name": "screenwriter",
+        "type": "Concept"
+      },
+      {
+        "name": "producer",
+        "type": "Concept"
+      },
+      {
+        "name": "American",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Scott Derrickson",
+        "target": "Los Angeles, California",
+        "relation": "lives_in"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "Sinister",
+        "relation": "directs"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "The Exorcism of Emily Rose",
+        "relation": "directs"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "Deliver Us From Evil",
+        "relation": "directs"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "Doctor Strange",
+        "relation": "directs"
+      },
+      {
+        "source": "Doctor Strange",
+        "target": "Marvel Cinematic Universe",
+        "relation": "part_of"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "director",
+        "relation": "occupation"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "screenwriter",
+        "relation": "occupation"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "producer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Scott Derrickson",
+        "target": "American",
+        "relation": "nationality"
+      }
+    ]
+  },
+  "47d504e9afcda0399e3daf6d907a4e145eb3a5be7f11f459c66cdd83ffc1539e": {
+    "title": "Ed Wood",
+    "entities": [
+      {
+        "name": "Edward Davis Wood Jr.",
+        "type": "Person"
+      },
+      {
+        "name": "Ed Wood",
+        "type": "Person"
+      },
+      {
+        "name": "American",
+        "type": "Concept"
+      },
+      {
+        "name": "filmmaker",
+        "type": "Concept"
+      },
+      {
+        "name": "actor",
+        "type": "Concept"
+      },
+      {
+        "name": "writer",
+        "type": "Concept"
+      },
+      {
+        "name": "producer",
+        "type": "Concept"
+      },
+      {
+        "name": "director",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "Ed Wood",
+        "relation": "alias"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "American",
+        "relation": "nationality"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "filmmaker",
+        "relation": "occupation"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "actor",
+        "relation": "occupation"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "writer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "producer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Edward Davis Wood Jr.",
+        "target": "director",
+        "relation": "occupation"
+      }
+    ]
+  },
+  "792b6181a82e9fe20cf5cacc7873812907f02b2ea1ad551dab929b3f19fc1459": {
+    "title": "Shirley Temple",
+    "entities": [
+      {
+        "name": "Shirley Temple Black",
+        "type": "Person"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Ghana",
+        "type": "Location"
+      },
+      {
+        "name": "Czechoslovakia",
+        "type": "Location"
+      },
+      {
+        "name": "Chief of Protocol of the United States",
+        "type": "Concept"
+      },
+      {
+        "name": "Hollywood",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Shirley Temple Black",
+        "target": "Ghana",
+        "relation": "ambassador_to"
+      },
+      {
+        "source": "Shirley Temple Black",
+        "target": "Czechoslovakia",
+        "relation": "ambassador_to"
+      },
+      {
+        "source": "Shirley Temple Black",
+        "target": "Chief of Protocol of the United States",
+        "relation": "served_as"
+      },
+      {
+        "source": "Shirley Temple Black",
+        "target": "Hollywood",
+        "relation": "box_office_draw"
+      },
+      {
+        "source": "Shirley Temple Black",
+        "target": "United States",
+        "relation": "nationality"
+      }
+    ]
+  },
+  "dff2a418b6f8506b1c291047232b7905d46c41d2eaaf393fe19e724950d8a297": {
+    "title": "Kiss and Tell (1945 film)",
+    "entities": [
+      {
+        "name": "Kiss and Tell (1945 film)",
+        "type": "Work"
+      },
+      {
+        "name": "Shirley Temple",
+        "type": "Person"
+      },
+      {
+        "name": "Corliss Archer",
+        "type": "Person"
+      },
+      {
+        "name": "Comedy film",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Kiss and Tell (1945 film)",
+        "target": "Shirley Temple",
+        "relation": "starring"
+      },
+      {
+        "source": "Shirley Temple",
+        "target": "Corliss Archer",
+        "relation": "portrays"
+      },
+      {
+        "source": "Kiss and Tell (1945 film)",
+        "target": "Comedy film",
+        "relation": "genre"
+      }
+    ]
+  },
+  "d5d3ff02140978fe8761e5b7a8d201a6452864d64bbe7efbc461d3482b9b3ede": {
+    "title": "The Hork-Bajir Chronicles",
+    "entities": [
+      {
+        "name": "The Hork-Bajir Chronicles",
+        "type": "Work"
+      },
+      {
+        "name": "Animorphs series",
+        "type": "Work"
+      },
+      {
+        "name": "K. A. Applegate",
+        "type": "Person"
+      },
+      {
+        "name": "The Pretender",
+        "type": "Work"
+      },
+      {
+        "name": "The Ellimist Chronicles",
+        "type": "Work"
+      },
+      {
+        "name": "The Andalite Chronicles",
+        "type": "Work"
+      },
+      {
+        "name": "Tobias",
+        "type": "Person"
+      },
+      {
+        "name": "Jara Hamee",
+        "type": "Person"
+      },
+      {
+        "name": "Yeerks",
+        "type": "Concept"
+      },
+      {
+        "name": "Aldrea",
+        "type": "Person"
+      },
+      {
+        "name": "Dak Hamee",
+        "type": "Person"
+      },
+      {
+        "name": "Esplin 9466",
+        "type": "Person"
+      },
+      {
+        "name": "Megamorphs books",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "Animorphs series",
+        "relation": "companion_of"
+      },
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "K. A. Applegate",
+        "relation": "author"
+      },
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "The Pretender",
+        "relation": "precedes"
+      },
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "The Ellimist Chronicles",
+        "relation": "occurs_after"
+      },
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "The Andalite Chronicles",
+        "relation": "occurs_before"
+      },
+      {
+        "source": "The Hork-Bajir Chronicles",
+        "target": "Tobias",
+        "relation": "introduced_by"
+      },
+      {
+        "source": "Tobias",
+        "target": "Jara Hamee",
+        "relation": "receives_story_from"
+      },
+      {
+        "source": "Aldrea",
+        "target": "Andalite",
+        "relation": "species"
+      },
+      {
+        "source": "Dak Hamee",
+        "target": "Hork-Bajir",
+        "relation": "species"
+      },
+      {
+        "source": "Aldrea",
+        "target": "Dak Hamee",
+        "relation": "allied_with"
+      },
+      {
+        "source": "Aldrea",
+        "target": "Yeerks",
+        "relation": "opposed_to"
+      },
+      {
+        "source": "Dak Hamee",
+        "target": "Yeerks",
+        "relation": "opposed_to"
+      },
+      {
+        "source": "Jara Hamee",
+        "target": "Aldrea",
+        "relation": "narrated_by"
+      },
+      {
+        "source": "Jara Hamee",
+        "target": "Dak Hamee",
+        "relation": "narrated_by"
+      }
+    ]
+  },
+  "44dee2bb9610d76410156a28c9e4b533aecbbe5e7f2389dd9da9c963dea742b3": {
+    "title": "Animorphs",
+    "entities": [
+      {
+        "name": "Animorphs",
+        "type": "Work"
+      },
+      {
+        "name": "Katherine Applegate",
+        "type": "Person"
+      },
+      {
+        "name": "Michael Grant",
+        "type": "Person"
+      },
+      {
+        "name": "K. A. Applegate",
+        "type": "Concept"
+      },
+      {
+        "name": "Scholastic",
+        "type": "Organization"
+      },
+      {
+        "name": "Science fantasy",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Animorphs",
+        "target": "Katherine Applegate",
+        "relation": "written_by"
+      },
+      {
+        "source": "Animorphs",
+        "target": "Michael Grant",
+        "relation": "written_by"
+      },
+      {
+        "source": "Animorphs",
+        "target": "K. A. Applegate",
+        "relation": "written_under"
+      },
+      {
+        "source": "Animorphs",
+        "target": "Scholastic",
+        "relation": "published_by"
+      },
+      {
+        "source": "Katherine Applegate",
+        "target": "Michael Grant",
+        "relation": "spouse"
+      },
+      {
+        "source": "K. A. Applegate",
+        "target": "Katherine Applegate",
+        "relation": "pen_name_of"
+      },
+      {
+        "source": "K. A. Applegate",
+        "target": "Michael Grant",
+        "relation": "pen_name_of"
+      },
+      {
+        "source": "Animorphs",
+        "target": "Science fantasy",
+        "relation": "genre"
+      }
+    ]
+  },
+  "a6b47dc7bfaf4a78697b401ef9155851e4c19b26b0da6ae9fe3cfb0e3b4319c5": {
+    "title": "Laleli Mosque",
+    "entities": [
+      {
+        "name": "Laleli Mosque",
+        "type": "Work"
+      },
+      {
+        "name": "Tulip Mosque",
+        "type": "Work"
+      },
+      {
+        "name": "Laleli",
+        "type": "Location"
+      },
+      {
+        "name": "Fatih",
+        "type": "Location"
+      },
+      {
+        "name": "Istanbul",
+        "type": "Location"
+      },
+      {
+        "name": "Turkey",
+        "type": "Location"
+      },
+      {
+        "name": "Ottoman imperial mosque",
+        "type": "Concept"
+      },
+      {
+        "name": "18th-century",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Laleli Mosque",
+        "target": "Tulip Mosque",
+        "relation": "also_known_as"
+      },
+      {
+        "source": "Laleli Mosque",
+        "target": "Laleli",
+        "relation": "located_in"
+      },
+      {
+        "source": "Laleli",
+        "target": "Fatih",
+        "relation": "located_in"
+      },
+      {
+        "source": "Fatih",
+        "target": "Istanbul",
+        "relation": "located_in"
+      },
+      {
+        "source": "Istanbul",
+        "target": "Turkey",
+        "relation": "located_in"
+      },
+      {
+        "source": "Laleli Mosque",
+        "target": "Ottoman imperial mosque",
+        "relation": "type"
+      },
+      {
+        "source": "Laleli Mosque",
+        "target": "18th-century",
+        "relation": "built_in_century"
+      }
+    ]
+  },
+  "29a10d035e35dfc34a569507f1fcb48084ade31c690fd886a5d8a57d1218ffad": {
+    "title": "Esma Sultan Mansion",
+    "entities": [
+      {
+        "name": "Esma Sultan Mansion",
+        "type": "Work"
+      },
+      {
+        "name": "Esma Sultan",
+        "type": "Person"
+      },
+      {
+        "name": "Bosphorus",
+        "type": "Location"
+      },
+      {
+        "name": "Ortak\u00f6y",
+        "type": "Location"
+      },
+      {
+        "name": "Istanbul",
+        "type": "Location"
+      },
+      {
+        "name": "Turkey",
+        "type": "Location"
+      },
+      {
+        "name": "Yal\u0131",
+        "type": "Concept"
+      },
+      {
+        "name": "Cultural center",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Esma Sultan Mansion",
+        "target": "Bosphorus",
+        "relation": "located_at"
+      },
+      {
+        "source": "Esma Sultan Mansion",
+        "target": "Ortak\u00f6y",
+        "relation": "located_in"
+      },
+      {
+        "source": "Ortak\u00f6y",
+        "target": "Istanbul",
+        "relation": "part_of"
+      },
+      {
+        "source": "Istanbul",
+        "target": "Turkey",
+        "relation": "located_in"
+      },
+      {
+        "source": "Esma Sultan Mansion",
+        "target": "Esma Sultan",
+        "relation": "named_after"
+      },
+      {
+        "source": "Esma Sultan",
+        "target": "Esma Sultan Mansion",
+        "relation": "original_owner"
+      },
+      {
+        "source": "Esma Sultan Mansion",
+        "target": "Cultural center",
+        "relation": "used_as"
+      }
+    ]
+  },
+  "71fa2b7809f70e5f5ee596a0d0dade408d8b79743e875db7f32424f6d48a2a0b": {
+    "title": "Adriana Trigiani",
+    "entities": [
+      {
+        "name": "Adriana Trigiani",
+        "type": "Person"
+      },
+      {
+        "name": "Italian American",
+        "type": "Concept"
+      },
+      {
+        "name": "author",
+        "type": "Concept"
+      },
+      {
+        "name": "television writer",
+        "type": "Concept"
+      },
+      {
+        "name": "film director",
+        "type": "Concept"
+      },
+      {
+        "name": "entrepreneur",
+        "type": "Concept"
+      },
+      {
+        "name": "Greenwich Village",
+        "type": "Location"
+      },
+      {
+        "name": "New York City",
+        "type": "Location"
+      },
+      {
+        "name": "Sixteen books",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Adriana Trigiani",
+        "target": "Italian American",
+        "relation": "ethnicity"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "author",
+        "relation": "occupation"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "television writer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "film director",
+        "relation": "occupation"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "entrepreneur",
+        "relation": "occupation"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "Greenwich Village",
+        "relation": "based_in"
+      },
+      {
+        "source": "Greenwich Village",
+        "target": "New York City",
+        "relation": "located_in"
+      },
+      {
+        "source": "Adriana Trigiani",
+        "target": "Sixteen books",
+        "relation": "author_of"
+      }
+    ]
+  },
+  "4fc2816efaf665b00bf12af1e0efad1d0c51ca33ab905ffe03b5832a69517d77": {
+    "title": "Big Stone Gap (film)",
+    "entities": [
+      {
+        "name": "Big Stone Gap (film)",
+        "type": "Work"
+      },
+      {
+        "name": "Adriana Trigiani",
+        "type": "Person"
+      },
+      {
+        "name": "Donna Gigliotti",
+        "type": "Person"
+      },
+      {
+        "name": "Altar Identity Studios",
+        "type": "Organization"
+      },
+      {
+        "name": "Media Society",
+        "type": "Organization"
+      },
+      {
+        "name": "Big Stone Gap (novel)",
+        "type": "Work"
+      },
+      {
+        "name": "Big Stone Gap (town)",
+        "type": "Location"
+      },
+      {
+        "name": "Virginia",
+        "type": "Location"
+      },
+      {
+        "name": "Virginia Film Festival",
+        "type": "Organization"
+      },
+      {
+        "name": "1970s",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Big Stone Gap (film)",
+        "target": "Adriana Trigiani",
+        "relation": "written_by"
+      },
+      {
+        "source": "Big Stone Gap (film)",
+        "target": "Adriana Trigiani",
+        "relation": "directed_by"
+      },
+      {
+        "source": "Big Stone Gap (film)",
+        "target": "Donna Gigliotti",
+        "relation": "produced_by"
+      },
+      {
+        "source": "Big Stone Gap (film)",
+        "target": "Altar Identity Studios",
+        "relation": "produced_for"
+      }
+    ]
+  },
+  "353a0d5d4dd9378a8af891cd29c744628170b657a84757043a3635673265cc46": {
+    "title": "2014 S/S",
+    "entities": [
+      {
+        "name": "2014 S/S",
+        "type": "Work"
+      },
+      {
+        "name": "WINNER",
+        "type": "Organization"
+      },
+      {
+        "name": "August 12, 2014",
+        "type": "Concept"
+      },
+      {
+        "name": "YG Entertainment",
+        "type": "Organization"
+      },
+      {
+        "name": "South Korea",
+        "type": "Location"
+      },
+      {
+        "name": "lyrics",
+        "type": "Concept"
+      },
+      {
+        "name": "songs",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "2014 S/S",
+        "target": "WINNER",
+        "relation": "debut_album_of"
+      },
+      {
+        "source": "2014 S/S",
+        "target": "August 12, 2014",
+        "relation": "release_date"
+      },
+      {
+        "source": "2014 S/S",
+        "target": "YG Entertainment",
+        "relation": "released_by"
+      },
+      {
+        "source": "WINNER",
+        "target": "lyrics",
+        "relation": "credited_for_writing"
+      },
+      {
+        "source": "WINNER",
+        "target": "songs",
+        "relation": "credited_for_composing"
+      },
+      {
+        "source": "WINNER",
+        "target": "South Korea",
+        "relation": "origin_country"
+      }
+    ]
+  },
+  "47bfb6ed6a4354b8fc0505239d74b2f23d3149a29659f8a3d641afaa083f8809": {
+    "title": "Winner (band)",
+    "entities": [
+      {
+        "name": "Winner (band)",
+        "type": "Organization"
+      },
+      {
+        "name": "YG Entertainment",
+        "type": "Organization"
+      },
+      {
+        "name": "South Korea",
+        "type": "Location"
+      },
+      {
+        "name": "Jinwoo",
+        "type": "Person"
+      },
+      {
+        "name": "Seunghoon",
+        "type": "Person"
+      },
+      {
+        "name": "Mino",
+        "type": "Person"
+      },
+      {
+        "name": "Seungyoon",
+        "type": "Person"
+      },
+      {
+        "name": "Taehyun",
+        "type": "Person"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Winner (band)",
+        "target": "YG Entertainment",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "South Korea",
+        "relation": "origin"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "Jinwoo",
+        "relation": "has_member"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "Seunghoon",
+        "relation": "has_member"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "Mino",
+        "relation": "has_member"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "Seungyoon",
+        "relation": "has_member"
+      },
+      {
+        "source": "Winner (band)",
+        "target": "Taehyun",
+        "relation": "former_member"
+      }
+    ]
+  },
+  "7cf9663712236edd6cbefcc69335a004c558ea809013526e21a7ef7d3503f2c6": {
+    "title": "Eenasul Fateh",
+    "entities": [
+      {
+        "name": "Eenasul Fateh",
+        "type": "Person"
+      },
+      {
+        "name": "Aladin",
+        "type": "Person"
+      },
+      {
+        "name": "Bangladesh",
+        "type": "Location"
+      },
+      {
+        "name": "Britain",
+        "type": "Location"
+      },
+      {
+        "name": "cultural practitioner",
+        "type": "Concept"
+      },
+      {
+        "name": "magician",
+        "type": "Concept"
+      },
+      {
+        "name": "live artist",
+        "type": "Concept"
+      },
+      {
+        "name": "international management consultant",
+        "type": "Concept"
+      },
+      {
+        "name": "3 April 1959",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Eenasul Fateh",
+        "target": "Aladin",
+        "relation": "stage_name"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "3 April 1959",
+        "relation": "birth_date"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "Bangladesh",
+        "relation": "nationality"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "Britain",
+        "relation": "nationality"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "cultural practitioner",
+        "relation": "occupation"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "magician",
+        "relation": "occupation"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "live artist",
+        "relation": "occupation"
+      },
+      {
+        "source": "Eenasul Fateh",
+        "target": "international management consultant",
+        "relation": "former_occupation"
+      }
+    ]
+  },
+  "15906a5ab7e690e597a54bf4065a46e3006ad1bb35030637a37cb1194d25f6c1": {
+    "title": "Management consulting",
+    "entities": [
+      {
+        "name": "Management consulting",
+        "type": "Concept"
+      },
+      {
+        "name": "Organizations",
+        "type": "Organization"
+      },
+      {
+        "name": "Management consultants",
+        "type": "Person"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Management consulting",
+        "target": "Organizations",
+        "relation": "helps"
+      },
+      {
+        "source": "Organizations",
+        "target": "Management consultants",
+        "relation": "draws_on_services_of"
+      }
+    ]
+  },
+  "82cbd93fd92cdcfa9067887ac086456a45ff3f5dc53b39eedf9ffefc33b34706": {
+    "title": "Androscoggin Bank Colis\u00e9e",
+    "entities": [
+      {
+        "name": "Androscoggin Bank Colis\u00e9e",
+        "type": "Work"
+      },
+      {
+        "name": "Central Maine Civic Center",
+        "type": "Work"
+      },
+      {
+        "name": "Lewiston Colisee",
+        "type": "Work"
+      },
+      {
+        "name": "Lewiston",
+        "type": "Location"
+      },
+      {
+        "name": "Maine",
+        "type": "Location"
+      },
+      {
+        "name": "Muhammed Ali",
+        "type": "Person"
+      },
+      {
+        "name": "Sonny Liston",
+        "type": "Person"
+      },
+      {
+        "name": "World Heavyweight Title fight",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Androscoggin Bank Colis\u00e9e",
+        "target": "Central Maine Civic Center",
+        "relation": "formerly known as"
+      },
+      {
+        "source": "Androscoggin Bank Colis\u00e9e",
+        "target": "Lewiston Colisee",
+        "relation": "formerly known as"
+      },
+      {
+        "source": "Androscoggin Bank Colis\u00e9e",
+        "target": "Lewiston",
+        "relation": "located in"
+      },
+      {
+        "source": "Lewiston",
+        "target": "Maine",
+        "relation": "located in"
+      },
+      {
+        "source": "Androscoggin Bank Colis\u00e9e",
+        "target": "World Heavyweight Title fight",
+        "relation": "hosted"
+      },
+      {
+        "source": "Muhammed Ali",
+        "target": "Sonny Liston",
+        "relation": "stood over"
+      }
+    ]
+  },
+  "0e4b904d41c540b67b8d72da26a613a05fa77daaf46da8e76ae9a68ba43fe142": {
+    "title": "Lewiston Maineiacs",
+    "entities": [
+      {
+        "name": "Lewiston Maineiacs",
+        "type": "Organization"
+      },
+      {
+        "name": "Quebec Major Junior Hockey League",
+        "type": "Organization"
+      },
+      {
+        "name": "Lewiston, Maine",
+        "type": "Location"
+      },
+      {
+        "name": "Androscoggin Bank Colis\u00e9e",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "President's Cup",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "Quebec Major Junior Hockey League",
+        "relation": "member_of"
+      },
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "Lewiston, Maine",
+        "relation": "based_in"
+      },
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "Androscoggin Bank Colis\u00e9e",
+        "relation": "home_arena"
+      },
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "United States",
+        "relation": "second_in_country"
+      },
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "United States",
+        "relation": "only_full_season_in_country"
+      },
+      {
+        "source": "Lewiston Maineiacs",
+        "target": "President's Cup",
+        "relation": "won"
+      }
+    ]
+  },
+  "2f166aafba04ed00a46ef0c5eebbb51443a54efabca80795339e3ee0dfbb39dd": {
+    "title": "Annie Morton",
+    "entities": [
+      {
+        "name": "Annie Morton",
+        "type": "Person"
+      },
+      {
+        "name": "Helmut Newton",
+        "type": "Person"
+      },
+      {
+        "name": "Peter Lindbergh",
+        "type": "Person"
+      },
+      {
+        "name": "Annie Leibovitz",
+        "type": "Person"
+      },
+      {
+        "name": "Richard Avedon",
+        "type": "Person"
+      },
+      {
+        "name": "Juergen Teller",
+        "type": "Person"
+      },
+      {
+        "name": "Paul Jasmin",
+        "type": "Person"
+      },
+      {
+        "name": "Mary Ellen Mark",
+        "type": "Person"
+      },
+      {
+        "name": "Terry Richardson",
+        "type": "Person"
+      }
+    ],
+    "relations": []
+  },
+  "e2f0572c6f6c62b3ae3bc8c2997dcdd3209935a55673fddfefdfb7062fb0ff7b": {
+    "title": "Terry Richardson",
+    "entities": [
+      {
+        "name": "Terrence Richardson",
+        "type": "Person"
+      },
+      {
+        "name": "Marc Jacobs",
+        "type": "Organization"
+      },
+      {
+        "name": "Aldo",
+        "type": "Organization"
+      },
+      {
+        "name": "Supreme",
+        "type": "Organization"
+      },
+      {
+        "name": "Sisley",
+        "type": "Organization"
+      },
+      {
+        "name": "Tom Ford",
+        "type": "Person"
+      },
+      {
+        "name": "Yves Saint Laurent",
+        "type": "Organization"
+      },
+      {
+        "name": "Rolling Stone",
+        "type": "Work"
+      },
+      {
+        "name": "GQ",
+        "type": "Work"
+      },
+      {
+        "name": "Vogue",
+        "type": "Work"
+      },
+      {
+        "name": "Vanity Fair",
+        "type": "Work"
+      },
+      {
+        "name": "Harper's Bazaar",
+        "type": "Work"
+      },
+      {
+        "name": "i-D",
+        "type": "Work"
+      },
+      {
+        "name": "Vice",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Terrence Richardson",
+        "target": "Marc Jacobs",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Aldo",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Supreme",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Sisley",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Tom Ford",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Yves Saint Laurent",
+        "relation": "shot_ad_campaign_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Rolling Stone",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "GQ",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Vogue",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Vanity Fair",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Harper's Bazaar",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "i-D",
+        "relation": "worked_for"
+      },
+      {
+        "source": "Terrence Richardson",
+        "target": "Vice",
+        "relation": "worked_for"
+      }
+    ]
+  },
+  "0b4daf3ed48201058a162f9855c7379e827c33a16eb0764735e8fa38ae42e1f1": {
+    "title": "Local H",
+    "entities": [
+      {
+        "name": "Local H",
+        "type": "Organization"
+      },
+      {
+        "name": "Scott Lucas",
+        "type": "Person"
+      },
+      {
+        "name": "Matt Garcia",
+        "type": "Person"
+      },
+      {
+        "name": "Joe Daniels",
+        "type": "Person"
+      },
+      {
+        "name": "John Sparkman",
+        "type": "Person"
+      },
+      {
+        "name": "Zion, Illinois",
+        "type": "Location"
+      },
+      {
+        "name": "1987",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Local H",
+        "target": "Scott Lucas",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Local H",
+        "target": "Matt Garcia",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Local H",
+        "target": "Joe Daniels",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Local H",
+        "target": "John Sparkman",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Local H",
+        "target": "Zion, Illinois",
+        "relation": "originated_in"
+      },
+      {
+        "source": "Local H",
+        "target": "1987",
+        "relation": "formed_in_year"
+      }
+    ]
+  },
+  "ea943d8ee5b6339cbe9778eb0f349cbda19426ec6c33aa00570c8594ecfabe69": {
+    "title": "For Against",
+    "entities": [
+      {
+        "name": "For Against",
+        "type": "Organization"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Lincoln, Nebraska",
+        "type": "Location"
+      },
+      {
+        "name": "post-punk",
+        "type": "Concept"
+      },
+      {
+        "name": "dream pop",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "For Against",
+        "target": "United States",
+        "relation": "origin_country"
+      },
+      {
+        "source": "For Against",
+        "target": "Lincoln, Nebraska",
+        "relation": "origin_city"
+      },
+      {
+        "source": "For Against",
+        "target": "post-punk",
+        "relation": "genre"
+      },
+      {
+        "source": "For Against",
+        "target": "dream pop",
+        "relation": "genre"
+      }
+    ]
+  },
+  "6a80abbeaf83a7539a84f9943979eea73ed8a8be21e4de02250b4c6561719e14": {
+    "title": "Kansas Song",
+    "entities": [
+      {
+        "name": "Kansas Song (We\u2019re From Kansas)",
+        "type": "Work"
+      },
+      {
+        "name": "University of Kansas",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Kansas Song (We\u2019re From Kansas)",
+        "target": "University of Kansas",
+        "relation": "fight_song_of"
+      }
+    ]
+  },
+  "a50d991c0ca2d2244cf268c796b30f931d23abf64d456a5bfc52a26c8dedafaf": {
+    "title": "University of Kansas",
+    "entities": [
+      {
+        "name": "University of Kansas",
+        "type": "Organization"
+      },
+      {
+        "name": "KU",
+        "type": "Organization"
+      },
+      {
+        "name": "Kansas",
+        "type": "Location"
+      },
+      {
+        "name": "Lawrence",
+        "type": "Location"
+      },
+      {
+        "name": "Mount Oread",
+        "type": "Location"
+      },
+      {
+        "name": "Kansas City metropolitan area",
+        "type": "Location"
+      },
+      {
+        "name": "Edwards Campus",
+        "type": "Organization"
+      },
+      {
+        "name": "Overland Park",
+        "type": "Location"
+      },
+      {
+        "name": "Medical school",
+        "type": "Organization"
+      },
+      {
+        "name": "Hospital",
+        "type": "Organization"
+      },
+      {
+        "name": "Kansas City",
+        "type": "Location"
+      },
+      {
+        "name": "Parsons",
+        "type": "Location"
+      }
+    ],
+    "relations": []
+  },
+  "4e19373f65fb8aea034b32db779920b55abb896011789fcb590751c72724c5d4": {
+    "title": "David Weissman",
+    "entities": [
+      {
+        "name": "David Weissman",
+        "type": "Person"
+      },
+      {
+        "name": "The Family Man",
+        "type": "Work"
+      },
+      {
+        "name": "Evolution",
+        "type": "Work"
+      },
+      {
+        "name": "When in Rome",
+        "type": "Work"
+      },
+      {
+        "name": "Screenwriter",
+        "type": "Concept"
+      },
+      {
+        "name": "Director",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "David Weissman",
+        "target": "Screenwriter",
+        "relation": "occupation"
+      },
+      {
+        "source": "David Weissman",
+        "target": "Director",
+        "relation": "occupation"
+      },
+      {
+        "source": "David Weissman",
+        "target": "The Family Man",
+        "relation": "has_credit"
+      },
+      {
+        "source": "David Weissman",
+        "target": "Evolution",
+        "relation": "has_credit"
+      },
+      {
+        "source": "David Weissman",
+        "target": "When in Rome",
+        "relation": "has_credit"
+      }
+    ]
+  },
+  "d2c540ef587a594fa78b52f787635966555712851e84f887ba33b82e7fa745ee": {
+    "title": "The Family Man",
+    "entities": [
+      {
+        "name": "The Family Man",
+        "type": "Work"
+      },
+      {
+        "name": "Brett Ratner",
+        "type": "Person"
+      },
+      {
+        "name": "David Diamond",
+        "type": "Person"
+      },
+      {
+        "name": "David Weissman",
+        "type": "Person"
+      },
+      {
+        "name": "Nicolas Cage",
+        "type": "Person"
+      },
+      {
+        "name": "T\u00e9a Leoni",
+        "type": "Person"
+      },
+      {
+        "name": "Saturn Films",
+        "type": "Organization"
+      },
+      {
+        "name": "American",
+        "type": "Location"
+      },
+      {
+        "name": "2000",
+        "type": "Concept"
+      },
+      {
+        "name": "romantic comedy-drama",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "The Family Man",
+        "target": "Brett Ratner",
+        "relation": "directed_by"
+      },
+      {
+        "source": "The Family Man",
+        "target": "David Diamond",
+        "relation": "written_by"
+      },
+      {
+        "source": "The Family Man",
+        "target": "David Weissman",
+        "relation": "written_by"
+      },
+      {
+        "source": "The Family Man",
+        "target": "Nicolas Cage",
+        "relation": "starring"
+      },
+      {
+        "source": "The Family Man",
+        "target": "T\u00e9a Leoni",
+        "relation": "starring"
+      },
+      {
+        "source": "The Family Man",
+        "target": "Saturn Films",
+        "relation": "produced_by"
+      },
+      {
+        "source": "Saturn Films",
+        "target": "Nicolas Cage",
+        "relation": "owned_by"
+      },
+      {
+        "source": "The Family Man",
+        "target": "American",
+        "relation": "country"
+      }
+    ]
+  },
+  "67bb87ad30a3bd74389dbef4a0030bf3ab29eddddd5c6200e1e639eb981deeb5": {
+    "title": "End of Days (film)",
+    "entities": [
+      {
+        "name": "End of Days",
+        "type": "Work"
+      },
+      {
+        "name": "Peter Hyams",
+        "type": "Person"
+      },
+      {
+        "name": "Arnold Schwarzenegger",
+        "type": "Person"
+      },
+      {
+        "name": "Gabriel Byrne",
+        "type": "Person"
+      },
+      {
+        "name": "Robin Tunney",
+        "type": "Person"
+      },
+      {
+        "name": "Kevin Pollak",
+        "type": "Person"
+      },
+      {
+        "name": "Rod Steiger",
+        "type": "Person"
+      },
+      {
+        "name": "CCH Pounder",
+        "type": "Person"
+      },
+      {
+        "name": "Udo Kier",
+        "type": "Person"
+      },
+      {
+        "name": "New York Police Department",
+        "type": "Organization"
+      },
+      {
+        "name": "Jericho Cane",
+        "type": "Person"
+      },
+      {
+        "name": "Satan",
+        "type": "Concept"
+      }
+    ],
+    "relations": []
+  },
+  "da70d9dcaca838263046fcfaa088bc24e5bf7b9ddf9b9ded0414f51495b6b4fd": {
+    "title": "Oh My God (Guns N' Roses song)",
+    "entities": [
+      {
+        "name": "Oh My God",
+        "type": "Work"
+      },
+      {
+        "name": "Guns N' Roses",
+        "type": "Organization"
+      },
+      {
+        "name": "End of Days",
+        "type": "Work"
+      },
+      {
+        "name": "1999",
+        "type": "Concept"
+      },
+      {
+        "name": "November 1999",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Oh My God",
+        "target": "Guns N' Roses",
+        "relation": "performed_by"
+      },
+      {
+        "source": "Oh My God",
+        "target": "1999",
+        "relation": "released_in"
+      },
+      {
+        "source": "Oh My God",
+        "target": "End of Days",
+        "relation": "soundtrack_of"
+      },
+      {
+        "source": "Oh My God",
+        "target": "November 1999",
+        "relation": "promo_sent_to_radio_in"
+      }
+    ]
+  },
+  "1b526ae63ab9126c0458697c91abf0bc399a0cf2a3576fa80e942796d20d6f31": {
+    "title": "888 7th Avenue",
+    "entities": [
+      {
+        "name": "888 7th Avenue",
+        "type": "Work"
+      },
+      {
+        "name": "Midtown Manhattan",
+        "type": "Location"
+      },
+      {
+        "name": "New York City",
+        "type": "Location"
+      },
+      {
+        "name": "Central Park Place",
+        "type": "Work"
+      },
+      {
+        "name": "Vornado Realty Trust",
+        "type": "Organization"
+      },
+      {
+        "name": "Arlen Building",
+        "type": "Work"
+      },
+      {
+        "name": "Arlen Realty & Development Corporation",
+        "type": "Organization"
+      },
+      {
+        "name": "Emery Roth & Sons",
+        "type": "Organization"
+      },
+      {
+        "name": "Red Eye Grill",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "888 7th Avenue",
+        "target": "Midtown Manhattan",
+        "relation": "located_in"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "New York City",
+        "relation": "located_in"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "1969",
+        "relation": "completed_in"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "Emery Roth & Sons",
+        "relation": "designed_by"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "Central Park Place",
+        "relation": "tied_with"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "Vornado Realty Trust",
+        "relation": "headquarters_of"
+      },
+      {
+        "source": "888 7th Avenue",
+        "target": "Arlen Building",
+        "relation": "previously_known_as"
+      },
+      {
+        "source": "Arlen Building",
+        "target": "Arlen Realty & Development Corporation",
+        "relation": "named_after"
+      },
+      {
+        "source": "Arlen Realty & Development Corporation",
+        "target": "888 7th Avenue",
+        "relation": "constructed"
+      },
+      {
+        "source": "Red Eye Grill",
+        "target": "888 7th Avenue",
+        "relation": "located_in"
+      }
+    ]
+  },
+  "8b8e89867be33c37422eb5b3bb50bdbd96a287238579bb99608645066f418a48": {
+    "title": "Random House Tower",
+    "entities": [
+      {
+        "name": "Random House Tower",
+        "type": "Work"
+      },
+      {
+        "name": "Park Imperial Apartments",
+        "type": "Work"
+      },
+      {
+        "name": "New York City",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Random House",
+        "type": "Organization"
+      },
+      {
+        "name": "Broadway",
+        "type": "Location"
+      },
+      {
+        "name": "West 56th Street",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Random House Tower",
+        "target": "Park Imperial Apartments",
+        "relation": "also_known_as"
+      },
+      {
+        "source": "Random House Tower",
+        "target": "New York City",
+        "relation": "located_in"
+      },
+      {
+        "source": "Random House Tower",
+        "target": "United States",
+        "relation": "located_in"
+      },
+      {
+        "source": "Random House Tower",
+        "target": "Random House",
+        "relation": "headquarters_of"
+      },
+      {
+        "source": "Random House Tower",
+        "target": "Broadway",
+        "relation": "entrance_on"
+      },
+      {
+        "source": "Random House Tower",
+        "target": "West 56th Street",
+        "relation": "apartment_entrance_on"
+      }
+    ]
+  },
+  "94e8cd334fcee40541e8a0e1fb35cef759c4a9e12c5dcc8c63f8a1a9b96fb551": {
+    "title": "1995\u201396 Manchester United F.C. season",
+    "entities": [
+      {
+        "name": "Manchester United",
+        "type": "Organization"
+      },
+      {
+        "name": "Premier League",
+        "type": "Concept"
+      },
+      {
+        "name": "top division of English football",
+        "type": "Concept"
+      },
+      {
+        "name": "Double",
+        "type": "Concept"
+      },
+      {
+        "name": "Alex Ferguson",
+        "type": "Person"
+      },
+      {
+        "name": "Paul Ince",
+        "type": "Person"
+      },
+      {
+        "name": "Mark Hughes",
+        "type": "Person"
+      },
+      {
+        "name": "Andrei Kanchelskis",
+        "type": "Person"
+      },
+      {
+        "name": "Nicky Butt",
+        "type": "Person"
+      },
+      {
+        "name": "David Beckham",
+        "type": "Person"
+      },
+      {
+        "name": "Paul Scholes",
+        "type": "Person"
+      },
+      {
+        "name": "Gary Neville",
+        "type": "Person"
+      },
+      {
+        "name": "Phil Neville",
+        "type": "Person"
+      },
+      {
+        "name": "FA Cup",
+        "type": "Concept"
+      }
+    ],
+    "relations": []
+  },
+  "b0a34ebc9f966c418aacad2eaefd1589b3f181712d9d179b2dabaf6fa4988a22": {
+    "title": "Alex Ferguson",
+    "entities": [
+      {
+        "name": "Alex Ferguson",
+        "type": "Person"
+      },
+      {
+        "name": "Manchester United",
+        "type": "Organization"
+      },
+      {
+        "name": "CBE",
+        "type": "Concept"
+      },
+      {
+        "name": "Scottish",
+        "type": "Concept"
+      },
+      {
+        "name": "31 December 1941",
+        "type": "Concept"
+      },
+      {
+        "name": "1986",
+        "type": "Concept"
+      },
+      {
+        "name": "2013",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Alex Ferguson",
+        "target": "31 December 1941",
+        "relation": "born_on"
+      },
+      {
+        "source": "Alex Ferguson",
+        "target": "Scottish",
+        "relation": "has_nationality"
+      },
+      {
+        "source": "Alex Ferguson",
+        "target": "CBE",
+        "relation": "honor"
+      },
+      {
+        "source": "Alex Ferguson",
+        "target": "Manchester United",
+        "relation": "managed"
+      },
+      {
+        "source": "Alex Ferguson",
+        "target": "1986",
+        "relation": "managed_from"
+      },
+      {
+        "source": "Alex Ferguson",
+        "target": "2013",
+        "relation": "managed_to"
+      }
+    ]
+  },
+  "dcf40b0c6aa866124f3d5c673073d41ee1cd296e6eaab1118b62a0e8ff13523b": {
+    "title": "Brown State Fishing Lake",
+    "entities": [
+      {
+        "name": "Brown State Fishing Lake",
+        "type": "Location"
+      },
+      {
+        "name": "Brown State Fishing Lake And Wildlife Area",
+        "type": "Location"
+      },
+      {
+        "name": "Brown County",
+        "type": "Location"
+      },
+      {
+        "name": "Kansas",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Hiawatha, Kansas",
+        "type": "Location"
+      },
+      {
+        "name": "Brown County State Park",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "Brown County",
+        "relation": "located_in"
+      },
+      {
+        "source": "Brown County",
+        "target": "Kansas",
+        "relation": "located_in"
+      },
+      {
+        "source": "Kansas",
+        "target": "United States",
+        "relation": "located_in"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "62 acres",
+        "relation": "has_area"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "13 feet",
+        "relation": "has_max_depth"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "Brown County State Park",
+        "relation": "formerly_known_as"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "Hiawatha, Kansas",
+        "relation": "distance_east_of"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "Brown State Fishing Lake And Wildlife Area",
+        "relation": "also_known_as"
+      },
+      {
+        "source": "Brown State Fishing Lake",
+        "target": "protected area",
+        "relation": "is_a"
+      }
+    ]
+  },
+  "978a1ef1dec940ecccccd92df0ba46da1ee3f724e6bd58f6fe0fabb0b4ef6fa9": {
+    "title": "Brown County, Kansas",
+    "entities": [
+      {
+        "name": "Brown County",
+        "type": "Location"
+      },
+      {
+        "name": "Kansas",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Hiawatha",
+        "type": "Location"
+      },
+      {
+        "name": "Kickapoo Indian Reservation of Kansas",
+        "type": "Location"
+      },
+      {
+        "name": "Sac and Fox Reservation",
+        "type": "Location"
+      },
+      {
+        "name": "Iowa Reservation of Kansas and Nebraska",
+        "type": "Location"
+      },
+      {
+        "name": "2010 census",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Brown County",
+        "target": "Kansas",
+        "relation": "located_in"
+      },
+      {
+        "source": "Kansas",
+        "target": "United States",
+        "relation": "located_in"
+      },
+      {
+        "source": "Brown County",
+        "target": "Hiawatha",
+        "relation": "has_county_seat"
+      },
+      {
+        "source": "Brown County",
+        "target": "Kickapoo Indian Reservation of Kansas",
+        "relation": "contains"
+      },
+      {
+        "source": "Brown County",
+        "target": "Sac and Fox Reservation",
+        "relation": "contains_majority_of"
+      },
+      {
+        "source": "Brown County",
+        "target": "Iowa Reservation of Kansas and Nebraska",
+        "relation": "contains_majority_of"
+      },
+      {
+        "source": "Brown County",
+        "target": "2010 census",
+        "relation": "population_recorded_in"
+      }
+    ]
+  },
+  "f0f5ca856c849178e104620e2ba88ccf75251bfa02b2322dc1d03047dd54893b": {
+    "title": "America East Conference",
+    "entities": [
+      {
+        "name": "America East Conference",
+        "type": "Organization"
+      },
+      {
+        "name": "NCAA Division I",
+        "type": "Concept"
+      },
+      {
+        "name": "Eastern College Athletic Conference-North",
+        "type": "Organization"
+      },
+      {
+        "name": "North Atlantic Conference",
+        "type": "Organization"
+      },
+      {
+        "name": "Northeastern United States",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "America East Conference",
+        "target": "NCAA Division I",
+        "relation": "affiliated_with"
+      },
+      {
+        "source": "America East Conference",
+        "target": "Northeastern United States",
+        "relation": "members_located_in"
+      },
+      {
+        "source": "America East Conference",
+        "target": "Eastern College Athletic Conference-North",
+        "relation": "former_name"
+      },
+      {
+        "source": "America East Conference",
+        "target": "North Atlantic Conference",
+        "relation": "former_name"
+      }
+    ]
+  },
+  "cdcc1e54c659226678c76da1cc4c884649c91fce4eaa495cc03aadc2b91cdd45": {
+    "title": "Vermont Catamounts men's soccer",
+    "entities": [
+      {
+        "name": "Vermont Catamounts men's soccer team",
+        "type": "Organization"
+      },
+      {
+        "name": "University of Vermont",
+        "type": "Organization"
+      },
+      {
+        "name": "NCAA Division I",
+        "type": "Concept"
+      },
+      {
+        "name": "America East Conference",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Vermont Catamounts men's soccer team",
+        "target": "University of Vermont",
+        "relation": "represents"
+      },
+      {
+        "source": "Vermont Catamounts men's soccer team",
+        "target": "America East Conference",
+        "relation": "competes_in"
+      },
+      {
+        "source": "Vermont Catamounts men's soccer team",
+        "target": "NCAA Division I",
+        "relation": "participates_in"
+      }
+    ]
+  },
+  "3461f01f8e4c5e378b9e329f7d9759b7c83c0a74de7522c836c86c0d64a5f861": {
+    "title": "Giuseppe Verdi",
+    "entities": [
+      {
+        "name": "Giuseppe Fortunino Francesco Verdi",
+        "type": "Person"
+      },
+      {
+        "name": "Italy",
+        "type": "Location"
+      },
+      {
+        "name": "opera composer",
+        "type": "Concept"
+      },
+      {
+        "name": "9 or 10 October 1813",
+        "type": "Concept"
+      },
+      {
+        "name": "27 January 1901",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Giuseppe Fortunino Francesco Verdi",
+        "target": "Italy",
+        "relation": "nationality"
+      },
+      {
+        "source": "Giuseppe Fortunino Francesco Verdi",
+        "target": "opera composer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Giuseppe Fortunino Francesco Verdi",
+        "target": "9 or 10 October 1813",
+        "relation": "birth_date"
+      },
+      {
+        "source": "Giuseppe Fortunino Francesco Verdi",
+        "target": "27 January 1901",
+        "relation": "death_date"
+      }
+    ]
+  },
+  "fb9c4ef8252c826481fd2bb0615de7ab8030847fda4d70568fffec3b30c7c3eb": {
+    "title": "Ambroise Thomas",
+    "entities": [
+      {
+        "name": "Charles Louis Ambroise Thomas",
+        "type": "Person"
+      },
+      {
+        "name": "Mignon",
+        "type": "Work"
+      },
+      {
+        "name": "Hamlet",
+        "type": "Work"
+      },
+      {
+        "name": "William Shakespeare",
+        "type": "Person"
+      },
+      {
+        "name": "Conservatoire de Paris",
+        "type": "Organization"
+      },
+      {
+        "name": "France",
+        "type": "Location"
+      },
+      {
+        "name": "Paris",
+        "type": "Location"
+      },
+      {
+        "name": "Composer",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Charles Louis Ambroise Thomas",
+        "target": "Composer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Charles Louis Ambroise Thomas",
+        "target": "Mignon",
+        "relation": "composer_of"
+      },
+      {
+        "source": "Charles Louis Ambroise Thomas",
+        "target": "Hamlet",
+        "relation": "composer_of"
+      },
+      {
+        "source": "Hamlet",
+        "target": "William Shakespeare",
+        "relation": "inspired_by"
+      }
+    ]
+  },
+  "0ecf40919a42f1f52d237306f4f3886f032c1ba0cd56b2862d4ef1897282b4e5": {
+    "title": "Richard Nixon",
+    "entities": [
+      {
+        "name": "Richard Milhous Nixon",
+        "type": "Person"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "President of the United States",
+        "type": "Concept"
+      },
+      {
+        "name": "Vice President of the United States",
+        "type": "Concept"
+      },
+      {
+        "name": "U.S. Representative",
+        "type": "Concept"
+      },
+      {
+        "name": "Senator",
+        "type": "Concept"
+      },
+      {
+        "name": "California",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "President of the United States",
+        "relation": "held_position"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "United States",
+        "relation": "served_country"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "Vice President of the United States",
+        "relation": "held_position"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "U.S. Representative",
+        "relation": "held_position"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "Senator",
+        "relation": "held_position"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "California",
+        "relation": "represented_state"
+      },
+      {
+        "source": "President of the United States",
+        "target": "United States",
+        "relation": "office_of"
+      },
+      {
+        "source": "Vice President of the United States",
+        "target": "United States",
+        "relation": "office_of"
+      },
+      {
+        "source": "U.S. Representative",
+        "target": "United States",
+        "relation": "office_of"
+      },
+      {
+        "source": "Senator",
+        "target": "United States",
+        "relation": "office_of"
+      },
+      {
+        "source": "Richard Milhous Nixon",
+        "target": "President of the United States",
+        "relation": "resigned"
+      }
+    ]
+  },
+  "6a73f9fde767a47bfd703c6b87d8a064b09edf44e56f973ba84833f45c9267bd": {
+    "title": "Roger O. Egeberg",
+    "entities": [
+      {
+        "name": "Roger Olaf Egeberg",
+        "type": "Person"
+      },
+      {
+        "name": "Douglas MacArthur",
+        "type": "Person"
+      },
+      {
+        "name": "Department of Health, Education, and Welfare",
+        "type": "Organization"
+      },
+      {
+        "name": "United States Department of Health and Human Services",
+        "type": "Organization"
+      },
+      {
+        "name": "Nixon administration",
+        "type": "Concept"
+      },
+      {
+        "name": "University of Southern California",
+        "type": "Organization"
+      },
+      {
+        "name": "University of Southern California medical school",
+        "type": "Work"
+      },
+      {
+        "name": "Washington, D.C.",
+        "type": "Location"
+      },
+      {
+        "name": "World War II",
+        "type": "Concept"
+      },
+      {
+        "name": "Pacific theater",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Douglas MacArthur",
+        "relation": "personal_physician"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "World War II",
+        "relation": "served_during"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Pacific theater",
+        "relation": "served_in"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Department of Health, Education, and Welfare",
+        "relation": "assistant_secretary_for_health_and_scientific_affairs"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Nixon administration",
+        "relation": "served_during"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "University of Southern California medical school",
+        "relation": "dean_of"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Washington, D.C.",
+        "relation": "born_in"
+      },
+      {
+        "source": "Roger Olaf Egeberg",
+        "target": "Washington, D.C.",
+        "relation": "died_in"
+      },
+      {
+        "source": "Department of Health, Education, and Welfare",
+        "target": "United States Department of Health and Human Services",
+        "relation": "renamed_to"
+      }
+    ]
+  },
+  "4b085ee74190eace810a2c1346cc5345a4cd537ded1ee6206f686f8b1094729f": {
+    "title": "Henry Roth",
+    "entities": [
+      {
+        "name": "Henry Roth",
+        "type": "Person"
+      },
+      {
+        "name": "February 8, 1906",
+        "type": "Concept"
+      },
+      {
+        "name": "October 13, 1995",
+        "type": "Concept"
+      },
+      {
+        "name": "American",
+        "type": "Concept"
+      },
+      {
+        "name": "novelist",
+        "type": "Concept"
+      },
+      {
+        "name": "short story writer",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Henry Roth",
+        "target": "February 8, 1906",
+        "relation": "birth_date"
+      },
+      {
+        "source": "Henry Roth",
+        "target": "October 13, 1995",
+        "relation": "death_date"
+      },
+      {
+        "source": "Henry Roth",
+        "target": "American",
+        "relation": "nationality"
+      },
+      {
+        "source": "Henry Roth",
+        "target": "novelist",
+        "relation": "occupation"
+      },
+      {
+        "source": "Henry Roth",
+        "target": "short story writer",
+        "relation": "occupation"
+      }
+    ]
+  },
+  "88c91431e2bccbef7908960337b5049c7ca17a2536c3e33fd7484ccc5e3e9ea0": {
+    "title": "Robert Erskine Childers",
+    "entities": [
+      {
+        "name": "Robert Erskine Childers",
+        "type": "Person"
+      },
+      {
+        "name": "Erskine Childers",
+        "type": "Person"
+      },
+      {
+        "name": "The Riddle of the Sands",
+        "type": "Work"
+      },
+      {
+        "name": "Asgard",
+        "type": "Work"
+      },
+      {
+        "name": "Irish Free State",
+        "type": "Organization"
+      },
+      {
+        "name": "Irish Civil War",
+        "type": "Concept"
+      },
+      {
+        "name": "Robert Caesar Childers",
+        "type": "Person"
+      },
+      {
+        "name": "Hugh Childers",
+        "type": "Person"
+      },
+      {
+        "name": "Robert Barton",
+        "type": "Person"
+      },
+      {
+        "name": "Erskine Hamilton Childers",
+        "type": "Person"
+      },
+      {
+        "name": "Fourth President of Ireland",
+        "type": "Concept"
+      },
+      {
+        "name": "Ireland",
+        "type": "Location"
+      },
+      {
+        "name": "Britain",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Robert Erskine Childers",
+        "target": "Erskine Childers",
+        "relation": "alias"
+      },
+      {
+        "source": "Robert Erskine Childers",
+        "target": "The Riddle of the Sands",
+        "relation": "author_of"
+      },
+      {
+        "source": "Robert Erskine Childers",
+        "target": "Asgard",
+        "relation": "used_for_smuggling"
+      },
+      {
+        "source": "Robert Erskine Childers",
+        "target": "Irish Free State",
+        "relation": "executed_by"
+      }
+    ]
+  },
+  "e5349e4313ce9185ab7f5021846649bbdbaf53649036b828e8327eeba0853f9e": {
+    "title": "Sergio P\u00e9rez",
+    "entities": [
+      {
+        "name": "Sergio P\u00e9rez Mendoza",
+        "type": "Person"
+      },
+      {
+        "name": "Checo P\u00e9rez",
+        "type": "Person"
+      },
+      {
+        "name": "Mexico",
+        "type": "Location"
+      },
+      {
+        "name": "Force India",
+        "type": "Organization"
+      },
+      {
+        "name": "racing driver",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Sergio P\u00e9rez Mendoza",
+        "target": "Checo P\u00e9rez",
+        "relation": "also_known_as"
+      },
+      {
+        "source": "Sergio P\u00e9rez Mendoza",
+        "target": "Force India",
+        "relation": "drives_for"
+      },
+      {
+        "source": "Sergio P\u00e9rez Mendoza",
+        "target": "Mexico",
+        "relation": "nationality"
+      },
+      {
+        "source": "Sergio P\u00e9rez Mendoza",
+        "target": "racing driver",
+        "relation": "occupation"
+      }
+    ]
+  },
+  "2a2322e19b8d846e8cdc7901722ab139ab37ce52069c1e1e3e569cf255fc036f": {
+    "title": "Formula One drivers from Mexico",
+    "entities": [
+      {
+        "name": "Pedro Rodr\u00edguez",
+        "type": "Person"
+      },
+      {
+        "name": "Sergio P\u00e9rez",
+        "type": "Person"
+      },
+      {
+        "name": "Mexico",
+        "type": "Location"
+      },
+      {
+        "name": "Sahara Force India F1 Team",
+        "type": "Organization"
+      },
+      {
+        "name": "Formula One",
+        "type": "Concept"
+      },
+      {
+        "name": "grand prix",
+        "type": "Concept"
+      },
+      {
+        "name": "championship",
+        "type": "Concept"
+      },
+      {
+        "name": "1950",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Pedro Rodr\u00edguez",
+        "target": "grand prix",
+        "relation": "won"
+      }
+    ]
+  },
+  "16719469101a4708217df315de7191d8d48c98265166642e5e047bf9a1febffa": {
+    "title": "Jim Cummings",
+    "entities": [
+      {
+        "name": "James Jonah Cummings",
+        "type": "Person"
+      },
+      {
+        "name": "Darkwing Duck",
+        "type": "Work"
+      },
+      {
+        "name": "Dr. Robotnik",
+        "type": "Concept"
+      },
+      {
+        "name": "Pete",
+        "type": "Concept"
+      },
+      {
+        "name": "Winnie the Pooh",
+        "type": "Concept"
+      },
+      {
+        "name": "Tigger",
+        "type": "Concept"
+      },
+      {
+        "name": "Tasmanian Devil",
+        "type": "Concept"
+      },
+      {
+        "name": "Disney",
+        "type": "Organization"
+      },
+      {
+        "name": "DreamWorks",
+        "type": "Organization"
+      },
+      {
+        "name": "Aladdin",
+        "type": "Work"
+      },
+      {
+        "name": "The Lion King",
+        "type": "Work"
+      },
+      {
+        "name": "Balto",
+        "type": "Work"
+      },
+      {
+        "name": "Antz",
+        "type": "Work"
+      },
+      {
+        "name": "The Road to El Dorado",
+        "type": "Work"
+      },
+      {
+        "name": "Shrek",
+        "type": "Work"
+      },
+      {
+        "name": "The Princess and the Frog",
+        "type": "Work"
+      },
+      {
+        "name": "Sonic the Hedgehog",
+        "type": "Work"
+      },
+      {
+        "name": "Icewind Dale",
+        "type": "Work"
+      },
+      {
+        "name": "Fallout",
+        "type": "Work"
+      },
+      {
+        "name": "Baldur's Gate",
+        "type": "Work"
+      },
+      {
+        "name": "Mass Effect 2",
+        "type": "Work"
+      },
+      {
+        "name": "Splatterhouse",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "James Jonah Cummings",
+        "target": "Darkwing Duck",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Dr. Robotnik",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Pete",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Winnie the Pooh",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Tigger",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Tasmanian Devil",
+        "relation": "voiced"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Aladdin",
+        "relation": "performed_in"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "The Lion King",
+        "relation": "performed_in"
+      },
+      {
+        "source": "James Jonah Cummings",
+        "target": "Balto",
+        "relation": "performed_in"
+      }
+    ]
+  },
+  "fe1cff04db29050456cf484bf6f3e463da333f7d0a76fd754ae80e32fefc0bbc": {
+    "title": "A Rather Blustery Day",
+    "entities": [
+      {
+        "name": "A Rather Blustery Day",
+        "type": "Work"
+      },
+      {
+        "name": "Winnie the Pooh and the Blustery Day",
+        "type": "Work"
+      },
+      {
+        "name": "Walt Disney",
+        "type": "Organization"
+      },
+      {
+        "name": "Robert Sherman",
+        "type": "Person"
+      },
+      {
+        "name": "Richard Sherman",
+        "type": "Person"
+      },
+      {
+        "name": "Jim Cummings",
+        "type": "Person"
+      },
+      {
+        "name": "Pooh",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "A Rather Blustery Day",
+        "target": "Winnie the Pooh and the Blustery Day",
+        "relation": "from"
+      },
+      {
+        "source": "Winnie the Pooh and the Blustery Day",
+        "target": "Walt Disney",
+        "relation": "produced_by"
+      },
+      {
+        "source": "Robert Sherman",
+        "target": "A Rather Blustery Day",
+        "relation": "writer_of"
+      },
+      {
+        "source": "Richard Sherman",
+        "target": "A Rather Blustery Day",
+        "relation": "writer_of"
+      },
+      {
+        "source": "Jim Cummings",
+        "target": "A Rather Blustery Day",
+        "relation": "singer_of"
+      },
+      {
+        "source": "Jim Cummings",
+        "target": "Pooh",
+        "relation": "performed_as"
+      }
+    ]
+  },
+  "57978c3bd4ded02b18d8b10b2439f87989a0f26c1de828d149c9564405545dc7": {
+    "title": "Apple Remote",
+    "entities": [
+      {
+        "name": "Apple Remote",
+        "type": "Work"
+      },
+      {
+        "name": "Apple Inc.",
+        "type": "Organization"
+      },
+      {
+        "name": "October 2005",
+        "type": "Concept"
+      },
+      {
+        "name": "Front Row",
+        "type": "Work"
+      },
+      {
+        "name": "iSight iMac G5",
+        "type": "Work"
+      },
+      {
+        "name": "Macintosh computers",
+        "type": "Concept"
+      },
+      {
+        "name": "Apple TV",
+        "type": "Work"
+      },
+      {
+        "name": "Siri Remote",
+        "type": "Work"
+      },
+      {
+        "name": "fourth generation",
+        "type": "Concept"
+      },
+      {
+        "name": "Macintosh TV",
+        "type": "Work"
+      },
+      {
+        "name": "TV tuner expansion boards",
+        "type": "Work"
+      },
+      {
+        "name": "PowerCD drive",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Apple Remote",
+        "target": "October 2005",
+        "relation": "released_in_or_after"
+      },
+      {
+        "source": "Apple Remote",
+        "target": "Apple Inc.",
+        "relation": "released_by"
+      },
+      {
+        "source": "Apple Remote",
+        "target": "Front Row",
+        "relation": "used_with"
+      },
+      {
+        "source": "Front Row",
+        "target": "iSight iMac G5",
+        "relation": "runs_on"
+      },
+      {
+        "source": "Apple Remote",
+        "target": "Macintosh computers",
+        "relation": "compatible_with"
+      },
+      {
+        "source": "Apple Remote",
+        "target": "Apple TV",
+        "relation": "primary_control_mechanism_for"
+      }
+    ]
+  },
+  "d9c3314361800d9b3b331a3d2ea79a50b50ea1ba5a9e3391c2cd845ecc6e4fab": {
+    "title": "Front Row (software)",
+    "entities": [
+      {
+        "name": "Front Row",
+        "type": "Work"
+      },
+      {
+        "name": "Apple",
+        "type": "Organization"
+      },
+      {
+        "name": "Macintosh computers",
+        "type": "Work"
+      },
+      {
+        "name": "Apple TV",
+        "type": "Work"
+      },
+      {
+        "name": "iTunes",
+        "type": "Work"
+      },
+      {
+        "name": "iPhoto",
+        "type": "Work"
+      },
+      {
+        "name": "Apple Remote",
+        "type": "Work"
+      },
+      {
+        "name": "Windows Media Center",
+        "type": "Work"
+      },
+      {
+        "name": "Kodi",
+        "type": "Work"
+      },
+      {
+        "name": "Mac OS X 10.7",
+        "type": "Work"
+      },
+      {
+        "name": "October 2005",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Front Row",
+        "target": "Macintosh computers",
+        "relation": "runs_on"
+      },
+      {
+        "source": "Front Row",
+        "target": "Apple TV",
+        "relation": "runs_on"
+      },
+      {
+        "source": "Front Row",
+        "target": "iTunes",
+        "relation": "relies_on"
+      },
+      {
+        "source": "Front Row",
+        "target": "iPhoto",
+        "relation": "relies_on"
+      },
+      {
+        "source": "Front Row",
+        "target": "Apple Remote",
+        "relation": "controlled_by"
+      },
+      {
+        "source": "Front Row",
+        "target": "Windows Media Center",
+        "relation": "similar_to"
+      },
+      {
+        "source": "Front Row",
+        "target": "Kodi",
+        "relation": "similar_to"
+      },
+      {
+        "source": "Front Row",
+        "target": "October 2005",
+        "relation": "released_in"
+      },
+      {
+        "source": "Front Row",
+        "target": "Mac OS X 10.7",
+        "relation": "removed_in"
+      },
+      {
+        "source": "Front Row",
+        "target": "Apple",
+        "relation": "developed_by"
+      }
+    ]
+  },
+  "554e55ca4d01f1f9b1209e6ee36e60f6430f04baa67536d0d16ea97db8aae18d": {
+    "title": "Wolf Alice",
+    "entities": [
+      {
+        "name": "Wolf Alice",
+        "type": "Organization"
+      },
+      {
+        "name": "North London",
+        "type": "Location"
+      },
+      {
+        "name": "Ellie Rowsell",
+        "type": "Person"
+      },
+      {
+        "name": "Joff Oddie",
+        "type": "Person"
+      },
+      {
+        "name": "Theo Ellis",
+        "type": "Person"
+      },
+      {
+        "name": "Joel Amey",
+        "type": "Person"
+      },
+      {
+        "name": "alternative rock",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Wolf Alice",
+        "target": "North London",
+        "relation": "originated_in"
+      },
+      {
+        "source": "Wolf Alice",
+        "target": "alternative rock",
+        "relation": "genre"
+      },
+      {
+        "source": "Ellie Rowsell",
+        "target": "Wolf Alice",
+        "relation": "member_of"
+      },
+      {
+        "source": "Joff Oddie",
+        "target": "Wolf Alice",
+        "relation": "member_of"
+      },
+      {
+        "source": "Theo Ellis",
+        "target": "Wolf Alice",
+        "relation": "member_of"
+      },
+      {
+        "source": "Joel Amey",
+        "target": "Wolf Alice",
+        "relation": "member_of"
+      }
+    ]
+  },
+  "fc91cec037f6c9363949fe7d80977ef6a9aeab90c889b025b7b0f809309b7371": {
+    "title": "Badly Drawn Boy",
+    "entities": [
+      {
+        "name": "Damon Michael Gough",
+        "type": "Person"
+      },
+      {
+        "name": "Badly Drawn Boy",
+        "type": "Concept"
+      },
+      {
+        "name": "Dunstable",
+        "type": "Location"
+      },
+      {
+        "name": "Bedfordshire",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Damon Michael Gough",
+        "target": "Badly Drawn Boy",
+        "relation": "stage_name"
+      },
+      {
+        "source": "Damon Michael Gough",
+        "target": "Dunstable",
+        "relation": "birth_place"
+      },
+      {
+        "source": "Dunstable",
+        "target": "Bedfordshire",
+        "relation": "located_in"
+      }
+    ]
+  },
+  "d376526c8a88e0dc7e942563610e4c93b225d462ca312f56a58e281beb373e11": {
+    "title": "Peter Schmeichel",
+    "entities": [
+      {
+        "name": "Peter Boles\u0142aw Schmeichel",
+        "type": "Person"
+      },
+      {
+        "name": "Manchester United",
+        "type": "Organization"
+      },
+      {
+        "name": "Denmark",
+        "type": "Location"
+      },
+      {
+        "name": "UEFA Champions League",
+        "type": "Concept"
+      },
+      {
+        "name": "Treble",
+        "type": "Concept"
+      },
+      {
+        "name": "UEFA Euro 1992",
+        "type": "Concept"
+      },
+      {
+        "name": "IFFHS World's Best Goalkeeper",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Peter Boles\u0142aw Schmeichel",
+        "target": "IFFHS World's Best Goalkeeper",
+        "relation": "won_award"
+      },
+      {
+        "source": "Peter Boles\u0142aw Schmeichel",
+        "target": "Manchester United",
+        "relation": "captained"
+      },
+      {
+        "source": "Manchester United",
+        "target": "UEFA Champions League",
+        "relation": "won"
+      },
+      {
+        "source": "Manchester United",
+        "target": "Treble",
+        "relation": "completed"
+      },
+      {
+        "source": "Peter Boles\u0142aw Schmeichel",
+        "target": "UEFA Euro 1992",
+        "relation": "won"
+      },
+      {
+        "source": "Peter Boles\u0142aw Schmeichel",
+        "target": "Denmark",
+        "relation": "represented"
+      }
+    ]
+  },
+  "7bda26cd3155e163604e0471b46976fa564ae662690c9c02841bd86eac9b400a": {
+    "title": "Kasper Schmeichel",
+    "entities": [
+      {
+        "name": "Kasper Peter Schmeichel",
+        "type": "Person"
+      },
+      {
+        "name": "Peter Schmeichel",
+        "type": "Person"
+      },
+      {
+        "name": "Leicester City",
+        "type": "Organization"
+      },
+      {
+        "name": "Denmark national team",
+        "type": "Organization"
+      },
+      {
+        "name": "Manchester United",
+        "type": "Organization"
+      },
+      {
+        "name": "Premier League",
+        "type": "Concept"
+      },
+      {
+        "name": "Denmark",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Kasper Peter Schmeichel",
+        "target": "Leicester City",
+        "relation": "plays_for"
+      },
+      {
+        "source": "Kasper Peter Schmeichel",
+        "target": "Denmark national team",
+        "relation": "plays_for"
+      },
+      {
+        "source": "Kasper Peter Schmeichel",
+        "target": "Peter Schmeichel",
+        "relation": "son_of"
+      },
+      {
+        "source": "Peter Schmeichel",
+        "target": "Manchester United",
+        "relation": "former_player_of"
+      },
+      {
+        "source": "Peter Schmeichel",
+        "target": "Denmark national team",
+        "relation": "former_player_of"
+      },
+      {
+        "source": "Kasper Peter Schmeichel",
+        "target": "Premier League",
+        "relation": "league_member"
+      }
+    ]
+  },
+  "4cc7ed35ce16bf96de861c19532dbdbbf47fbb1d6b153548da7048044a4ac3b5": {
+    "title": "These Boots Are Made for Walkin'",
+    "entities": [
+      {
+        "name": "These Boots Are Made for Walkin'",
+        "type": "Work"
+      },
+      {
+        "name": "Lee Hazlewood",
+        "type": "Person"
+      },
+      {
+        "name": "Nancy Sinatra",
+        "type": "Person"
+      },
+      {
+        "name": "January 22, 1966",
+        "type": "Concept"
+      },
+      {
+        "name": "Billboard Hot 100",
+        "type": "Concept"
+      },
+      {
+        "name": "UK Singles Chart",
+        "type": "Concept"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "These Boots Are Made for Walkin'",
+        "target": "Lee Hazlewood",
+        "relation": "written_by"
+      },
+      {
+        "source": "These Boots Are Made for Walkin'",
+        "target": "Nancy Sinatra",
+        "relation": "recorded_by"
+      },
+      {
+        "source": "These Boots Are Made for Walkin'",
+        "target": "January 22, 1966",
+        "relation": "charted_on"
+      },
+      {
+        "source": "These Boots Are Made for Walkin'",
+        "target": "Billboard Hot 100",
+        "relation": "reached_number_one_in"
+      },
+      {
+        "source": "These Boots Are Made for Walkin'",
+        "target": "UK Singles Chart",
+        "relation": "reached_number_one_in"
+      }
+    ]
+  },
+  "534e8d14b923e240bfa9399482fd63e3c7bcaf4fee451c58fc700732c47980f5": {
+    "title": "Lee Hazlewood",
+    "entities": [
+      {
+        "name": "Lee Hazlewood",
+        "type": "Person"
+      },
+      {
+        "name": "Duane Eddy",
+        "type": "Person"
+      },
+      {
+        "name": "Nancy Sinatra",
+        "type": "Person"
+      },
+      {
+        "name": "American",
+        "type": "Concept"
+      },
+      {
+        "name": "Singer",
+        "type": "Concept"
+      },
+      {
+        "name": "Songwriter",
+        "type": "Concept"
+      },
+      {
+        "name": "Record producer",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Lee Hazlewood",
+        "target": "American",
+        "relation": "nationality"
+      },
+      {
+        "source": "Lee Hazlewood",
+        "target": "Singer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Lee Hazlewood",
+        "target": "Songwriter",
+        "relation": "occupation"
+      },
+      {
+        "source": "Lee Hazlewood",
+        "target": "Record producer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Lee Hazlewood",
+        "target": "Duane Eddy",
+        "relation": "collaborated_with"
+      },
+      {
+        "source": "Lee Hazlewood",
+        "target": "Nancy Sinatra",
+        "relation": "collaborated_with"
+      }
+    ]
+  },
+  "a27a08ec3b1480b2907775cf9ba8ec3ccd00eed9db070559d211b1be49671b2f": {
+    "title": "Virginia Commonwealth University",
+    "entities": [
+      {
+        "name": "Virginia Commonwealth University",
+        "type": "Organization"
+      },
+      {
+        "name": "Richmond, Virginia",
+        "type": "Location"
+      },
+      {
+        "name": "Hampden\u2013Sydney College",
+        "type": "Organization"
+      },
+      {
+        "name": "Medical College of Virginia",
+        "type": "Organization"
+      },
+      {
+        "name": "Virginia General Assembly",
+        "type": "Organization"
+      },
+      {
+        "name": "Richmond Professional Institute",
+        "type": "Organization"
+      },
+      {
+        "name": "VCU Health System",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Virginia Commonwealth University",
+        "target": "Richmond, Virginia",
+        "relation": "located_in"
+      },
+      {
+        "source": "Virginia Commonwealth University",
+        "target": "Hampden\u2013Sydney College",
+        "relation": "founded_as_medical_department_of"
+      },
+      {
+        "source": "Virginia Commonwealth University",
+        "target": "Medical College of Virginia",
+        "relation": "renamed_to"
+      },
+      {
+        "source": "Virginia General Assembly",
+        "target": "Virginia Commonwealth University",
+        "relation": "created_by_merger_of"
+      }
+    ]
+  },
+  "52e77dbe7b3b623192c9c8f431c0261f81640aaf164239d60a895304840931dd": {
+    "title": "2011\u201312 VCU Rams men's basketball team",
+    "entities": [
+      {
+        "name": "2011\u201312 VCU Rams men's basketball team",
+        "type": "Work"
+      },
+      {
+        "name": "Virginia Commonwealth University",
+        "type": "Organization"
+      },
+      {
+        "name": "Shaka Smart",
+        "type": "Person"
+      },
+      {
+        "name": "CAA",
+        "type": "Organization"
+      },
+      {
+        "name": "Drexel",
+        "type": "Organization"
+      },
+      {
+        "name": "NCAA Tournament",
+        "type": "Concept"
+      },
+      {
+        "name": "2012 CAA Men's Basketball Championship",
+        "type": "Work"
+      },
+      {
+        "name": "Final Four",
+        "type": "Concept"
+      },
+      {
+        "name": "1984\u201385",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "Virginia Commonwealth University",
+        "relation": "represented_by"
+      },
+      {
+        "source": "Shaka Smart",
+        "target": "2011\u201312 VCU Rams men's basketball team",
+        "relation": "head_coach"
+      },
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "2011\u201312 NCAA Division I men's basketball season",
+        "relation": "participated_in_season"
+      },
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "CAA",
+        "relation": "finished_runner_up_in"
+      },
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "2012 CAA Men's Basketball Championship",
+        "relation": "won_championship"
+      },
+      {
+        "source": "2012 CAA Men's Basketball Championship",
+        "target": "Drexel",
+        "relation": "defeated"
+      },
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "NCAA Tournament",
+        "relation": "earned_berth_into"
+      },
+      {
+        "source": "2011\u201312 VCU Rams men's basketball team",
+        "target": "Final Four",
+        "relation": "previous_season_run_to"
+      }
+    ]
+  },
+  "451b976c5315ea90906e1bfc9ccd43ffbfd339540ec12f2b4bfe111ef1c69627": {
+    "title": "Dictyosperma",
+    "entities": [
+      {
+        "name": "Dictyosperma",
+        "type": "Concept"
+      },
+      {
+        "name": "Dictyosperma album",
+        "type": "Concept"
+      },
+      {
+        "name": "Palm family",
+        "type": "Concept"
+      },
+      {
+        "name": "Mascarene Islands",
+        "type": "Location"
+      },
+      {
+        "name": "Mauritius",
+        "type": "Location"
+      },
+      {
+        "name": "R\u00e9union",
+        "type": "Location"
+      },
+      {
+        "name": "Rodrigues",
+        "type": "Location"
+      },
+      {
+        "name": "Tropics",
+        "type": "Location"
+      },
+      {
+        "name": "Princess palm",
+        "type": "Concept"
+      },
+      {
+        "name": "Hurricane palm",
+        "type": "Concept"
+      },
+      {
+        "name": "Archontophoenix",
+        "type": "Concept"
+      },
+      {
+        "name": "Greek",
+        "type": "Concept"
+      },
+      {
+        "name": "Latin",
+        "type": "Concept"
+      },
+      {
+        "name": "Crownshaft",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Dictyosperma",
+        "target": "Palm family",
+        "relation": "belongs_to_family"
+      },
+      {
+        "source": "Dictyosperma",
+        "target": "Mascarene Islands",
+        "relation": "found_in"
+      },
+      {
+        "source": "Dictyosperma album",
+        "target": "Dictyosperma",
+        "relation": "species_of"
+      }
+    ]
+  },
+  "99b8737ec6502b3b65b3c683d517f6e597c9c9279f87813276ebf7caa31bf021": {
+    "title": "Huernia",
+    "entities": [
+      {
+        "name": "Huernia",
+        "type": "Concept"
+      },
+      {
+        "name": "Apocynaceae",
+        "type": "Concept"
+      },
+      {
+        "name": "Asclepiadoideae",
+        "type": "Concept"
+      },
+      {
+        "name": "Eastern Africa",
+        "type": "Location"
+      },
+      {
+        "name": "Southern Africa",
+        "type": "Location"
+      },
+      {
+        "name": "Stapelia",
+        "type": "Concept"
+      },
+      {
+        "name": "Hoodia",
+        "type": "Concept"
+      },
+      {
+        "name": "Justin Heurnius",
+        "type": "Person"
+      },
+      {
+        "name": "South African Cape",
+        "type": "Location"
+      },
+      {
+        "name": "Flies",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Huernia",
+        "target": "Apocynaceae",
+        "relation": "belongs_to_family"
+      },
+      {
+        "source": "Huernia",
+        "target": "Asclepiadoideae",
+        "relation": "belongs_to_subfamily"
+      },
+      {
+        "source": "Huernia",
+        "target": "Eastern Africa",
+        "relation": "native_to"
+      },
+      {
+        "source": "Huernia",
+        "target": "Southern Africa",
+        "relation": "native_to"
+      },
+      {
+        "source": "Huernia",
+        "target": "Stapelia",
+        "relation": "closely_related_to"
+      },
+      {
+        "source": "Huernia",
+        "target": "Hoodia",
+        "relation": "closely_related_to"
+      },
+      {
+        "source": "Huernia",
+        "target": "Flies",
+        "relation": "attracts_for_pollination"
+      }
+    ]
+  },
+  "217adbae5afe7c5483791917701e7e335f8e6cd10ba1a8057abf977e63074b64": {
+    "title": "Kaiser Ventures",
+    "entities": [
+      {
+        "name": "Kaiser Ventures",
+        "type": "Organization"
+      },
+      {
+        "name": "Kaiser Steel",
+        "type": "Organization"
+      },
+      {
+        "name": "Ontario, California",
+        "type": "Location"
+      },
+      {
+        "name": "Henry J. Kaiser",
+        "type": "Person"
+      },
+      {
+        "name": "Pacific Coast shipbuilding industry",
+        "type": "Concept"
+      },
+      {
+        "name": "World War II",
+        "type": "Concept"
+      },
+      {
+        "name": "Korean War",
+        "type": "Concept"
+      },
+      {
+        "name": "California Shipbuilding Corporation",
+        "type": "Organization"
+      },
+      {
+        "name": "Terminal Island, California",
+        "type": "Location"
+      },
+      {
+        "name": "Liberty ships",
+        "type": "Work"
+      },
+      {
+        "name": "Victory ships",
+        "type": "Work"
+      },
+      {
+        "name": "U.S. Steel",
+        "type": "Organization"
+      },
+      {
+        "name": "Utah",
+        "type": "Location"
+      },
+      {
+        "name": "Napa, California",
+        "type": "Location"
+      },
+      {
+        "name": "Basalt Rock Company",
+        "type": "Organization"
+      },
+      {
+        "name": "Fontana, California",
+        "type": "Location"
+      },
+      {
+        "name": "California Steel Industries",
+        "type": "Organization"
+      },
+      {
+        "name": "Eagle Mountain, California",
+        "type": "Location"
+      }
+    ],
+    "relations": []
+  },
+  "4ad29907da891eb94f96ffd086a7d9a22d48a27d800e2bd7a9ece5578c9fb269": {
+    "title": "Henry J. Kaiser",
+    "entities": [
+      {
+        "name": "Henry John Kaiser",
+        "type": "Person"
+      },
+      {
+        "name": "Kaiser Shipyards",
+        "type": "Organization"
+      },
+      {
+        "name": "Liberty ships",
+        "type": "Work"
+      },
+      {
+        "name": "World War II",
+        "type": "Concept"
+      },
+      {
+        "name": "Kaiser Aluminum",
+        "type": "Organization"
+      },
+      {
+        "name": "Kaiser Steel",
+        "type": "Organization"
+      },
+      {
+        "name": "Kaiser Permanente",
+        "type": "Organization"
+      },
+      {
+        "name": "Kaiser-Frazer",
+        "type": "Organization"
+      },
+      {
+        "name": "Kaiser Motors",
+        "type": "Organization"
+      },
+      {
+        "name": "civic centers",
+        "type": "Concept"
+      },
+      {
+        "name": "dams",
+        "type": "Concept"
+      },
+      {
+        "name": "Kaiser Family Foundation",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser Shipyards",
+        "relation": "established"
+      },
+      {
+        "source": "Kaiser Shipyards",
+        "target": "Liberty ships",
+        "relation": "built"
+      },
+      {
+        "source": "Liberty ships",
+        "target": "World War II",
+        "relation": "built_during"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser Aluminum",
+        "relation": "formed"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser Steel",
+        "relation": "formed"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser Permanente",
+        "relation": "organized"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser-Frazer",
+        "relation": "led"
+      },
+      {
+        "source": "Kaiser-Frazer",
+        "target": "Kaiser Motors",
+        "relation": "succeeded_by"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "civic centers",
+        "relation": "involved_in"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "dams",
+        "relation": "involved_in"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "Kaiser Family Foundation",
+        "relation": "established"
+      },
+      {
+        "source": "Henry John Kaiser",
+        "target": "modern American shipbuilding",
+        "relation": "known_as_father_of"
+      }
+    ]
+  },
+  "da4304b73d49a25f9f6eaffb10ae235441798ba1773edef0e14a971240eb82b4": {
+    "title": "Tunnels &amp; Trolls",
+    "entities": [
+      {
+        "name": "Tunnels & Trolls",
+        "type": "Work"
+      },
+      {
+        "name": "Ken St. Andre",
+        "type": "Person"
+      },
+      {
+        "name": "Flying Buffalo",
+        "type": "Organization"
+      },
+      {
+        "name": "Dungeons & Dragons",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Tunnels & Trolls",
+        "target": "Ken St. Andre",
+        "relation": "designed_by"
+      },
+      {
+        "source": "Tunnels & Trolls",
+        "target": "Ken St. Andre",
+        "relation": "written_by"
+      },
+      {
+        "source": "Tunnels & Trolls",
+        "target": "Flying Buffalo",
+        "relation": "published_by"
+      },
+      {
+        "source": "Tunnels & Trolls",
+        "target": "Dungeons & Dragons",
+        "relation": "alternative_to"
+      }
+    ]
+  },
+  "5f89308f349a63214cefb5b0f95675f5e0aaa507e457e7ff4b5be47697576680": {
+    "title": "Arena of Khazan",
+    "entities": [
+      {
+        "name": "Arena of Khazan",
+        "type": "Work"
+      },
+      {
+        "name": "Tunnels & Trolls",
+        "type": "Work"
+      },
+      {
+        "name": "Flying Buffalo",
+        "type": "Organization"
+      },
+      {
+        "name": "1979",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Arena of Khazan",
+        "target": "Flying Buffalo",
+        "relation": "published_by"
+      },
+      {
+        "source": "Arena of Khazan",
+        "target": "Tunnels & Trolls",
+        "relation": "for_game"
+      },
+      {
+        "source": "Arena of Khazan",
+        "target": "1979",
+        "relation": "published_year"
+      }
+    ]
+  },
+  "f8caa1e43b01819363c57a143472d9b573f3308e8475efd94fd561c29391659b": {
+    "title": "Poison (American band)",
+    "entities": [
+      {
+        "name": "Poison",
+        "type": "Organization"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Billboard",
+        "type": "Organization"
+      },
+      {
+        "name": "Every Rose Has Its Thorn",
+        "type": "Work"
+      },
+      {
+        "name": "Look What the Cat Dragged In",
+        "type": "Work"
+      },
+      {
+        "name": "Open Up and Say... Ahh!",
+        "type": "Work"
+      },
+      {
+        "name": "Flesh & Blood",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Poison",
+        "target": "United States",
+        "relation": "originated_in"
+      },
+      {
+        "source": "Poison",
+        "target": "Billboard",
+        "relation": "charted_on"
+      },
+      {
+        "source": "Poison",
+        "target": "Every Rose Has Its Thorn",
+        "relation": "has_number_one_single"
+      },
+      {
+        "source": "Poison",
+        "target": "Look What the Cat Dragged In",
+        "relation": "released_album"
+      },
+      {
+        "source": "Poison",
+        "target": "Open Up and Say... Ahh!",
+        "relation": "released_album"
+      },
+      {
+        "source": "Poison",
+        "target": "Flesh & Blood",
+        "relation": "released_album"
+      },
+      {
+        "source": "Open Up and Say... Ahh!",
+        "target": "United States",
+        "relation": "certified_5x_platinum_in"
+      },
+      {
+        "source": "Billboard",
+        "target": "Every Rose Has Its Thorn",
+        "relation": "charted"
+      }
+    ]
+  },
+  "5ef5e0448b7825b78c490c2e42e280d8e2b6d056c51ae128d8a3a8dd1cae0ee5": {
+    "title": "Shut Up, Make Love",
+    "entities": [
+      {
+        "name": "Shut Up, Make Love",
+        "type": "Work"
+      }
+    ],
+    "relations": []
+  },
+  "3778a5ab6fdb87f97e5d3799a981fe87fbad0883a5432ca920c739c0a194f570": {
+    "title": "Hayden (musician)",
+    "entities": [
+      {
+        "name": "Paul Hayden Desser",
+        "type": "Person"
+      },
+      {
+        "name": "Hayden",
+        "type": "Person"
+      },
+      {
+        "name": "Thornhill, Ontario",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Paul Hayden Desser",
+        "target": "Hayden",
+        "relation": "stage_name"
+      },
+      {
+        "source": "Paul Hayden Desser",
+        "target": "Thornhill, Ontario",
+        "relation": "origin"
+      }
+    ]
+  },
+  "f4ca84237f146e4f5da2df936dff6c27815d65f1a7f235ff753aec2dc9261650": {
+    "title": "Buck-Tick",
+    "entities": [
+      {
+        "name": "Buck-Tick",
+        "type": "Organization"
+      },
+      {
+        "name": "Fujioka",
+        "type": "Location"
+      },
+      {
+        "name": "Gunma",
+        "type": "Location"
+      },
+      {
+        "name": "Atsushi Sakurai",
+        "type": "Person"
+      },
+      {
+        "name": "Hisashi Imai",
+        "type": "Person"
+      },
+      {
+        "name": "Hidehiko Hoshino",
+        "type": "Person"
+      },
+      {
+        "name": "Yutaka Higuchi",
+        "type": "Person"
+      },
+      {
+        "name": "Toll Yagami",
+        "type": "Person"
+      },
+      {
+        "name": "visual kei movement",
+        "type": "Concept"
+      },
+      {
+        "name": "studio albums",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Buck-Tick",
+        "target": "Fujioka",
+        "relation": "formed_in"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Gunma",
+        "relation": "formed_in"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Atsushi Sakurai",
+        "relation": "has_member"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Hisashi Imai",
+        "relation": "has_member"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Hidehiko Hoshino",
+        "relation": "has_member"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Yutaka Higuchi",
+        "relation": "has_member"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "Toll Yagami",
+        "relation": "has_member"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "visual kei movement",
+        "relation": "founder_of"
+      },
+      {
+        "source": "Buck-Tick",
+        "target": "studio albums",
+        "relation": "released"
+      }
+    ]
+  },
+  "a9e5217ed483b97390ddf1848757e42d4a37d699f52f5084982bb36b5936e414": {
+    "title": "Charles Nungesser",
+    "entities": [
+      {
+        "name": "Charles Eug\u00e8ne Jules Marie Nungesser",
+        "type": "Person"
+      },
+      {
+        "name": "Charles Lindbergh",
+        "type": "Person"
+      },
+      {
+        "name": "France",
+        "type": "Location"
+      },
+      {
+        "name": "World War I",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Charles Eug\u00e8ne Jules Marie Nungesser",
+        "target": "Charles Lindbergh",
+        "relation": "rival"
+      },
+      {
+        "source": "Charles Eug\u00e8ne Jules Marie Nungesser",
+        "target": "France",
+        "relation": "nationality"
+      },
+      {
+        "source": "Charles Eug\u00e8ne Jules Marie Nungesser",
+        "target": "World War I",
+        "relation": "participated_in"
+      }
+    ]
+  },
+  "8958e58216f4b75529e13518346ee9a1fd32df2a07c1552373d0f23a4a39e3fc": {
+    "title": "L'Oiseau Blanc",
+    "entities": [
+      {
+        "name": "L'Oiseau Blanc",
+        "type": "Work"
+      },
+      {
+        "name": "The White Bird",
+        "type": "Work"
+      },
+      {
+        "name": "Levasseur PL.8",
+        "type": "Work"
+      },
+      {
+        "name": "Paris",
+        "type": "Location"
+      },
+      {
+        "name": "New York City",
+        "type": "Location"
+      },
+      {
+        "name": "Orteig Prize",
+        "type": "Concept"
+      },
+      {
+        "name": "Charles Nungesser",
+        "type": "Person"
+      },
+      {
+        "name": "Fran\u00e7ois Coli",
+        "type": "Person"
+      },
+      {
+        "name": "Ireland",
+        "type": "Location"
+      },
+      {
+        "name": "Charles Lindbergh",
+        "type": "Person"
+      }
+    ],
+    "relations": []
+  },
+  "569187a44112eaceda45d24cb61e6949577ab3964192bd09367301e7e2c2a4a2": {
+    "title": "In the Realm of the Hackers",
+    "entities": [
+      {
+        "name": "In The Realm of the Hackers",
+        "type": "Work"
+      },
+      {
+        "name": "Kevin Anderson",
+        "type": "Person"
+      },
+      {
+        "name": "Melbourne, Australia",
+        "type": "Location"
+      },
+      {
+        "name": "Electron",
+        "type": "Person"
+      },
+      {
+        "name": "Phoenix",
+        "type": "Person"
+      },
+      {
+        "name": "The Realm",
+        "type": "Organization"
+      },
+      {
+        "name": "US Naval Research Laboratory",
+        "type": "Organization"
+      },
+      {
+        "name": "Lawrence Livermore National Laboratory",
+        "type": "Organization"
+      },
+      {
+        "name": "NASA",
+        "type": "Organization"
+      },
+      {
+        "name": "Underground",
+        "type": "Work"
+      },
+      {
+        "name": "Suelette Dreyfus",
+        "type": "Person"
+      }
+    ],
+    "relations": [
+      {
+        "source": "In The Realm of the Hackers",
+        "target": "Kevin Anderson",
+        "relation": "directed_by"
+      },
+      {
+        "source": "In The Realm of the Hackers",
+        "target": "Melbourne, Australia",
+        "relation": "centered_in"
+      },
+      {
+        "source": "In The Realm of the Hackers",
+        "target": "Underground",
+        "relation": "inspired_by"
+      },
+      {
+        "source": "Underground",
+        "target": "Suelette Dreyfus",
+        "relation": "authored_by"
+      },
+      {
+        "source": "Suelette Dreyfus",
+        "target": "Melbourne, Australia",
+        "relation": "based_in"
+      },
+      {
+        "source": "Electron",
+        "target": "The Realm",
+        "relation": "member_of"
+      },
+      {
+        "source": "Phoenix",
+        "target": "The Realm",
+        "relation": "member_of"
+      },
+      {
+        "source": "The Realm",
+        "target": "US Naval Research Laboratory",
+        "relation": "hacked"
+      },
+      {
+        "source": "The Realm",
+        "target": "Lawrence Livermore National Laboratory",
+        "relation": "hacked"
+      },
+      {
+        "source": "The Realm",
+        "target": "NASA",
+        "relation": "hacked"
+      }
+    ]
+  },
+  "2b1711a9a80ded19e2bdd67d454d531cdda8bbf15bb42b866384b7e64bbbde47": {
+    "title": "Freakonomics (film)",
+    "entities": [
+      {
+        "name": "Freakonomics: The Movie",
+        "type": "Work"
+      },
+      {
+        "name": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything",
+        "type": "Work"
+      },
+      {
+        "name": "Steven D. Levitt",
+        "type": "Person"
+      },
+      {
+        "name": "Stephen J. Dubner",
+        "type": "Person"
+      },
+      {
+        "name": "Tribeca Film Festival",
+        "type": "Organization"
+      },
+      {
+        "name": "Rottentomatoes",
+        "type": "Organization"
+      },
+      {
+        "name": "Documentary film",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Freakonomics: The Movie",
+        "target": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything",
+        "relation": "based_on"
+      },
+      {
+        "source": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything",
+        "target": "Steven D. Levitt",
+        "relation": "authored_by"
+      },
+      {
+        "source": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything",
+        "target": "Stephen J. Dubner",
+        "relation": "authored_by"
+      },
+      {
+        "source": "Freakonomics: The Movie",
+        "target": "Tribeca Film Festival",
+        "relation": "premiered_at"
+      },
+      {
+        "source": "Freakonomics: The Movie",
+        "target": "Rottentomatoes",
+        "relation": "rated_by"
+      },
+      {
+        "source": "Freakonomics: The Movie",
+        "target": "Documentary film",
+        "relation": "genre"
+      }
+    ]
+  },
+  "87aae3ebe16b13ae6fec386ad302731cd2be3252c52045c910ee8dae81ab6764": {
+    "title": "Letters to Cleo",
+    "entities": [
+      {
+        "name": "Letters to Cleo",
+        "type": "Organization"
+      },
+      {
+        "name": "Boston",
+        "type": "Location"
+      },
+      {
+        "name": "Massachusetts",
+        "type": "Location"
+      },
+      {
+        "name": "alternative rock",
+        "type": "Concept"
+      },
+      {
+        "name": "Here & Now",
+        "type": "Work"
+      },
+      {
+        "name": "Aurora Gory Alice",
+        "type": "Work"
+      },
+      {
+        "name": "Kay Hanley",
+        "type": "Person"
+      },
+      {
+        "name": "Greg McKenna",
+        "type": "Person"
+      },
+      {
+        "name": "Michael Eisenstein",
+        "type": "Person"
+      },
+      {
+        "name": "Stacy Jones",
+        "type": "Person"
+      },
+      {
+        "name": "Scott Riebling",
+        "type": "Person"
+      },
+      {
+        "name": "Tom Polce",
+        "type": "Person"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Letters to Cleo",
+        "target": "Boston",
+        "relation": "originated_in"
+      },
+      {
+        "source": "Boston",
+        "target": "Massachusetts",
+        "relation": "located_in"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "alternative rock",
+        "relation": "genre"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Kay Hanley",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Greg McKenna",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Michael Eisenstein",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Stacy Jones",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Scott Riebling",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Tom Polce",
+        "relation": "has_member"
+      },
+      {
+        "source": "Letters to Cleo",
+        "target": "Here & Now",
+        "relation": "released_single"
+      },
+      {
+        "source": "Here & Now",
+        "target": "Aurora Gory Alice",
+        "relation": "included_in_album"
+      }
+    ]
+  },
+  "faf87f225d64b7ab71e0d7ea64253e82c4703a62be13f6f87e4e0f1ac3fdfea3": {
+    "title": "Screaming Trees",
+    "entities": [
+      {
+        "name": "Screaming Trees",
+        "type": "Organization"
+      },
+      {
+        "name": "Ellensburg",
+        "type": "Location"
+      },
+      {
+        "name": "Washington",
+        "type": "Location"
+      },
+      {
+        "name": "Mark Lanegan",
+        "type": "Person"
+      },
+      {
+        "name": "Gary Lee Conner",
+        "type": "Person"
+      },
+      {
+        "name": "Van Conner",
+        "type": "Person"
+      },
+      {
+        "name": "Mark Pickerel",
+        "type": "Person"
+      },
+      {
+        "name": "Barrett Martin",
+        "type": "Person"
+      },
+      {
+        "name": "grunge",
+        "type": "Concept"
+      },
+      {
+        "name": "hard rock",
+        "type": "Concept"
+      },
+      {
+        "name": "psychedelic",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Screaming Trees",
+        "target": "Ellensburg",
+        "relation": "formed_in"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "Washington",
+        "relation": "formed_in"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "Mark Lanegan",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "Gary Lee Conner",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "Van Conner",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "Mark Pickerel",
+        "relation": "formed_by"
+      },
+      {
+        "source": "Mark Pickerel",
+        "target": "Barrett Martin",
+        "relation": "replaced_by"
+      },
+      {
+        "source": "Screaming Trees",
+        "target": "grunge",
+        "relation": "associated_with"
+      }
+    ]
+  },
+  "7b7b533ee71f03e1b54f07ade02fbbb05c39eb0ac37f7ebafefca97a1f16b26e": {
+    "title": "Socialist Revolutionary Party",
+    "entities": [
+      {
+        "name": "Socialist Revolutionary Party",
+        "type": "Organization"
+      },
+      {
+        "name": "Russia",
+        "type": "Location"
+      },
+      {
+        "name": "Russian Revolution",
+        "type": "Concept"
+      },
+      {
+        "name": "February Revolution",
+        "type": "Concept"
+      },
+      {
+        "name": "Russian Provisional Government",
+        "type": "Organization"
+      }
+    ],
+    "relations": []
+  },
+  "c056d389043bd26cb5932c6888a446b2ef165af2dcfc91938935f6a5a3ce8fbd": {
+    "title": "Russian Civil War",
+    "entities": [
+      {
+        "name": "Russian Civil War",
+        "type": "Work"
+      }
+    ],
+    "relations": []
+  },
+  "90047ceb7de94878bb9cd5d013e4d75e9e67f772bd3bdd9e1fe4c5402f15e627": {
+    "title": "Carlo Rovelli",
+    "entities": [
+      {
+        "name": "Carlo Rovelli",
+        "type": "Person"
+      },
+      {
+        "name": "Italy",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "France",
+        "type": "Location"
+      },
+      {
+        "name": "quantum gravity",
+        "type": "Concept"
+      },
+      {
+        "name": "loop quantum gravity theory",
+        "type": "Work"
+      },
+      {
+        "name": "history and philosophy of science",
+        "type": "Concept"
+      },
+      {
+        "name": "Il Corriere della Sera",
+        "type": "Organization"
+      },
+      {
+        "name": "Il Sole 24 Ore",
+        "type": "Organization"
+      },
+      {
+        "name": "La Repubblica",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Carlo Rovelli",
+        "target": "Italy",
+        "relation": "worked_in"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "United States",
+        "relation": "worked_in"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "France",
+        "relation": "worked_in"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "loop quantum gravity theory",
+        "relation": "founder_of"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "history and philosophy of science",
+        "relation": "worked_in_field"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "Il Corriere della Sera",
+        "relation": "collaborates_with"
+      }
+    ]
+  },
+  "d0253348a8df64a22dd53e7b25c71bf2eb9977fd26750211f9266cf0a7f519e6": {
+    "title": "Seven Brief Lessons on Physics",
+    "entities": [
+      {
+        "name": "Seven Brief Lessons on Physics",
+        "type": "Work"
+      },
+      {
+        "name": "Carlo Rovelli",
+        "type": "Person"
+      },
+      {
+        "name": "Italy",
+        "type": "Location"
+      },
+      {
+        "name": "Italian",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Seven Brief Lessons on Physics",
+        "target": "Carlo Rovelli",
+        "relation": "author"
+      },
+      {
+        "source": "Carlo Rovelli",
+        "target": "Italy",
+        "relation": "nationality"
+      },
+      {
+        "source": "Seven Brief Lessons on Physics",
+        "target": "Italy",
+        "relation": "bestseller_in"
+      },
+      {
+        "source": "Seven Brief Lessons on Physics",
+        "target": "Italian",
+        "relation": "original_language"
+      }
+    ]
+  },
+  "4eb7643a6f8f9868519969b495200691400fa64770ce6b72ae3ace3a6da96c35": {
+    "title": "Livesey Hall War Memorial",
+    "entities": [
+      {
+        "name": "Livesey Hall War Memorial",
+        "type": "Work"
+      },
+      {
+        "name": "World War I",
+        "type": "Concept"
+      },
+      {
+        "name": "World War II",
+        "type": "Concept"
+      },
+      {
+        "name": "South Suburban Gas Company",
+        "type": "Organization"
+      },
+      {
+        "name": "London",
+        "type": "Location"
+      },
+      {
+        "name": "Sydney March",
+        "type": "Person"
+      },
+      {
+        "name": "March family",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Livesey Hall War Memorial",
+        "target": "World War I",
+        "relation": "commemorates"
+      },
+      {
+        "source": "Livesey Hall War Memorial",
+        "target": "World War II",
+        "relation": "commemorates"
+      },
+      {
+        "source": "Livesey Hall War Memorial",
+        "target": "South Suburban Gas Company",
+        "relation": "commemorates_employees_of"
+      },
+      {
+        "source": "Livesey Hall War Memorial",
+        "target": "Sydney March",
+        "relation": "designed_by"
+      },
+      {
+        "source": "South Suburban Gas Company",
+        "target": "London",
+        "relation": "based_in"
+      },
+      {
+        "source": "Sydney March",
+        "target": "March family",
+        "relation": "member_of_family"
+      }
+    ]
+  },
+  "8d38ead044f2c2da0fcefb83d188aec3c86e5e70cce5c7bdbff95db8f573c889": {
+    "title": "World War II casualties",
+    "entities": [
+      {
+        "name": "World War II",
+        "type": "Work"
+      },
+      {
+        "name": "60 million people",
+        "type": "Concept"
+      },
+      {
+        "name": "50 million",
+        "type": "Concept"
+      },
+      {
+        "name": "80 million",
+        "type": "Concept"
+      },
+      {
+        "name": "civilians",
+        "type": "Concept"
+      },
+      {
+        "name": "50 to 55 million civilians",
+        "type": "Concept"
+      },
+      {
+        "name": "military",
+        "type": "Concept"
+      },
+      {
+        "name": "21 to 25 million military",
+        "type": "Concept"
+      },
+      {
+        "name": "war-related disease",
+        "type": "Concept"
+      },
+      {
+        "name": "famine",
+        "type": "Concept"
+      },
+      {
+        "name": "19 to 28 million from disease and famine",
+        "type": "Concept"
+      },
+      {
+        "name": "prisoners of war",
+        "type": "Concept"
+      },
+      {
+        "name": "5 million prisoners of war",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "World War II",
+        "target": "60 million people",
+        "relation": "killed"
+      },
+      {
+        "source": "World War II",
+        "target": "50 million",
+        "relation": "minimum_estimated_deaths"
+      },
+      {
+        "source": "World War II",
+        "target": "80 million",
+        "relation": "maximum_estimated_deaths"
+      },
+      {
+        "source": "World War II",
+        "target": "50 to 55 million civilians",
+        "relation": "civilian_deaths"
+      }
+    ]
+  },
+  "227fa15f1a0f16c930b8745f8260c771719c0a909c91d07ab5bc6619f78bc555": {
+    "title": "Elko Regional Airport",
+    "entities": [
+      {
+        "name": "Elko Regional Airport",
+        "type": "Location"
+      },
+      {
+        "name": "Elko Municipal Airport",
+        "type": "Work"
+      },
+      {
+        "name": "Elko",
+        "type": "Location"
+      },
+      {
+        "name": "Elko County",
+        "type": "Location"
+      },
+      {
+        "name": "Nevada",
+        "type": "Location"
+      },
+      {
+        "name": "EKO",
+        "type": "Concept"
+      },
+      {
+        "name": "KEKO",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Elko Regional Airport",
+        "target": "EKO",
+        "relation": "iata_code"
+      },
+      {
+        "source": "Elko Regional Airport",
+        "target": "KEKO",
+        "relation": "icao_code"
+      },
+      {
+        "source": "Elko Regional Airport",
+        "target": "EKO",
+        "relation": "faa_lid"
+      },
+      {
+        "source": "Elko Regional Airport",
+        "target": "Elko Municipal Airport",
+        "relation": "formerly_known_as"
+      },
+      {
+        "source": "Elko Regional Airport",
+        "target": "Elko County",
+        "relation": "located_in"
+      },
+      {
+        "source": "Elko County",
+        "target": "Nevada",
+        "relation": "located_in"
+      },
+      {
+        "source": "Elko",
+        "target": "Elko County",
+        "relation": "located_in"
+      },
+      {
+        "source": "Elko Regional Airport",
+        "target": "Elko",
+        "relation": "located_near"
+      }
+    ]
+  },
+  "609b7f7964be36110e2df115707a1a994b246315ac2e7fbd4d46e0363a8ff6f1": {
+    "title": "Gerald R. Ford International Airport",
+    "entities": [
+      {
+        "name": "Gerald R. Ford International Airport",
+        "type": "Work"
+      },
+      {
+        "name": "Cascade Township",
+        "type": "Location"
+      },
+      {
+        "name": "Grand Rapids, Michigan",
+        "type": "Location"
+      },
+      {
+        "name": "Kent County Board of Commissioners",
+        "type": "Organization"
+      },
+      {
+        "name": "FAA National Plan of Integrated Airport Systems",
+        "type": "Work"
+      },
+      {
+        "name": "small hub primary commercial service facility",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Gerald R. Ford International Airport",
+        "target": "Cascade Township",
+        "relation": "located_in"
+      },
+      {
+        "source": "Gerald R. Ford International Airport",
+        "target": "Grand Rapids, Michigan",
+        "relation": "approx_13_mi_southeast_of"
+      },
+      {
+        "source": "Gerald R. Ford International Airport",
+        "target": "Kent County Board of Commissioners",
+        "relation": "owned_by"
+      }
+    ]
+  },
+  "5447a263a7e2d91bd77431ba35673350b33e28396fee38b13791b3415f829de8": {
+    "title": "Ralph Hefferline",
+    "entities": [
+      {
+        "name": "Ralph Franklin Hefferline",
+        "type": "Person"
+      },
+      {
+        "name": "Muncie",
+        "type": "Location"
+      },
+      {
+        "name": "Indiana",
+        "type": "Location"
+      },
+      {
+        "name": "Columbia University",
+        "type": "Organization"
+      },
+      {
+        "name": "psychology professor",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Ralph Franklin Hefferline",
+        "target": "Muncie",
+        "relation": "born_in_city"
+      },
+      {
+        "source": "Muncie",
+        "target": "Indiana",
+        "relation": "located_in_state"
+      },
+      {
+        "source": "Ralph Franklin Hefferline",
+        "target": "Columbia University",
+        "relation": "professor_at"
+      },
+      {
+        "source": "Ralph Franklin Hefferline",
+        "target": "psychology professor",
+        "relation": "occupation"
+      }
+    ]
+  },
+  "c3de4d0511c1856337dbb9dde75a09da2e9fa21e96ab6e3cd3a330f97ef3cd9d": {
+    "title": "Columbia University",
+    "entities": [
+      {
+        "name": "Columbia University",
+        "type": "Organization"
+      },
+      {
+        "name": "Upper Manhattan",
+        "type": "Location"
+      },
+      {
+        "name": "New York City",
+        "type": "Location"
+      },
+      {
+        "name": "Ivy League",
+        "type": "Concept"
+      },
+      {
+        "name": "private",
+        "type": "Concept"
+      },
+      {
+        "name": "research university",
+        "type": "Concept"
+      },
+      {
+        "name": "prestigious university",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Columbia University",
+        "target": "Upper Manhattan",
+        "relation": "located_in"
+      },
+      {
+        "source": "Columbia University",
+        "target": "New York City",
+        "relation": "located_in"
+      },
+      {
+        "source": "Upper Manhattan",
+        "target": "New York City",
+        "relation": "part_of"
+      },
+      {
+        "source": "Columbia University",
+        "target": "Ivy League",
+        "relation": "member_of"
+      },
+      {
+        "source": "Columbia University",
+        "target": "private",
+        "relation": "type"
+      },
+      {
+        "source": "Columbia University",
+        "target": "research university",
+        "relation": "type"
+      },
+      {
+        "source": "Columbia University",
+        "target": "prestigious university",
+        "relation": "type"
+      }
+    ]
+  },
+  "682acf2af0b7ee4750882859a6bb48f205a38396f2dc50dd2f4b8f76647ef615": {
+    "title": "Manchester Terrier",
+    "entities": [
+      {
+        "name": "Manchester Terrier",
+        "type": "Work"
+      },
+      {
+        "name": "dog",
+        "type": "Concept"
+      },
+      {
+        "name": "smooth-haired terrier type",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Manchester Terrier",
+        "target": "dog",
+        "relation": "breed_of"
+      },
+      {
+        "source": "Manchester Terrier",
+        "target": "smooth-haired terrier type",
+        "relation": "type_of"
+      }
+    ]
+  },
+  "3f928f35ef655f46ad7a71124ecef1a6b6b8c80481b7518c009666f10c845560": {
+    "title": "Scotch Collie",
+    "entities": [
+      {
+        "name": "Scotch Collie",
+        "type": "Work"
+      },
+      {
+        "name": "Highland regions of Scotland",
+        "type": "Location"
+      },
+      {
+        "name": "Scotland",
+        "type": "Location"
+      },
+      {
+        "name": "Long-haired Collie",
+        "type": "Work"
+      },
+      {
+        "name": "Rough Collie",
+        "type": "Work"
+      },
+      {
+        "name": "Short-haired Collie",
+        "type": "Work"
+      },
+      {
+        "name": "Smooth Collie",
+        "type": "Work"
+      },
+      {
+        "name": "Roman Cattle Dogs",
+        "type": "Work"
+      },
+      {
+        "name": "Native Celtic Dogs",
+        "type": "Work"
+      },
+      {
+        "name": "Viking Herding Spitzes",
+        "type": "Work"
+      },
+      {
+        "name": "Gordon",
+        "type": "Work"
+      },
+      {
+        "name": "Irish Setters",
+        "type": "Work"
+      },
+      {
+        "name": "Roman occupation",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Scotch Collie",
+        "target": "Highland regions of Scotland",
+        "relation": "originated_from"
+      },
+      {
+        "source": "Scotch Collie",
+        "target": "Scotland",
+        "relation": "originated_from"
+      },
+      {
+        "source": "Scotch Collie",
+        "target": "Long-haired Collie",
+        "relation": "consists_of"
+      },
+      {
+        "source": "Scotch Collie",
+        "target": "Short-haired Collie",
+        "relation": "consists_of"
+      }
+    ]
+  },
+  "b12d47e10f544feb3109d50e3ca35bd4b8d99b176a9201435e19a79e6cfe4855": {
+    "title": "Sachin Warrier",
+    "entities": [
+      {
+        "name": "Sachin Warrier",
+        "type": "Person"
+      },
+      {
+        "name": "Malayalam cinema industry",
+        "type": "Concept"
+      },
+      {
+        "name": "Kerala",
+        "type": "Location"
+      },
+      {
+        "name": "Muthuchippi Poloru",
+        "type": "Work"
+      },
+      {
+        "name": "Thattathin Marayathu",
+        "type": "Work"
+      },
+      {
+        "name": "Malarvaadi Arts Club",
+        "type": "Work"
+      },
+      {
+        "name": "Tata Consultancy Services",
+        "type": "Organization"
+      },
+      {
+        "name": "Kochi",
+        "type": "Location"
+      },
+      {
+        "name": "Aanandam",
+        "type": "Work"
+      },
+      {
+        "name": "playback singer",
+        "type": "Concept"
+      },
+      {
+        "name": "composer",
+        "type": "Concept"
+      },
+      {
+        "name": "software engineer",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Sachin Warrier",
+        "target": "playback singer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "composer",
+        "relation": "occupation"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "Malayalam cinema industry",
+        "relation": "industry"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "Kerala",
+        "relation": "origin"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "Muthuchippi Poloru",
+        "relation": "notable_song"
+      },
+      {
+        "source": "Muthuchippi Poloru",
+        "target": "Thattathin Marayathu",
+        "relation": "song_from_film"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "Malarvaadi Arts Club",
+        "relation": "debut_movie"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "software engineer",
+        "relation": "worked_as"
+      },
+      {
+        "source": "Sachin Warrier",
+        "target": "Tata Consultancy Services",
+        "relation": "employer"
+      },
+      {
+        "source": "Tata Consultancy Services",
+        "target": "Kochi",
+        "relation": "location"
+      }
+    ]
+  },
+  "78b8cb5c70caf910d61db7be02fe9e1c6d598b4529f022296729e95dc66b03de": {
+    "title": "Tata Consultancy Services",
+    "entities": [
+      {
+        "name": "Tata Consultancy Services Limited (TCS)",
+        "type": "Organization"
+      },
+      {
+        "name": "Tata Group",
+        "type": "Organization"
+      },
+      {
+        "name": "Mumbai",
+        "type": "Location"
+      },
+      {
+        "name": "Maharashtra",
+        "type": "Location"
+      },
+      {
+        "name": "India",
+        "type": "Location"
+      },
+      {
+        "name": "46 countries",
+        "type": "Concept"
+      },
+      {
+        "name": "Information Technology",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "Mumbai",
+        "relation": "headquartered_in"
+      },
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "Maharashtra",
+        "relation": "located_in"
+      },
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "India",
+        "relation": "based_in"
+      },
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "Tata Group",
+        "relation": "subsidiary_of"
+      },
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "46 countries",
+        "relation": "operates_in"
+      },
+      {
+        "source": "Tata Consultancy Services Limited (TCS)",
+        "target": "Information Technology",
+        "relation": "industry"
+      }
+    ]
+  },
+  "ba69acb582cb1da2773489e29d0b760c91fe9fff6a0f913d6d177c4fd0f9a3d9": {
+    "title": "Masakazu Katsura",
+    "entities": [
+      {
+        "name": "Masakazu Katsura",
+        "type": "Person"
+      },
+      {
+        "name": "Japanese manga artist",
+        "type": "Concept"
+      },
+      {
+        "name": "Wing-man",
+        "type": "Work"
+      },
+      {
+        "name": "Shadow Lady",
+        "type": "Work"
+      },
+      {
+        "name": "DNA\u00b2",
+        "type": "Work"
+      },
+      {
+        "name": "Video Girl Ai",
+        "type": "Work"
+      },
+      {
+        "name": "I\"s",
+        "type": "Work"
+      },
+      {
+        "name": "Zetman",
+        "type": "Work"
+      },
+      {
+        "name": "Tiger & Bunny",
+        "type": "Work"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Masakazu Katsura",
+        "target": "Japanese manga artist",
+        "relation": "occupation"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "Wing-man",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "Shadow Lady",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "DNA\u00b2",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "Video Girl Ai",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "I\"s",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "Zetman",
+        "relation": "creator_of"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "Tiger & Bunny",
+        "relation": "character_designer_for"
+      }
+    ]
+  },
+  "acb6b87bea0504774c16ffbc21b6a900b4fac7b872d6342b56cdbabc1a24846d": {
+    "title": "I&quot;s",
+    "entities": [
+      {
+        "name": "I\"s",
+        "type": "Work"
+      },
+      {
+        "name": "Masakazu Katsura",
+        "type": "Person"
+      },
+      {
+        "name": "Ichitaka Seto",
+        "type": "Person"
+      },
+      {
+        "name": "Iori Yoshizuki",
+        "type": "Person"
+      },
+      {
+        "name": "Itsuki Akiba",
+        "type": "Person"
+      },
+      {
+        "name": "Japan",
+        "type": "Location"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Masakazu Katsura",
+        "target": "I\"s",
+        "relation": "author"
+      },
+      {
+        "source": "Masakazu Katsura",
+        "target": "I\"s",
+        "relation": "illustrator"
+      },
+      {
+        "source": "Ichitaka Seto",
+        "target": "I\"s",
+        "relation": "main_character"
+      },
+      {
+        "source": "Iori Yoshizuki",
+        "target": "Ichitaka Seto",
+        "relation": "classmate"
+      },
+      {
+        "source": "Ichitaka Seto",
+        "target": "Iori Yoshizuki",
+        "relation": "love_interest"
+      },
+      {
+        "source": "Itsuki Akiba",
+        "target": "Ichitaka Seto",
+        "relation": "childhood_friend"
+      },
+      {
+        "source": "Itsuki Akiba",
+        "target": "Japan",
+        "relation": "returned_to"
+      },
+      {
+        "source": "Itsuki Akiba",
+        "target": "United States",
+        "relation": "moved_to"
+      },
+      {
+        "source": "Itsuki Akiba",
+        "target": "Ichitaka Seto",
+        "relation": "crush_on"
+      }
+    ]
+  },
+  "6c2b8f9de815103d9749a65a2632fefa7fd4ca128a380ada3bbcce28c5ebd001": {
+    "title": "Battle of Adwa",
+    "entities": [
+      {
+        "name": "Battle of Adwa",
+        "type": "Work"
+      },
+      {
+        "name": "Ethiopian Empire",
+        "type": "Organization"
+      },
+      {
+        "name": "Kingdom of Italy",
+        "type": "Organization"
+      },
+      {
+        "name": "Adwa",
+        "type": "Location"
+      },
+      {
+        "name": "Ethiopia",
+        "type": "Location"
+      },
+      {
+        "name": "Tigray",
+        "type": "Location"
+      },
+      {
+        "name": "First Italo-Ethiopian War",
+        "type": "Concept"
+      },
+      {
+        "name": "Ethiopian sovereignty",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Battle of Adwa",
+        "target": "Ethiopian Empire",
+        "relation": "fought_by"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Kingdom of Italy",
+        "relation": "fought_by"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Adwa",
+        "relation": "near_location"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Ethiopia",
+        "relation": "in_country"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Tigray",
+        "relation": "in_region"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "First Italo-Ethiopian War",
+        "relation": "part_of"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Kingdom of Italy",
+        "relation": "defeat_for"
+      },
+      {
+        "source": "Battle of Adwa",
+        "target": "Ethiopian sovereignty",
+        "relation": "secured"
+      }
+    ]
+  },
+  "326618d18955cd424b3aadc23b1277c8b31ea9533c29920129099489b0033a41": {
+    "title": "Giuseppe Arimondi",
+    "entities": [
+      {
+        "name": "Giuseppe Edoardo Arimondi",
+        "type": "Person"
+      },
+      {
+        "name": "Savigliano",
+        "type": "Location"
+      },
+      {
+        "name": "Adwa",
+        "type": "Location"
+      },
+      {
+        "name": "First Italo-Ethiopian War",
+        "type": "Work"
+      },
+      {
+        "name": "Mahdists",
+        "type": "Concept"
+      },
+      {
+        "name": "Kitchener's Expedition",
+        "type": "Work"
+      },
+      {
+        "name": "Agordat",
+        "type": "Location"
+      },
+      {
+        "name": "Gold Medal of Military Valor",
+        "type": "Concept"
+      },
+      {
+        "name": "OSML",
+        "type": "Organization"
+      },
+      {
+        "name": "OMS",
+        "type": "Organization"
+      },
+      {
+        "name": "OCI",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "Savigliano",
+        "relation": "birthPlace"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "Adwa",
+        "relation": "deathPlace"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "First Italo-Ethiopian War",
+        "relation": "participatedIn"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "Mahdists",
+        "relation": "defeated"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "Agordat",
+        "relation": "defeatedAt"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "Gold Medal of Military Valor",
+        "relation": "awardedPosthumously"
+      },
+      {
+        "source": "Giuseppe Edoardo Arimondi",
+        "target": "OSML",
+        "relation": "memberOf"
+      }
+    ]
+  },
+  "95aff251d00eb2a3a132c9f4e74cd04bca18da62e2eed757226ae80630ad5c69": {
+    "title": "Nelson Rockefeller",
+    "entities": [
+      {
+        "name": "Nelson Aldrich Rockefeller",
+        "type": "Person"
+      },
+      {
+        "name": "United States",
+        "type": "Location"
+      },
+      {
+        "name": "Vice President of the United States",
+        "type": "Work"
+      },
+      {
+        "name": "Governor of New York",
+        "type": "Work"
+      },
+      {
+        "name": "Assistant Secretary of State for American Republic Affairs",
+        "type": "Work"
+      },
+      {
+        "name": "Under Secretary of Health, Education and Welfare",
+        "type": "Work"
+      },
+      {
+        "name": "Franklin D. Roosevelt",
+        "type": "Person"
+      },
+      {
+        "name": "Harry S. Truman",
+        "type": "Person"
+      },
+      {
+        "name": "Dwight D. Eisenhower",
+        "type": "Person"
+      },
+      {
+        "name": "Rockefeller family",
+        "type": "Organization"
+      },
+      {
+        "name": "Rockefeller Center",
+        "type": "Location"
+      },
+      {
+        "name": "Manhattan",
+        "type": "Location"
+      },
+      {
+        "name": "New York",
+        "type": "Location"
+      },
+      {
+        "name": "American Republic Affairs",
+        "type": "Concept"
+      },
+      {
+        "name": "Health, Education and Welfare",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Nelson Aldrich Rockefeller",
+        "target": "Vice President of the United States",
+        "relation": "served_as"
+      },
+      {
+        "source": "Nelson Aldrich Rockefeller",
+        "target": "Governor of New York",
+        "relation": "served_as"
+      },
+      {
+        "source": "Nelson Aldrich Rockefeller",
+        "target": "Assistant Secretary of State for American Republic Affairs",
+        "relation": "served_as"
+      },
+      {
+        "source": "Nelson Aldrich Rockefeller",
+        "target": "Under Secretary of Health, Education and Welfare",
+        "relation": "served_as"
+      },
+      {
+        "source": "Assistant Secretary of State for American Republic Affairs",
+        "target": "Franklin D. Roosevelt",
+        "relation": "served_under"
+      },
+      {
+        "source": "Assistant Secretary of State for American Republic Affairs",
+        "target": "Harry S. Truman",
+        "relation": "served_under"
+      }
+    ]
+  },
+  "093ae379bb08f49e587b0dc93ea29d7e071d229f742960f6392dab2fa7e64136": {
+    "title": "Alfred Balk",
+    "entities": [
+      {
+        "name": "Alfred Balk",
+        "type": "Person"
+      },
+      {
+        "name": "Nation of Islam",
+        "type": "Organization"
+      },
+      {
+        "name": "Twentieth Century Fund",
+        "type": "Organization"
+      },
+      {
+        "name": "National News Council",
+        "type": "Organization"
+      },
+      {
+        "name": "Nelson Rockefeller",
+        "type": "Person"
+      }
+    ],
+    "relations": []
+  },
+  "6662cf7af103147348790ee041cb324c55b8deba7e77084afd5f0db8b4182ae1": {
+    "title": "Yellowcraigs",
+    "entities": [
+      {
+        "name": "Yellowcraig",
+        "type": "Location"
+      },
+      {
+        "name": "Broad Sands Bay",
+        "type": "Location"
+      },
+      {
+        "name": "East Lothian",
+        "type": "Location"
+      },
+      {
+        "name": "Scotland",
+        "type": "Location"
+      },
+      {
+        "name": "Firth of Forth",
+        "type": "Location"
+      },
+      {
+        "name": "Site of Special Scientific Interest",
+        "type": "Concept"
+      },
+      {
+        "name": "Dirleton",
+        "type": "Location"
+      },
+      {
+        "name": "Dirleton Castle",
+        "type": "Work"
+      },
+      {
+        "name": "North Berwick West Links golf course",
+        "type": "Organization"
+      },
+      {
+        "name": "Archerfield Estate",
+        "type": "Location"
+      },
+      {
+        "name": "Archerfield Links golf courses",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Yellowcraig",
+        "target": "Broad Sands Bay",
+        "relation": "also_known_as"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "East Lothian",
+        "relation": "located_in"
+      },
+      {
+        "source": "East Lothian",
+        "target": "Scotland",
+        "relation": "part_of"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Site of Special Scientific Interest",
+        "relation": "partly_within"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Firth of Forth",
+        "relation": "bordered_north_by"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Dirleton",
+        "relation": "bordered_south_by"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Dirleton Castle",
+        "relation": "bordered_south_by"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "North Berwick West Links golf course",
+        "relation": "bordered_east_by"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Archerfield Estate",
+        "relation": "bordered_west_by"
+      },
+      {
+        "source": "Yellowcraig",
+        "target": "Archerfield Links golf courses",
+        "relation": "bordered_west_by"
+      }
+    ]
+  },
+  "05699ca7183eab505d1b61d7f4493b71bbdf733c329b3d4381efd4afe1630ed5": {
+    "title": "Dirleton Castle",
+    "entities": [
+      {
+        "name": "Dirleton Castle",
+        "type": "Work"
+      },
+      {
+        "name": "Dirleton",
+        "type": "Location"
+      },
+      {
+        "name": "East Lothian",
+        "type": "Location"
+      },
+      {
+        "name": "Scotland",
+        "type": "Location"
+      },
+      {
+        "name": "North Berwick",
+        "type": "Location"
+      },
+      {
+        "name": "Edinburgh",
+        "type": "Location"
+      },
+      {
+        "name": "13th century",
+        "type": "Concept"
+      },
+      {
+        "name": "17th century",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Dirleton Castle",
+        "target": "Dirleton",
+        "relation": "located_in"
+      },
+      {
+        "source": "Dirleton",
+        "target": "East Lothian",
+        "relation": "located_in"
+      },
+      {
+        "source": "East Lothian",
+        "target": "Scotland",
+        "relation": "located_in"
+      },
+      {
+        "source": "Dirleton Castle",
+        "target": "North Berwick",
+        "relation": "west_of"
+      },
+      {
+        "source": "Dirleton Castle",
+        "target": "Edinburgh",
+        "relation": "east_of"
+      },
+      {
+        "source": "Dirleton Castle",
+        "target": "13th century",
+        "relation": "dates_to"
+      },
+      {
+        "source": "Dirleton Castle",
+        "target": "17th century",
+        "relation": "abandoned_by_end_of"
+      }
+    ]
+  },
+  "e22f3886e785db046e406c85dca919e153eaeb39409dfdedb284a3ef7dba000f": {
+    "title": "Back to Mono (1958\u20131969)",
+    "entities": [
+      {
+        "name": "Back to Mono (1958\u20131969)",
+        "type": "Work"
+      },
+      {
+        "name": "Phil Spector",
+        "type": "Person"
+      },
+      {
+        "name": "ABKCO",
+        "type": "Organization"
+      },
+      {
+        "name": "To Know Him Is to Love Him",
+        "type": "Work"
+      },
+      {
+        "name": "Teddy Bears",
+        "type": "Organization"
+      },
+      {
+        "name": "Tom Wolfe",
+        "type": "Person"
+      },
+      {
+        "name": "The First Tycoon of Teen",
+        "type": "Work"
+      },
+      {
+        "name": "Back to Mono pin",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Back to Mono (1958\u20131969)",
+        "target": "Phil Spector",
+        "relation": "compilation_of"
+      },
+      {
+        "source": "Back to Mono (1958\u20131969)",
+        "target": "ABKCO",
+        "relation": "released_by"
+      },
+      {
+        "source": "Back to Mono (1958\u20131969)",
+        "target": "To Know Him Is to Love Him",
+        "relation": "first_track"
+      },
+      {
+        "source": "To Know Him Is to Love Him",
+        "target": "Phil Spector",
+        "relation": "performed_by"
+      }
+    ]
+  },
+  "e6bc59194f7214066b89d4d796b9db5b2f79f3799a9f25fd90fc2ecac9b0c46d": {
+    "title": "To Know Him Is to Love Him",
+    "entities": [
+      {
+        "name": "To Know Him Is to Love Him",
+        "type": "Work"
+      },
+      {
+        "name": "Phil Spector",
+        "type": "Person"
+      },
+      {
+        "name": "Teddy Bears",
+        "type": "Organization"
+      },
+      {
+        "name": "Billboard Hot 100 singles chart",
+        "type": "Concept"
+      },
+      {
+        "name": "New Musical Express chart",
+        "type": "Concept"
+      },
+      {
+        "name": "Peter & Gordon",
+        "type": "Organization"
+      },
+      {
+        "name": "Bobby Vinton",
+        "type": "Person"
+      },
+      {
+        "name": "To Know You Is to Love You",
+        "type": "Work"
+      },
+      {
+        "name": "Dolly Parton",
+        "type": "Person"
+      },
+      {
+        "name": "Linda Ronstadt",
+        "type": "Person"
+      },
+      {
+        "name": "Emmylou Harris",
+        "type": "Person"
+      },
+      {
+        "name": "Trio",
+        "type": "Work"
+      },
+      {
+        "name": "U.S. country singles charts",
+        "type": "Concept"
+      },
+      {
+        "name": "12/8 time",
+        "type": "Concept"
+      }
+    ],
+    "relations": []
+  },
+  "577cbdbce15159972e953acae5a6eac645e0bf82e9e0ca4155a9da4149404dd1": {
+    "title": "World Summit of Nobel Peace Laureates",
+    "entities": [
+      {
+        "name": "World Summit of Nobel Peace Laureates",
+        "type": "Work"
+      },
+      {
+        "name": "Mikhail Gorbachev",
+        "type": "Person"
+      },
+      {
+        "name": "Nobel Peace Laureates",
+        "type": "Concept"
+      },
+      {
+        "name": "Peace Laureate Organizations",
+        "type": "Concept"
+      },
+      {
+        "name": "Permanent Secretariat",
+        "type": "Organization"
+      }
+    ],
+    "relations": []
+  },
+  "6028b4225d7695c3a83320f22130b051801e87f2b66b202244fbfe7b4c60f5af": {
+    "title": "Mikhail Gorbachev",
+    "entities": [
+      {
+        "name": "Mikhail Gorbachev",
+        "type": "Person"
+      },
+      {
+        "name": "Soviet Union",
+        "type": "Location"
+      },
+      {
+        "name": "Communist Party of the Soviet Union",
+        "type": "Organization"
+      },
+      {
+        "name": "General Secretary",
+        "type": "Concept"
+      },
+      {
+        "name": "Chairman of the Presidium of the Supreme Soviet",
+        "type": "Concept"
+      },
+      {
+        "name": "Supreme Soviet",
+        "type": "Organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Mikhail Gorbachev",
+        "target": "Soviet Union",
+        "relation": "leader_of"
+      },
+      {
+        "source": "Mikhail Gorbachev",
+        "target": "Soviet Union",
+        "relation": "head_of_state"
+      },
+      {
+        "source": "Mikhail Gorbachev",
+        "target": "General Secretary",
+        "relation": "held_position"
+      },
+      {
+        "source": "General Secretary",
+        "target": "Communist Party of the Soviet Union",
+        "relation": "position_of"
+      },
+      {
+        "source": "Mikhail Gorbachev",
+        "target": "Chairman of the Presidium of the Supreme Soviet",
+        "relation": "held_position"
+      },
+      {
+        "source": "Chairman of the Presidium of the Supreme Soviet",
+        "target": "Supreme Soviet",
+        "relation": "part_of"
+      }
+    ]
+  },
+  "df660f0d423ad94b8ca5713216a3b4cbef705bcd2251ba650d66857235ccf815": {
+    "title": "Silene",
+    "entities": [
+      {
+        "name": "Silene",
+        "type": "Concept"
+      },
+      {
+        "name": "Caryophyllaceae",
+        "type": "Concept"
+      },
+      {
+        "name": "Lychnis",
+        "type": "Concept"
+      },
+      {
+        "name": "campion",
+        "type": "Concept"
+      },
+      {
+        "name": "catchfly",
+        "type": "Concept"
+      },
+      {
+        "name": "Northern Hemisphere",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Silene",
+        "target": "Caryophyllaceae",
+        "relation": "belongs_to_family"
+      },
+      {
+        "source": "Silene",
+        "target": "campion",
+        "relation": "has_common_name"
+      },
+      {
+        "source": "Silene",
+        "target": "catchfly",
+        "relation": "has_common_name"
+      },
+      {
+        "source": "Lychnis",
+        "target": "campion",
+        "relation": "has_common_name"
+      },
+      {
+        "source": "Silene",
+        "target": "Northern Hemisphere",
+        "relation": "distributed_in"
+      }
+    ]
+  },
+  "d84386a88253edf59e000183a4b3cd5dd0e2feea7a1c7ba3d9919f2351231658": {
+    "title": "Ferocactus",
+    "entities": [
+      {
+        "name": "Ferocactus",
+        "type": "Concept"
+      },
+      {
+        "name": "cacti",
+        "type": "Concept"
+      },
+      {
+        "name": "southwestern United States",
+        "type": "Location"
+      },
+      {
+        "name": "northwestern Mexico",
+        "type": "Location"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Ferocactus",
+        "target": "cacti",
+        "relation": "type_of"
+      },
+      {
+        "source": "Ferocactus",
+        "target": "southwestern United States",
+        "relation": "found_in"
+      },
+      {
+        "source": "Ferocactus",
+        "target": "northwestern Mexico",
+        "relation": "found_in"
+      }
+    ]
+  },
+  "23458253ff96d847e0bfad8c097d2f40af240fb5d784060dbbfab38c382e9528": {
+    "title": "No. 2 Squadron RAAF",
+    "entities": [
+      {
+        "name": "No. 2 Squadron RAAF",
+        "type": "Organization"
+      },
+      {
+        "name": "Royal Australian Air Force",
+        "type": "Organization"
+      },
+      {
+        "name": "RAAF Base Williamtown",
+        "type": "Location"
+      },
+      {
+        "name": "Newcastle",
+        "type": "Location"
+      },
+      {
+        "name": "New South Wales",
+        "type": "Location"
+      },
+      {
+        "name": "Australian Flying Corps",
+        "type": "Organization"
+      },
+      {
+        "name": "World War I",
+        "type": "Concept"
+      },
+      {
+        "name": "Western Front",
+        "type": "Location"
+      },
+      {
+        "name": "South West Pacific theatre",
+        "type": "Location"
+      }
+    ],
+    "relations": []
+  },
+  "9c37801a706fc2b88e6b2ee716be0f3587d9c76b8dcba4f2f0196f9769495680": {
+    "title": "English Electric Canberra",
+    "entities": [
+      {
+        "name": "English Electric Canberra",
+        "type": "Work"
+      },
+      {
+        "name": "English Electric",
+        "type": "Organization"
+      },
+      {
+        "name": "Air Ministry",
+        "type": "Organization"
+      },
+      {
+        "name": "de Havilland Mosquito",
+        "type": "Work"
+      },
+      {
+        "name": "Royal Air Force",
+        "type": "Organization"
+      },
+      {
+        "name": "RAF",
+        "type": "Organization"
+      },
+      {
+        "name": "1950s",
+        "type": "Concept"
+      },
+      {
+        "name": "1940s",
+        "type": "Concept"
+      },
+      {
+        "name": "1944",
+        "type": "Concept"
+      },
+      {
+        "name": "May 1951",
+        "type": "Concept"
+      }
+    ],
+    "relations": [
+      {
+        "source": "English Electric Canberra",
+        "target": "1950s",
+        "relation": "manufactured_in"
+      },
+      {
+        "source": "English Electric Canberra",
+        "target": "English Electric",
+        "relation": "developed_by"
+      }
+    ]
+  }
+}
