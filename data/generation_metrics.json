@@ -1,9 +1,9 @@
 {
   "model_evaluated": "qwen/qwen3.8-27b",
   "total_queries": 50,
-  "exact_match_pct": 30.0,
-  "f1_score_pct": 39.27,
-  "runtime_seconds": 151.7,
+  "exact_match_pct": 32.0,
+  "f1_score_pct": 41.09,
+  "runtime_seconds": 149.52,
   "predictions": [
     {
       "id": "5a8b57f25542995d1e6f1371",
@@ -297,7 +297,7 @@
       "id": "5a8ef2a75542995a26add583",
       "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
       "gold": "2000",
-      "prediction": "1990",
+      "prediction": "1998",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -313,9 +313,9 @@
       "id": "5ab51dae5542991779162d82",
       "question": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
       "gold": "no",
-      "prediction": "No. Elko Regional Airport is located in Elko County, Nevada, while Gerald R. Ford International Airport is located in Kent County, Michigan.",
-      "exact_match": 0.0,
-      "f1": 0.08695652173913045
+      "prediction": "No.",
+      "exact_match": 1.0,
+      "f1": 1.0
     },
     {
       "id": "5a7571135542992d0ec05f98",
@@ -345,7 +345,7 @@
       "id": "5a79311755429970f5fffe67",
       "question": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
       "gold": "1962",
-      "prediction": "1979",
+      "prediction": "1980",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -377,7 +377,7 @@
       "id": "5ab859a955429934fafe6d7b",
       "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
       "gold": "Phil Spector",
-      "prediction": "The provided context does not contain information about a song inspired by words on a tombstone or the box set *Back to Mono*.",
+      "prediction": "The provided context does not contain information about a song inspired by words on a tombstone or the box set *Back to Mono*. The context only details the K-pop group WINNER, the Megamorphs books, and the architectural term Yal\u0131.",
       "exact_match": 0.0,
       "f1": 0.0
     },
