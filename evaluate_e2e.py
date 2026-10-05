@@ -45,15 +45,21 @@ def normalize_text(s: str) -> str:
     return " ".join(s.split())
 
 def compute_f1(gold: str, pred: str) -> float:
+    """Standard multiset token F1 score (per SQuAD / HotpotQA benchmark protocol)."""
     gold_toks = normalize_text(gold).split()
     pred_toks = normalize_text(pred).split()
     if not gold_toks or not pred_toks:
         return 1.0 if gold_toks == pred_toks else 0.0
-    common = set(gold_toks) & set(pred_toks)
-    if not common:
+    
+    # Multiset intersection accounts for exact token frequencies
+    gold_counts = Counter(gold_toks)
+    pred_counts = Counter(pred_toks)
+    overlap = sum((gold_counts & pred_counts).values())
+    
+    if overlap == 0:
         return 0.0
-    prec = len(common) / len(pred_toks)
-    rec = len(common) / len(gold_toks)
+    prec = overlap / len(pred_toks)
+    rec = overlap / len(gold_toks)
     return (2 * prec * rec) / (prec + rec)
 
 def compute_em(gold: str, pred: str) -> float:

@@ -1,13 +1,14 @@
 {
   "empirical_synthesis_ablation": {
-    "methodology": "Actual incremental live calls vs. sampled (N=3) extrapolated full-rebuild baseline",
+    "methodology": "Actual incremental live calls vs. stratified sample (N=10) extrapolated full-rebuild baseline",
+    "sample_size": 10,
     "full_rebuild_required_calls": 253,
     "deltagraphrag_actual_calls": 0,
     "api_call_reduction_pct": 100.0,
-    "full_rebuild_modeled_tokens": 175497,
+    "full_rebuild_modeled_tokens": 93255,
     "deltagraphrag_measured_tokens": 0,
     "token_reduction_pct": 100.0,
-    "rebuild_modeled_latency_sec": 345.99,
+    "rebuild_modeled_latency_sec": 256.01,
     "deltagraphrag_ingress_wall_sec": 0.01
   },
   "graph_verification": {

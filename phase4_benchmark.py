@@ -120,7 +120,7 @@ with open(BASE_SUMM_PATH, "r", encoding="utf-8") as f:
 t1_corpus = split_data.get("t1_streaming", [])
 print(f"[STATUS] Loaded {len(t1_corpus)} streaming passages (T1).")
 
-# 1. Structural baselines
+# 1. Structural Baselines
 comm_to_nodes = {}
 for n, c in node_to_comm.items():
     comm_to_nodes.setdefault(c, set()).add(n)
@@ -242,7 +242,7 @@ for doc in t1_corpus:
 
 ingress_latency = time.time() - start_ingress
 
-# 3. Two-Tier Perturbation Gating
+# 3. Two-Tier Drift Evaluation
 print(f"[STATUS] Evaluating structural drift (Threshold = {DRIFT_THRESHOLD*100}%)...")
 re_synthesize_queue = []
 
@@ -304,17 +304,21 @@ for idx, cset in enumerate(ref_communities):
     for node in cset:
         ref_node_to_comm[node] = idx
 
-# 5. Measure Empirical Baseline Sample
-SAMPLE_SIZE = min(3, len(ref_communities))
-print(f"[STATUS] Measuring empirical Full Rebuild token cost across {SAMPLE_SIZE} sample communities...")
+# 5. Measure Empirical Baseline via Stratified Sampling across Size Quantiles (N=10)
+sorted_ref_communities = sorted(list(ref_communities), key=len)
+SAMPLE_SIZE = min(10, len(sorted_ref_communities))
+stride = max(len(sorted_ref_communities) // SAMPLE_SIZE, 1)
+sampled_communities = [sorted_ref_communities[i * stride] for i in range(SAMPLE_SIZE)]
+
+print(f"[STATUS] Measuring empirical Full Rebuild cost across stratified sample of {len(sampled_communities)} communities...")
 sample_tokens = []
 sample_latencies = []
 
-for cset in list(ref_communities)[:SAMPLE_SIZE]:
+for cset in sampled_communities:
     res = synthesize_community_summary(list(cset), G_ref)
     sample_tokens.append(res["total_tokens"])
     sample_latencies.append(res["latency_sec"])
-    time.sleep(0.5)
+    time.sleep(0.3)
 
 avg_tokens_per_comm = sum(sample_tokens) / len(sample_tokens)
 avg_latency_per_comm = sum(sample_latencies) / len(sample_latencies)
@@ -354,8 +358,7 @@ nmi_score = compute_nmi(labels_rebuild, labels_incremental)
 
 final_modularity = nx.community.modularity(G, comm_to_nodes.values(), weight="weight")
 
-# 7. Persist Graph Topologies for A/B Evaluation
-# NOTE: REBUILD_SUMM_PATH is intentionally omitted here to prevent sharing incremental summaries
+# 7. Persist Topologies for A/B Evaluation
 print("[STATUS] Persisting graph topologies for downstream A/B evaluation...")
 with open(INCR_GRAPH_PATH, "w", encoding="utf-8") as f:
     json.dump(nx.node_link_data(G), f)
@@ -369,10 +372,11 @@ with open(REBUILD_GRAPH_PATH, "w", encoding="utf-8") as f:
 with open(REBUILD_COMM_PATH, "w", encoding="utf-8") as f:
     json.dump(ref_node_to_comm, f)
 
-# 8. Telemetry Results with Explicit Methodology Labeling
+# 8. Record Telemetry Artifact with Stratified Labeling
 results = {
     "empirical_synthesis_ablation": {
-        "methodology": "Actual incremental live calls vs. sampled (N=3) extrapolated full-rebuild baseline",
+        "methodology": f"Actual incremental live calls vs. stratified sample (N={len(sampled_communities)}) extrapolated full-rebuild baseline",
+        "sample_size": len(sampled_communities),
         "full_rebuild_required_calls": measured_rebuild_calls,
         "deltagraphrag_actual_calls": delta_calls,
         "api_call_reduction_pct": round(call_reduction_pct, 2),
@@ -412,7 +416,7 @@ print(f"  Weights Match (W_delta == W_ref)     : {'MATCH' if weights_match else 
 print(f"  Louvain Alignment Score (NMI)        : {nmi_score:.4f}")
 print("-" * 65)
 print("2. Synthesis Invocations & Cost:")
-print(f"  Full Rebuild Baseline Communities    : {measured_rebuild_calls} (extrapolated from N=3 sample)")
+print(f"  Full Rebuild Baseline Communities    : {measured_rebuild_calls} (extrapolated from stratified N={len(sampled_communities)} sample)")
 print(f"  Empirical Mean Tokens / Community    : {avg_tokens_per_comm:.1f} tokens")
 print(f"  Projected Full Rebuild Total Tokens  : {measured_rebuild_tokens:,} tokens")
 print(f"  DeltaGraphRAG Live Re-synthesis Calls: {delta_calls} calls")
