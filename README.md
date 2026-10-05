@@ -11,26 +11,27 @@
 
 ## 🧠 Overview
 
-**DeltaGraphRAG** is an incremental indexing framework designed for Graph Retrieval-Augmented Generation (GraphRAG). Standard GraphRAG systems suffer from prohibitive re-indexing costs during streaming ingestion: every update batch requires re-clustering the global graph and invoking LLMs to summarize every community cluster (\(O(\vert{}C\vert{})\) synthesis calls), consuming hundreds of thousands of tokens per update.
+**DeltaGraphRAG** is an incremental indexing framework designed for Graph Retrieval-Augmented Generation (GraphRAG). Naïve full-rebuild GraphRAG pipelines can incur substantial re-indexing costs during streaming ingestion, including global community recomputation and repeated LLM-based community summarization (\(O(\vert{}C\vert{})\) synthesis invocations), consuming tens of thousands of tokens per batch.
 
-DeltaGraphRAG replaces full-graph re-indexing with a **two-tier modularity-gated (\(\Delta Q\)) update policy**:
-1. **Tier 1 (Fast-Path In-Memory Patching)**: Ingressed entities and relationships are routed to existing communities using localized modularity gain \(\Delta Q\) in \(O(\text{deg}(v))\) time. Sub-threshold structural mutations are absorbed entirely in memory with zero LLM synthesis calls.
-2. **Tier 2 (Targeted Re-Synthesis)**: Live LLM community re-summarization is triggered selectively only when accumulated structural drift exceeds a 15% threshold (\(\tau = 0.15\)).
+DeltaGraphRAG replaces global re-indexing with a **two-tier modularity-gated (\(\Delta Q\)) update policy**:
+1. **Tier 1 (Fast-Path In-Memory Patching)**: Streaming entities and relationships are routed to existing communities using localized Newman-Girvan modularity-gain computation across candidate incident neighborhoods. Sub-threshold structural mutations are absorbed entirely in memory with zero LLM synthesis calls.
+2. **Tier 2 (Targeted Re-Synthesis)**: Live LLM community re-summarization is triggered selectively only when accumulated structural drift crosses a 15% perturbation threshold (\(\tau = 0.15\)).
 
-In empirical evaluations against an independently summarized Full Rebuild reference baseline, DeltaGraphRAG eliminates **100.0% of streaming synthesis calls** (0 calls vs. 253 baseline calls, saving ~93,000 tokens) in exchange for a modest **5.61 percentage point Token F1 margin**, while preserving exact set-theoretic graph identity (\(V_\Delta == V_{\text{ref}}\), \(E_\Delta == E_{\text{ref}}\), \(W_\Delta == W_{\text{ref}}\)) and partition alignment (\(\text{NMI} = 0.9948\)).
+In empirical evaluations against an on-demand, independently synthesized Full Rebuild reference baseline across evaluated test queries, DeltaGraphRAG achieves a **100.0% modeled reduction in streaming synthesis calls** on this streaming workload (0 live calls vs. a 253-call extrapolated full-rebuild baseline, saving an estimated ~93,000 tokens) in exchange for a modest **5.61 percentage point Token F1 margin**, while empirically verifying exact set-theoretic graph identity (\(V_\Delta == V_{\text{ref}}\), \(E_\Delta == E_{\text{ref}}\), \(W_\Delta == W_{\text{ref}}\)) and partition alignment (\(\text{NMI} = 0.9948\)).
+
 
 ---
 
 ## ⚙️ Features
 
-* **Local Modularity Delta ($\Delta Q$) Routing**: Deterministically routes streaming entities to optimal clusters using localized edge-degree variation in $O(\text{deg}(v))$ time.
+* **Local Modularity Delta ($\Delta Q$) Routing**: Deterministically routes streaming entities to optimal clusters using localized modularity-gain computation over candidate incident communities.
 * **Two-Tier Perturbation Gating**:
 * **Tier 1 (Fast Path)**: Absorbs streaming mutations in memory for clusters below the 15% drift threshold, explicitly protecting newly initialized singleton clusters from premature re-synthesis thrashing.
 * **Tier 2 (Targeted Re-Synthesis)**: Selectively triggers single-community LLM re-summarization via Groq only when structural drift crosses threshold bounds.
 
 
-* **Strict Topological Equivalence**: Guarantees identical vertex sets, undirected edge sets, and edge weights ($V, E, W$) relative to a static full rebuild, with high Louvain partition alignment ($\text{NMI} = 0.9948$).
-* **Multi-Hop QA A/B Evaluation**: Built-in head-to-head evaluation suite comparing incremental retrieval against an independent, on-demand full rebuild summary baseline using standard SQuAD/HotpotQA multiset Token F1.
+* **Strict Topological Equivalence**: Empirically verifies identical vertex sets, undirected edge sets, and edge weights ($V, E, W$) relative to a static full rebuild, with high Louvain partition alignment ($\text{NMI} = 0.9948$).
+* **Multi-Hop QA A/B Evaluation**: Built-in head-to-head evaluation suite comparing incremental retrieval against an on-demand, independently synthesized full rebuild summary baseline using standard SQuAD/HotpotQA multiset Token F1.
 * **Idempotent Extraction Engine**: Caches schema-enforced entity-relation extractions backed by deterministic SHA-256 document chunk hashing.
 * **Interactive Multi-Hop CLI**: Standalone command-line inference engine (`query.py`) for live querying across multi-hop reasoning chains.
 
@@ -42,6 +43,7 @@ In empirical evaluations against an independently summarized Full Rebuild refere
 
 *Figure 1: Empirical evaluation dashboard across 50 multi-hop HotpotQA queries showing compute cost elimination (-100.0% calls), multiset Token F1 distribution (Mean F1: 16.86%), response error taxonomy, and scale-free Louvain cluster cardinality ($Q \approx 0.9430$).*
 ![DeltaGraphRAG Benchmark Dashboard](data/benchmark_dashboard.png)
+
 
 ### Community Topology Distribution
 
@@ -80,7 +82,7 @@ Evaluated across 50 multi-hop reasoning questions under identical retrieval para
 | **Mean Token F1 (Multiset)** | 22.47% | **16.86%** | **-5.61% Delta** |
 | **Synthesis Calls Required** | 253 calls (~93k tokens) | **0 live calls (0 tokens)** | **-100.0% Compute Savings** |
 
-*Systems Trade-Off Analysis: DeltaGraphRAG trades a modest **5.61 percentage point F1 margin** for a **100.0% reduction in streaming re-synthesis compute**. Because graph topology and edge weights remain strictly identical ($V_\Delta == V_{\text{ref}}$, $E_\Delta == E_{\text{ref}}$, $W_\Delta == W_{\text{ref}}$), communities can be lazily re-synthesized on a background schedule without compounding structural drift.*
+*Systems Trade-Off Analysis: DeltaGraphRAG trades a modest **5.61 percentage point F1 margin** for a **100.0% modeled reduction in streaming re-synthesis compute** (0 live calls vs. 253 extrapolated baseline calls). Because graph topology and edge weights remain strictly identical ($V_\Delta == V_{\text{ref}}$, $E_\Delta == E_{\text{ref}}$, $W_\Delta == W_{\text{ref}}$), communities can be lazily re-synthesized on a background schedule without compounding structural drift.*
 
 ---
 
@@ -88,7 +90,7 @@ Evaluated across 50 multi-hop reasoning questions under identical retrieval para
 
 ### 1. Local Modularity Delta ($\Delta Q$)
 
-When an incoming entity $v$ is introduced into graph $G = (V, E)$ with total edge weight $m$, its placement into an adjacent community $C$ is governed by the localized Newman-Girvan modularity gain:
+When an incoming entity $v$ is introduced into graph $G = (V, E)$ with total edge weight $m$, its placement into an adjacent community $C$ is governed by localized Newman-Girvan modularity gain:
 
 $$\Delta Q(v \to C) = \left[ \frac{k_{v, \text{in}}}{2m} \right] - \left[ \frac{\Sigma_{\text{tot}} \cdot k_v}{2m^2} \right]$$
 
@@ -109,7 +111,7 @@ If $\max \Delta Q \le 0$, node $v$ initializes a new singleton community cluster
 
 ### 2. Comprehensive Mutation Accounting & Drift Gating
 
-Rather than tracking vertex additions alone, DeltaGraphRAG tracks vertex mutations, intra-community edges, and inter-community bridges:
+DeltaGraphRAG tracks vertex mutations, intra-community edges, and inter-community bridges:
 
 $$M(C) = d_v + d_{\text{intra}} + 0.5 \cdot d_{\text{inter}}$$
 
