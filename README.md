@@ -42,13 +42,17 @@ In empirical evaluations against an on-demand, independently synthesized Full Re
 ### Empirical Evaluation Dashboard
 
 *Figure 1: Empirical evaluation dashboard across 50 multi-hop HotpotQA queries showing compute cost elimination (-100.0% calls), multiset Token F1 distribution (Mean F1: 16.86%), response error taxonomy, and scale-free Louvain cluster cardinality ($Q \approx 0.9430$).*
+
 ![DeltaGraphRAG Benchmark Dashboard](data/benchmark_dashboard.png)
+
 
 
 ### Community Topology Distribution
 
 *Figure 2: Knowledge graph topology across 731 entity nodes and 516 edges partitioned via Louvain modularity optimization ($Q \approx 0.9430$). Nodes are colored by detected semantic community.*
+
 ![Louvain Community Topology](data/graph_topology.png)
+
 
 ---
 
