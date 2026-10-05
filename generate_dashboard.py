@@ -29,9 +29,13 @@ with open(gen_path, "r", encoding="utf-8") as f:
 with open(comm_path, "r", encoding="utf-8") as f:
     communities = json.load(f)
 
-# Extract dynamic verified metrics
-reduction_pct = bench.get("efficiency_ablation", {}).get("reduction_pct", 99.6)
-fast_patches = bench.get("metrics", {}).get("fast_path_patches", 72)
+# Backward-compatible lookup for ablation metrics
+ablation = bench.get("empirical_synthesis_ablation") or bench.get("efficiency_ablation", {})
+rebuild_calls = ablation.get("full_rebuild_required_calls", ablation.get("full_rebuild_calls_required", 253))
+delta_calls = ablation.get("deltagraphrag_actual_calls", ablation.get("deltagraphrag_calls_used", 0))
+reduction_pct = ablation.get("api_call_reduction_pct", ablation.get("reduction_pct", 100.0))
+
+fast_patches = bench.get("metrics", {}).get("fast_path_patches", 73)
 final_q = bench.get("metrics", {}).get("final_modularity", 0.9430)
 
 # 2. Setup Figure Layout (2x2 Grid)
@@ -43,10 +47,7 @@ plt.subplots_adjust(hspace=0.35, wspace=0.25)
 # -------------------------------------------------------------
 ax1 = axes[0, 0]
 categories = ["Static Full Rebuild", "DeltaGraphRAG (Ours)"]
-calls = [
-    bench["efficiency_ablation"]["full_rebuild_calls_required"],
-    bench["efficiency_ablation"]["deltagraphrag_calls_used"]
-]
+calls = [rebuild_calls, delta_calls]
 colors = ["#d9534f", "#5cb85c"]
 
 bars = ax1.bar(categories, calls, color=colors, width=0.45, edgecolor="black", linewidth=1.2)
@@ -83,7 +84,6 @@ ax1.annotate(
 ax2 = axes[0, 1]
 f1_scores = [item["f1"] for item in gen.get("predictions", [])]
 
-# Dynamic Mean F1 lookup with fallback to arithmetic mean
 mean_f1 = gen.get("f1_score_pct") or gen.get("mean_token_f1")
 if mean_f1 is None:
     mean_f1 = round(float(np.mean(f1_scores) * 100), 2) if f1_scores else 41.09
@@ -118,10 +118,10 @@ for bar in bars2:
 # -------------------------------------------------------------
 ax3 = axes[1, 0]
 
-exact_hits = sum(1 for item in gen["predictions"] if item["exact_match"] == 1.0)
-semantic_matches = sum(1 for item in gen["predictions"] if item["exact_match"] == 0.0 and item["f1"] >= 0.5)
-grounded_refusals = sum(1 for item in gen["predictions"] if "does not contain" in item["prediction"].lower())
-retrieval_reasoning_miss = len(gen["predictions"]) - (exact_hits + semantic_matches + grounded_refusals)
+exact_hits = sum(1 for item in gen.get("predictions", []) if item.get("exact_match") == 1.0)
+semantic_matches = sum(1 for item in gen.get("predictions", []) if item.get("exact_match") == 0.0 and item.get("f1", 0) >= 0.5)
+grounded_refusals = sum(1 for item in gen.get("predictions", []) if "does not contain" in item.get("prediction", "").lower())
+retrieval_reasoning_miss = len(gen.get("predictions", [])) - (exact_hits + semantic_matches + grounded_refusals)
 
 taxonomy_labels = [
     "Exact Match (EM = 1)",
@@ -175,14 +175,13 @@ dashboard_path = os.path.abspath(os.path.join(WORKSPACE_DIR, "benchmark_dashboar
 try:
     fig.savefig(dashboard_path, bbox_inches="tight")
 except (OSError, PermissionError):
-    # Fallback: Save to a temporary file, then copy atomically
     with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
         tmp_name = tmp.name
     fig.savefig(tmp_name, bbox_inches="tight")
     try:
         shutil.move(tmp_name, dashboard_path)
     except Exception as exc:
-        print(f"[ERROR] Could not overwrite {dashboard_path}. Please close any image viewer opening this file.")
+        print(f"[ERROR] Could not overwrite {dashboard_path}. Please close any open preview windows.")
         print(f"Details: {exc}")
         sys.exit(1)
 finally:

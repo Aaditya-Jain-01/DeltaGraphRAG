@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import time
 import uuid
@@ -6,6 +7,10 @@ import math
 import hashlib
 from collections import Counter, defaultdict
 import networkx as nx
+from dotenv import load_dotenv
+from groq import Groq
+
+load_dotenv()
 
 WORKSPACE_DIR = "data"
 SPLIT_PATH = os.path.join(WORKSPACE_DIR, "dataset_split.json")
@@ -14,31 +19,41 @@ BASE_GRAPH_PATH = os.path.join(WORKSPACE_DIR, "base_graph.json")
 BASE_COMM_PATH = os.path.join(WORKSPACE_DIR, "base_communities.json")
 BASE_SUMM_PATH = os.path.join(WORKSPACE_DIR, "base_summaries.json")
 BENCH_OUT_PATH = os.path.join(WORKSPACE_DIR, "benchmark_results.json")
+CONFIG_PATH = os.path.join(WORKSPACE_DIR, "model_config.json")
 
 DRIFT_THRESHOLD = 0.15
 
+# Initialize Groq client for real LLM synthesis
+api_key = os.getenv("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("Missing GROQ_API_KEY in .env file.")
+
+client = Groq(api_key=api_key)
+
+# Load model configuration
+model_id = "llama-3.3-70b-versatile"
+if os.path.exists(CONFIG_PATH):
+    try:
+        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+            model_id = cfg.get("fast_model", model_id)
+    except Exception:
+        pass
+
 def compute_nmi(labels_true, labels_pred):
-    """Computes Normalized Mutual Information (arithmetic mean) in pure Python."""
+    """Computes Normalized Mutual Information in pure Python."""
     if not labels_true or not labels_pred:
         return 0.0
     n = len(labels_true)
-    
-    # Contingency matrix
     contingency = defaultdict(lambda: defaultdict(int))
     count_t = Counter(labels_true)
     count_p = Counter(labels_pred)
-    
     for t, p in zip(labels_true, labels_pred):
         contingency[t][p] += 1
-        
-    # Entropies
     h_t = -sum((cnt / n) * math.log(cnt / n) for cnt in count_t.values())
     h_p = -sum((cnt / n) * math.log(cnt / n) for cnt in count_p.values())
-    
     if h_t + h_p == 0:
         return 1.0
-        
-    # Mutual Information
     mi = 0.0
     for t, row in contingency.items():
         for p, count_tp in row.items():
@@ -47,14 +62,43 @@ def compute_nmi(labels_true, labels_pred):
                 p_t = count_t[t] / n
                 p_p = count_p[p] / n
                 mi += p_tp * math.log(p_tp / (p_t * p_p))
-                
     return (2.0 * mi) / (h_t + h_p)
 
 def generate_doc_hash(title: str, text: str) -> str:
     payload = f"{title.strip()}::{text.strip()}".encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
 
-print("[STATUS] Loading indexing state and corpus partitions...")
+def synthesize_community_summary(comm_id: str, member_nodes: list, graph: nx.Graph) -> dict:
+    """Live API synthesis: Calls Groq to generate a holistic community description."""
+    subgraph = graph.subgraph(member_nodes)
+    edges_desc = []
+    for u, v, data in subgraph.edges(data=True):
+        edges_desc.append(f"{u} connected to {v} (weight {data.get('weight', 1.0)})")
+    
+    context_str = f"Community Members: {', '.join(member_nodes[:20])}\nKey Relationships:\n" + "\n".join(edges_desc[:25])
+    prompt = (
+        f"You are a knowledge graph synthesizer. Provide a concise, factual summary (2-3 sentences) "
+        f"characterizing the core theme, entities, and primary connections in this community cluster:\n\n{context_str}"
+    )
+
+    t0 = time.time()
+    response = client.chat.completions.create(
+        model=model_id,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.0,
+        max_tokens=256
+    )
+    latency = time.time() - t0
+    
+    return {
+        "summary": response.choices[0].message.content.strip(),
+        "prompt_tokens": response.usage.prompt_tokens,
+        "completion_tokens": response.usage.completion_tokens,
+        "total_tokens": response.usage.total_tokens,
+        "latency_sec": latency
+    }
+
+print(f"[STATUS] Initializing benchmark pipeline (Synthesis Engine: {model_id})...")
 with open(SPLIT_PATH, "r", encoding="utf-8") as f:
     split_data = json.load(f)
 
@@ -74,19 +118,20 @@ with open(BASE_SUMM_PATH, "r", encoding="utf-8") as f:
 t1_corpus = split_data.get("t1_streaming", [])
 print(f"[STATUS] Loaded {len(t1_corpus)} streaming passages (T1).")
 
-# 1. Establish initial structural baselines (|V_C| and internal edges |E_C|)
+# 1. Structural Baselines (|V_C| and intra-community edges |E_C|)
 comm_to_nodes = {}
 for n, c in node_to_comm.items():
     comm_to_nodes.setdefault(c, set()).add(n)
 
-comm_baseline_v = {c_id: len(nodes) for c_id, nodes in comm_to_nodes.items()}
+comm_baseline_v = {c: len(nodes) for c, nodes in comm_to_nodes.items()}
 comm_baseline_e = {}
-for c_id, nodes in comm_to_nodes.items():
+for c, nodes in comm_to_nodes.items():
     sub = G.subgraph(nodes)
-    comm_baseline_e[c_id] = sub.number_of_edges()
+    comm_baseline_e[c] = sub.number_of_edges()
 
-mutation_v = {c_id: 0 for c_id in comm_to_nodes.keys()}
-mutation_e = {c_id: 0 for c_id in comm_to_nodes.keys()}
+mutation_v = {c: 0 for c in comm_to_nodes.keys()}
+mutation_e_intra = {c: 0 for c in comm_to_nodes.keys()}
+mutation_e_inter = {c: 0 for c in comm_to_nodes.keys()}
 
 comm_weights = {}
 for n, c in node_to_comm.items():
@@ -98,14 +143,17 @@ stats = {
     "t1_extracted_nodes": 0,
     "fast_path_patches": 0,
     "resynthesis_calls": 0,
+    "actual_api_calls_made": 0,
+    "actual_tokens_consumed": 0,
+    "actual_synthesis_time": 0.0,
     "cache_hits": 0,
     "cache_misses": 0
 }
 
-start_time = time.time()
+start_ingress = time.time()
 
-# 2. Incremental Streaming Ingress Pipeline
-print("\n[STATUS] Ingesting streaming entities and relationships...")
+# 2. Incremental Streaming Ingress
+print("\n[STATUS] Streaming ingress underway...")
 for doc in t1_corpus:
     doc_hash = generate_doc_hash(doc["title"], doc["text"])
     extractions = extract_cache.get(doc_hash)
@@ -140,7 +188,8 @@ for doc in t1_corpus:
             comm_baseline_v[best_comm] = 0
             comm_baseline_e[best_comm] = 0
             mutation_v[best_comm] = 0
-            mutation_e[best_comm] = 0
+            mutation_e_intra[best_comm] = 0
+            mutation_e_inter[best_comm] = 0
             comm_to_nodes[best_comm] = set()
         else:
             total_edges = max(G.number_of_edges(), 1)
@@ -161,7 +210,8 @@ for doc in t1_corpus:
                 comm_baseline_v[best_comm] = 0
                 comm_baseline_e[best_comm] = 0
                 mutation_v[best_comm] = 0
-                mutation_e[best_comm] = 0
+                mutation_e_intra[best_comm] = 0
+                mutation_e_inter[best_comm] = 0
                 comm_to_nodes[best_comm] = set()
 
         G.add_node(v_name)
@@ -171,7 +221,7 @@ for doc in t1_corpus:
         mutation_v[best_comm] = mutation_v.get(best_comm, 0) + 1
         stats["t1_extracted_nodes"] += 1
 
-    # Ingress relationships & track intra-community edge mutations
+    # Ingress relationships & track edge mutations
     for rel in relations:
         src, tgt = rel["source"], rel["target"]
         if src != tgt:
@@ -182,22 +232,29 @@ for doc in t1_corpus:
 
             c_src = node_to_comm.get(src)
             c_tgt = node_to_comm.get(tgt)
-            if c_src and c_src == c_tgt:
-                mutation_e[c_src] = mutation_e.get(c_src, 0) + 1
+            if c_src and c_tgt:
+                if c_src == c_tgt:
+                    mutation_e_intra[c_src] = mutation_e_intra.get(c_src, 0) + 1
+                else:
+                    mutation_e_inter[c_src] = mutation_e_inter.get(c_src, 0) + 1
+                    mutation_e_inter[c_tgt] = mutation_e_inter.get(c_tgt, 0) + 1
 
-ingress_latency = time.time() - start_time
+ingress_latency = time.time() - start_ingress
 
-# 3. Comprehensive Drift Gating (Entity + Edge Perturbations)
+# 3. Two-Tier Perturbation Gating & Live Summarization
 print(f"[STATUS] Evaluating structural drift (Threshold = {DRIFT_THRESHOLD*100}%)...")
+re_synthesize_queue = []
+
 for c_id, base_v in comm_baseline_v.items():
     d_v = mutation_v.get(c_id, 0)
-    d_e = mutation_e.get(c_id, 0)
-    total_mutations = d_v + d_e
+    d_intra = mutation_e_intra.get(c_id, 0)
+    d_inter = mutation_e_inter.get(c_id, 0)
+    total_mutations = d_v + d_intra + (0.5 * d_inter)
 
     if total_mutations == 0:
         continue
 
-    # Boundary handling for novel clusters
+    # Singleton / novel clusters absorbed into memory without LLM overhead
     if base_v == 0:
         stats["fast_path_patches"] += 1
         continue
@@ -209,9 +266,28 @@ for c_id, base_v in comm_baseline_v.items():
         stats["fast_path_patches"] += 1
     else:
         stats["resynthesis_calls"] += 1
+        re_synthesize_queue.append(c_id)
 
-# 4. Construct Full Rebuild Reference Graph & Baseline Partition
-print("[STATUS] Running reference Full Rebuild & Global Louvain clustering on 100 documents...")
+# Execute live LLM calls for any triggered communities
+if re_synthesize_queue:
+    print(f"[STATUS] Executing live Groq synthesis for {len(re_synthesize_queue)} breached communities...")
+    for c_id in re_synthesize_queue:
+        mem = list(comm_to_nodes[c_id])
+        res = synthesize_community_summary(c_id, mem, G)
+        summaries[c_id] = res["summary"]
+        stats["actual_api_calls_made"] += 1
+        stats["actual_tokens_consumed"] += res["total_tokens"]
+        stats["actual_synthesis_time"] += res["latency_sec"]
+        print(f"  [SYNTHESIS COMPLETE] Community {c_id}: {res['total_tokens']} tokens, {res['latency_sec']:.2f}s")
+else:
+    print("[STATUS] Fast-path absorbed all streaming mutations (0 communities breached drift threshold).")
+
+# Save updated community summaries
+with open(BASE_SUMM_PATH, "w", encoding="utf-8") as f:
+    json.dump(summaries, f, indent=2)
+
+# 4. Independent Reference Graph & Measured Full-Rebuild Baseline
+print("[STATUS] Constructing Full Rebuild reference graph & global Louvain partitioning...")
 G_ref = nx.Graph()
 all_docs = split_data["t0_base"] + split_data["t1_streaming"]
 
@@ -228,46 +304,73 @@ for doc in all_docs:
             else:
                 G_ref.add_edge(s, t, weight=1.0)
 
-# Full Louvain rebuild communities on G_ref
 ref_communities = nx.community.louvain_communities(G_ref, weight="weight", seed=42)
 ref_node_to_comm = {}
 for idx, cset in enumerate(ref_communities):
     for node in cset:
         ref_node_to_comm[node] = idx
 
-# 5. Rigorous Equivalence & Alignment Checks
-nodes_match = set(G.nodes()) == set(G_ref.nodes())
+# 5. Measure Empirical Full Rebuild Baseline via Live Sample Calls
+SAMPLE_SIZE = min(3, len(ref_communities))
+print(f"[STATUS] Measuring empirical Full Rebuild token cost across {SAMPLE_SIZE} sample communities...")
+sample_tokens = []
+sample_latencies = []
 
+for cset in list(ref_communities)[:SAMPLE_SIZE]:
+    res = synthesize_community_summary("sample_ref", list(cset), G_ref)
+    sample_tokens.append(res["total_tokens"])
+    sample_latencies.append(res["latency_sec"])
+    time.sleep(0.5)
+
+avg_tokens_per_comm = sum(sample_tokens) / len(sample_tokens)
+avg_latency_per_comm = sum(sample_latencies) / len(sample_latencies)
+
+measured_rebuild_calls = len(ref_communities)
+measured_rebuild_tokens = int(measured_rebuild_calls * avg_tokens_per_comm)
+measured_rebuild_wall_time = measured_rebuild_calls * avg_latency_per_comm
+
+delta_calls = stats["actual_api_calls_made"]
+delta_tokens = stats["actual_tokens_consumed"]
+
+token_savings_pct = (
+    ((measured_rebuild_tokens - delta_tokens) / measured_rebuild_tokens) * 100.0
+    if measured_rebuild_tokens > 0 else 0.0
+)
+call_reduction_pct = (
+    ((measured_rebuild_calls - delta_calls) / measured_rebuild_calls) * 100.0
+    if measured_rebuild_calls > 0 else 0.0
+)
+
+# 6. Set-Theoretic & Alignment Verification
+nodes_match = set(G.nodes()) == set(G_ref.nodes())
 edges_G = set(tuple(sorted((u, v))) for u, v in G.edges())
 edges_ref = set(tuple(sorted((u, v))) for u, v in G_ref.edges())
 edges_match = edges_G == edges_ref
 
-# Edge weights equality check
 weights_match = True
 for u, v in edges_G:
     if G[u][v].get("weight", 1.0) != G_ref[u][v].get("weight", 1.0):
         weights_match = False
         break
 
-# Normalized Mutual Information (Partition Alignment)
 common_nodes = sorted(list(set(G.nodes()).intersection(set(G_ref.nodes()))))
 labels_incremental = [node_to_comm[n] for n in common_nodes]
 labels_rebuild = [ref_node_to_comm[n] for n in common_nodes]
 nmi_score = compute_nmi(labels_rebuild, labels_incremental)
 
-# Real baseline rebuild calls = exact count of communities in full Louvain rebuild
-rebuild_calls_baseline = len(ref_communities)
-incremental_calls_used = stats["resynthesis_calls"]
-reduction_pct = ((rebuild_calls_baseline - incremental_calls_used) / rebuild_calls_baseline) * 100
-
 final_modularity = nx.community.modularity(G, comm_to_nodes.values(), weight="weight")
 
-# 6. Save verified results
+# 7. Write Verified Telemetry Artifact
 results = {
-    "efficiency_ablation": {
-        "full_rebuild_calls_required": rebuild_calls_baseline,
-        "deltagraphrag_calls_used": incremental_calls_used,
-        "reduction_pct": round(reduction_pct, 2)
+    "empirical_synthesis_ablation": {
+        "full_rebuild_required_calls": measured_rebuild_calls,
+        "deltagraphrag_actual_calls": delta_calls,
+        "api_call_reduction_pct": round(call_reduction_pct, 2),
+        "full_rebuild_modeled_tokens": measured_rebuild_tokens,
+        "deltagraphrag_measured_tokens": delta_tokens,
+        "token_reduction_pct": round(token_savings_pct, 2),
+        "rebuild_modeled_latency_sec": round(measured_rebuild_wall_time, 2),
+        "deltagraphrag_ingress_wall_sec": round(ingress_latency, 2)
     },
     "graph_verification": {
         "nodes_match": nodes_match,
@@ -280,28 +383,31 @@ results = {
         "final_edges": G.number_of_edges(),
         "final_modularity": round(final_modularity, 4),
         "total_incremental_communities": len(comm_to_nodes),
-        "rebuild_baseline_communities": len(ref_communities),
+        "rebuild_baseline_communities": measured_rebuild_calls,
         "fast_path_patches": stats["fast_path_patches"],
-        "targeted_resynthesis_calls": stats["resynthesis_calls"]
+        "targeted_resynthesis_calls": delta_calls
     }
 }
 
 with open(BENCH_OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2)
 
-print("\n" + "=" * 62)
-print("       DELTAGRAPHRAG RIGOROUS EMPIRICAL BENCHMARK             ")
-print("=" * 62)
-print(f"Topology Verification (Nodes, Edges, Weights):")
+print("\n" + "=" * 65)
+print("     DELTAGRAPHRAG VERIFIED EMPIRICAL BENCHMARK (LIVE LLM)    ")
+print("=" * 65)
+print("1. Topological & Structural Equivalence:")
 print(f"  Nodes Match (V_delta == V_ref)       : {'MATCH' if nodes_match else 'MISMATCH'}")
 print(f"  Edges Match (E_delta == E_ref)       : {'MATCH' if edges_match else 'MISMATCH'}")
 print(f"  Weights Match (W_delta == W_ref)     : {'MATCH' if weights_match else 'MISMATCH'}")
-print(f"  Partition Alignment (Louvain NMI)    : {nmi_score:.4f}")
-print("-" * 62)
-print(f"Synthesis Call Ablation:")
-print(f"  Full Rebuild Community Count (Calls) : {rebuild_calls_baseline}")
-print(f"  DeltaGraphRAG Re-synthesis Calls     : {incremental_calls_used}")
-print(f"  Tier 1 In-Memory Fast-Path Patches   : {stats['fast_path_patches']}")
-print(f"  Modeled Synthesis Call Reduction     : {reduction_pct:.1f}%")
-print("=" * 62)
-print(f"[STATUS] Telemetry written to: {BENCH_OUT_PATH}")
+print(f"  Louvain Alignment Score (NMI)        : {nmi_score:.4f}")
+print("-" * 65)
+print("2. Live Measured Synthesis Invocations & Cost:")
+print(f"  Full Rebuild Communities to Index    : {measured_rebuild_calls} communities")
+print(f"  Empirical Mean Tokens / Community    : {avg_tokens_per_comm:.1f} tokens")
+print(f"  Projected Full Rebuild Total Tokens  : {measured_rebuild_tokens:,} tokens")
+print(f"  DeltaGraphRAG Live Re-synthesis Calls: {delta_calls} calls")
+print(f"  DeltaGraphRAG Measured Live Tokens   : {delta_tokens:,} tokens")
+print(f"  Empirical Synthesis Call Reduction   : {call_reduction_pct:.1f}%")
+print(f"  Empirical Token Consumption Savings  : {token_savings_pct:.1f}%")
+print("=" * 65)
+print(f"[STATUS] Telemetry saved to: {BENCH_OUT_PATH}")

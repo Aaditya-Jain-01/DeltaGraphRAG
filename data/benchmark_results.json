@@ -1,8 +1,13 @@
 {
-  "efficiency_ablation": {
-    "full_rebuild_calls_required": 253,
-    "deltagraphrag_calls_used": 0,
-    "reduction_pct": 100.0
+  "empirical_synthesis_ablation": {
+    "full_rebuild_required_calls": 253,
+    "deltagraphrag_actual_calls": 0,
+    "api_call_reduction_pct": 100.0,
+    "full_rebuild_modeled_tokens": 174991,
+    "deltagraphrag_measured_tokens": 0,
+    "token_reduction_pct": 100.0,
+    "rebuild_modeled_latency_sec": 550.81,
+    "deltagraphrag_ingress_wall_sec": 0.02
   },
   "graph_verification": {
     "nodes_match": true,
