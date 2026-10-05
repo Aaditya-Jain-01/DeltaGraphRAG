@@ -21,13 +21,11 @@ BASE_SUMM_PATH = os.path.join(WORKSPACE_DIR, "base_summaries.json")
 BENCH_OUT_PATH = os.path.join(WORKSPACE_DIR, "benchmark_results.json")
 CONFIG_PATH = os.path.join(WORKSPACE_DIR, "model_config.json")
 
-# Artifact export paths for downstream A/B evaluation
 INCR_GRAPH_PATH = os.path.join(WORKSPACE_DIR, "incremental_graph.json")
 INCR_COMM_PATH = os.path.join(WORKSPACE_DIR, "incremental_communities.json")
 INCR_SUMM_PATH = os.path.join(WORKSPACE_DIR, "incremental_summaries.json")
 REBUILD_GRAPH_PATH = os.path.join(WORKSPACE_DIR, "rebuild_graph.json")
 REBUILD_COMM_PATH = os.path.join(WORKSPACE_DIR, "rebuild_communities.json")
-REBUILD_SUMM_PATH = os.path.join(WORKSPACE_DIR, "rebuild_summaries.json")
 
 DRIFT_THRESHOLD = 0.15
 
@@ -47,7 +45,6 @@ if os.path.exists(CONFIG_PATH):
         pass
 
 def compute_nmi(labels_true, labels_pred):
-    """Computes Normalized Mutual Information in pure Python."""
     if not labels_true or not labels_pred:
         return 0.0
     n = len(labels_true)
@@ -74,7 +71,7 @@ def generate_doc_hash(title: str, text: str) -> str:
     payload = f"{title.strip()}::{text.strip()}".encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
 
-def synthesize_community_summary(comm_id: str, member_nodes: list, graph: nx.Graph) -> dict:
+def synthesize_community_summary(member_nodes: list, graph: nx.Graph) -> dict:
     subgraph = graph.subgraph(member_nodes)
     edges_desc = []
     for u, v, data in subgraph.edges(data=True):
@@ -123,7 +120,7 @@ with open(BASE_SUMM_PATH, "r", encoding="utf-8") as f:
 t1_corpus = split_data.get("t1_streaming", [])
 print(f"[STATUS] Loaded {len(t1_corpus)} streaming passages (T1).")
 
-# 1. Structural baselines (|V_C| and intra-community edges |E_C|)
+# 1. Structural Baselines
 comm_to_nodes = {}
 for n, c in node_to_comm.items():
     comm_to_nodes.setdefault(c, set()).add(n)
@@ -245,7 +242,7 @@ for doc in t1_corpus:
 
 ingress_latency = time.time() - start_ingress
 
-# 3. Two-Tier Perturbation Gating
+# 3. Drift Evaluation
 print(f"[STATUS] Evaluating structural drift (Threshold = {DRIFT_THRESHOLD*100}%)...")
 re_synthesize_queue = []
 
@@ -275,7 +272,7 @@ if re_synthesize_queue:
     print(f"[STATUS] Executing live Groq synthesis for {len(re_synthesize_queue)} breached communities...")
     for c_id in re_synthesize_queue:
         mem = list(comm_to_nodes[c_id])
-        res = synthesize_community_summary(c_id, mem, G)
+        res = synthesize_community_summary(mem, G)
         summaries[c_id] = res["summary"]
         stats["actual_api_calls_made"] += 1
         stats["actual_tokens_consumed"] += res["total_tokens"]
@@ -283,7 +280,7 @@ if re_synthesize_queue:
 else:
     print("[STATUS] Fast-path absorbed all streaming mutations (0 communities breached drift threshold).")
 
-# 4. Construct Full Rebuild Reference Graph & Baseline Partition
+# 4. Construct Reference Graph
 print("[STATUS] Constructing Full Rebuild reference graph & global Louvain partitioning...")
 G_ref = nx.Graph()
 all_docs = split_data["t0_base"] + split_data["t1_streaming"]
@@ -307,16 +304,14 @@ for idx, cset in enumerate(ref_communities):
     for node in cset:
         ref_node_to_comm[node] = idx
 
-# 5. Measure Empirical Full Rebuild Baseline via Live Sample Calls
+# 5. Measure Empirical Baseline Sample
 SAMPLE_SIZE = min(3, len(ref_communities))
 print(f"[STATUS] Measuring empirical Full Rebuild token cost across {SAMPLE_SIZE} sample communities...")
 sample_tokens = []
 sample_latencies = []
 
-rebuild_summaries = {}
-for idx, cset in enumerate(list(ref_communities)[:SAMPLE_SIZE]):
-    res = synthesize_community_summary(str(idx), list(cset), G_ref)
-    rebuild_summaries[str(idx)] = res["summary"]
+for cset in list(ref_communities)[:SAMPLE_SIZE]:
+    res = synthesize_community_summary(list(cset), G_ref)
     sample_tokens.append(res["total_tokens"])
     sample_latencies.append(res["latency_sec"])
     time.sleep(0.5)
@@ -340,7 +335,7 @@ call_reduction_pct = (
     if measured_rebuild_calls > 0 else 0.0
 )
 
-# 6. Set-Theoretic & Alignment Verification
+# 6. Topological Checks
 nodes_match = set(G.nodes()) == set(G_ref.nodes())
 edges_G = set(tuple(sorted((u, v))) for u, v in G.edges())
 edges_ref = set(tuple(sorted((u, v))) for u, v in G_ref.edges())
@@ -359,8 +354,8 @@ nmi_score = compute_nmi(labels_rebuild, labels_incremental)
 
 final_modularity = nx.community.modularity(G, comm_to_nodes.values(), weight="weight")
 
-# 7. Persist Artifacts for A/B QA Comparison
-print("[STATUS] Persisting graph artifacts for downstream A/B evaluation...")
+# 7. Persist Artifacts (Incremental vs Rebuild separation)
+print("[STATUS] Persisting graph topologies for downstream A/B evaluation...")
 with open(INCR_GRAPH_PATH, "w", encoding="utf-8") as f:
     json.dump(nx.node_link_data(G), f)
 with open(INCR_COMM_PATH, "w", encoding="utf-8") as f:
@@ -372,14 +367,11 @@ with open(REBUILD_GRAPH_PATH, "w", encoding="utf-8") as f:
     json.dump(nx.node_link_data(G_ref), f)
 with open(REBUILD_COMM_PATH, "w", encoding="utf-8") as f:
     json.dump(ref_node_to_comm, f)
-# For rebuild summaries, map aligned partitions from summaries to avoid 253 redundant LLM calls
-with open(REBUILD_SUMM_PATH, "w", encoding="utf-8") as f:
-    json.dump(summaries, f)
 
-# 8. Write Verified Telemetry Artifact
+# 8. Record Telemetry
 results = {
     "empirical_synthesis_ablation": {
-        "baseline_methodology": "Empirically sampled (N=3) and extrapolated across 253 communities",
+        "methodology": "Actual incremental live calls vs. sampled (N=3) extrapolated full-rebuild baseline",
         "full_rebuild_required_calls": measured_rebuild_calls,
         "deltagraphrag_actual_calls": delta_calls,
         "api_call_reduction_pct": round(call_reduction_pct, 2),
@@ -418,8 +410,8 @@ print(f"  Edges Match (E_delta == E_ref)       : {'MATCH' if edges_match else 'M
 print(f"  Weights Match (W_delta == W_ref)     : {'MATCH' if weights_match else 'MISMATCH'}")
 print(f"  Louvain Alignment Score (NMI)        : {nmi_score:.4f}")
 print("-" * 65)
-print("2. Live Measured Synthesis Invocations & Cost:")
-print(f"  Full Rebuild Communities to Index    : {measured_rebuild_calls} communities")
+print("2. Synthesis Invocations & Cost:")
+print(f"  Full Rebuild Baseline Communities    : {measured_rebuild_calls} (extrapolated from N=3 sample)")
 print(f"  Empirical Mean Tokens / Community    : {avg_tokens_per_comm:.1f} tokens")
 print(f"  Projected Full Rebuild Total Tokens  : {measured_rebuild_tokens:,} tokens")
 print(f"  DeltaGraphRAG Live Re-synthesis Calls: {delta_calls} calls")

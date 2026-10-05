@@ -22,28 +22,20 @@ REBUILD_SUMM_PATH = os.path.join(WORKSPACE_DIR, "rebuild_summaries.json")
 OUTPUT_PATH = os.path.join(WORKSPACE_DIR, "generation_metrics.json")
 CONFIG_PATH = os.path.join(WORKSPACE_DIR, "model_config.json")
 
-# Fallback to base artifacts if incremental artifacts are not present
-if not os.path.exists(INCR_GRAPH_PATH):
-    INCR_GRAPH_PATH = os.path.join(WORKSPACE_DIR, "base_graph.json")
-    INCR_COMM_PATH = os.path.join(WORKSPACE_DIR, "base_communities.json")
-    INCR_SUMM_PATH = os.path.join(WORKSPACE_DIR, "base_summaries.json")
-    REBUILD_GRAPH_PATH = INCR_GRAPH_PATH
-    REBUILD_COMM_PATH = INCR_COMM_PATH
-    REBUILD_SUMM_PATH = INCR_SUMM_PATH
-
 api_key = os.getenv("GROQ_API_KEY")
 if not api_key:
     raise ValueError("Missing GROQ_API_KEY in .env file.")
 
 client = Groq(api_key=api_key)
 
-# Specifically target the verified instruct evaluation engine
 eval_model_id = "qwen/qwen3.8-27b"
+synth_model_id = "openai/gpt-oss-120b"
 if os.path.exists(CONFIG_PATH):
     try:
         with open(CONFIG_PATH, "r", encoding="utf-8") as f:
             cfg = json.load(f)
             eval_model_id = cfg.get("eval_model") or cfg.get("query_model") or eval_model_id
+            synth_model_id = cfg.get("fast_model") or synth_model_id
     except Exception:
         pass
 
@@ -68,19 +60,37 @@ def compute_em(gold: str, pred: str) -> float:
     return 1.0 if normalize_text(gold) == normalize_text(pred) else 0.0
 
 def extract_summary_text(val) -> str:
-    """Extracts plain-text narrative whether summary artifact is string or dict."""
     if isinstance(val, str):
         return val.strip()
     if isinstance(val, dict):
         for k in ["summary", "description", "content", "text", "body"]:
             if k in val and isinstance(val[k], str):
                 return val[k].strip()
-        joined = " ".join(str(v).strip() for v in val.values() if isinstance(v, (str, int, float)))
-        return joined.strip()
+        return " ".join(str(v).strip() for v in val.values() if isinstance(v, (str, int, float))).strip()
     return str(val).strip()
 
-def retrieve_context(query: str, graph: nx.Graph, node_to_comm: dict, summaries: dict, top_k: int = 2) -> tuple:
-    """Retrieves top community context via entity lexical overlap."""
+def synthesize_rebuild_community(member_nodes: list, graph: nx.Graph) -> str:
+    """Live synthesis for a Full Rebuild reference community."""
+    subgraph = graph.subgraph(member_nodes)
+    edges_desc = [f"{u} connected to {v}" for u, v in list(subgraph.edges())[:20]]
+    context_str = f"Members: {', '.join(member_nodes[:20])}\nConnections:\n" + "\n".join(edges_desc)
+    prompt = (
+        f"You are a knowledge graph synthesizer. Provide a concise, factual summary (2-3 sentences) "
+        f"characterizing the core theme, entities, and primary connections in this community cluster:\n\n{context_str}"
+    )
+    try:
+        resp = client.chat.completions.create(
+            model=synth_model_id,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0,
+            max_tokens=256
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception:
+        return f"Community containing {', '.join(member_nodes[:10])}."
+
+def retrieve_context_and_patch(query: str, graph: nx.Graph, node_to_comm: dict, summaries: dict, 
+                               comm_to_nodes: dict, is_rebuild: bool = False, top_k: int = 2) -> tuple:
     query_tokens = set(normalize_text(query).split())
     scored_nodes = []
     for node in graph.nodes():
@@ -102,15 +112,14 @@ def retrieve_context(query: str, graph: nx.Graph, node_to_comm: dict, summaries:
     
     contexts = []
     for cid in top_comm_ids:
-        c_str = str(cid)
-        raw = None
-        if c_str in summaries:
-            raw = summaries[c_str]
-        elif cid in summaries:
-            raw = summaries[cid]
-        elif c_str.isdigit() and int(c_str) in summaries:
-            raw = summaries[int(c_str)]
-            
+        # If running Full Rebuild and community summary does not exist, synthesize it live
+        if is_rebuild and cid not in summaries:
+            members = comm_to_nodes.get(cid, [])
+            if members:
+                summaries[cid] = synthesize_rebuild_community(members, graph)
+                time.sleep(0.3)
+        
+        raw = summaries.get(cid)
         if raw is not None:
             text = extract_summary_text(raw)
             if text:
@@ -119,9 +128,8 @@ def retrieve_context(query: str, graph: nx.Graph, node_to_comm: dict, summaries:
     combined = "\n\n".join(contexts) if contexts else "No relevant graph context found."
     return combined, set(top_comm_ids)
 
-def call_llm_with_retry(prompt: str, retries: int = 3) -> str:
-    """Calls Groq completions with exponential backoff on rate limits."""
-    for attempt in range(retries):
+def call_eval_llm(prompt: str) -> str:
+    for attempt in range(3):
         try:
             resp = client.chat.completions.create(
                 model=eval_model_id,
@@ -130,26 +138,20 @@ def call_llm_with_retry(prompt: str, retries: int = 3) -> str:
                 max_tokens=64
             )
             msg = resp.choices[0].message
-            content = msg.content or ""
-            if not content and hasattr(msg, "reasoning"):
-                content = msg.reasoning or ""
+            content = msg.content or getattr(msg, "reasoning", "") or ""
             if content.strip():
                 return content.strip()
             time.sleep(1.0)
         except Exception as e:
-            err_msg = str(e).lower()
-            if "rate_limit" in err_msg or "429" in err_msg:
+            if "429" in str(e) or "rate_limit" in str(e).lower():
                 time.sleep(2.5 * (attempt + 1))
                 continue
-            if attempt == retries - 1:
-                return f"Error: {e}"
             time.sleep(1.0)
     return ""
 
 def load_evaluation_queries() -> list:
     queries = []
     seen = set()
-
     def add_pair(q, a):
         if q and a and isinstance(q, str) and isinstance(a, str):
             norm_q = q.strip().lower()
@@ -157,7 +159,6 @@ def load_evaluation_queries() -> list:
                 seen.add(norm_q)
                 queries.append({"question": q.strip(), "answer": a.strip()})
 
-    # Strategy 1: Search dataset_split.json
     if os.path.exists(SPLIT_PATH):
         try:
             with open(SPLIT_PATH, "r", encoding="utf-8") as f:
@@ -167,65 +168,30 @@ def load_evaluation_queries() -> list:
                     if isinstance(v, list):
                         for item in v:
                             if isinstance(item, dict):
-                                q = item.get("question") or item.get("query")
-                                a = item.get("answer") or item.get("gold")
-                                add_pair(q, a)
+                                add_pair(item.get("question"), item.get("answer"))
                                 for sub_key in ["questions", "qa", "qa_pairs"]:
                                     if sub_key in item and isinstance(item[sub_key], list):
                                         for sub in item[sub_key]:
                                             if isinstance(sub, dict):
-                                                sq = sub.get("question") or sub.get("query")
-                                                sa = sub.get("answer") or sub.get("gold")
-                                                add_pair(sq, sa)
+                                                add_pair(sub.get("question"), sub.get("answer"))
         except Exception:
             pass
 
-    # Strategy 2: Search generation_metrics.json
     if len(queries) < 50 and os.path.exists(OUTPUT_PATH):
         try:
             with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
                 g_data = json.load(f)
-            preds = g_data.get("predictions", []) if isinstance(g_data, dict) else []
-            for p in preds:
+            for p in g_data.get("predictions", []):
                 if isinstance(p, dict):
-                    q = p.get("question") or p.get("query")
-                    a = p.get("gold") or p.get("answer")
-                    add_pair(q, a)
+                    add_pair(p.get("query"), p.get("gold"))
         except Exception:
             pass
 
-    # Strategy 3: Scan all other json files in data directory
-    if len(queries) < 50:
-        for fname in os.listdir(WORKSPACE_DIR):
-            if fname.endswith(".json") and fname not in ["dataset_split.json", "generation_metrics.json"]:
-                fpath = os.path.join(WORKSPACE_DIR, fname)
-                try:
-                    with open(fpath, "r", encoding="utf-8") as f:
-                        other_data = json.load(f)
-                    if isinstance(other_data, list):
-                        for item in other_data:
-                            if isinstance(item, dict):
-                                q = item.get("question") or item.get("query")
-                                a = item.get("answer") or item.get("gold")
-                                add_pair(q, a)
-                    elif isinstance(other_data, dict):
-                        for _, v in other_data.items():
-                            if isinstance(v, list):
-                                for item in v:
-                                    if isinstance(item, dict):
-                                        q = item.get("question") or item.get("query")
-                                        a = item.get("answer") or item.get("gold")
-                                        add_pair(q, a)
-                except Exception:
-                    pass
-            if len(queries) >= 50:
-                break
-
     return queries[:50]
 
-print(f"[STATUS] Initializing A/B Evaluation Suite (Model: {eval_model_id})...")
+print(f"[STATUS] Initializing A/B Evaluation Suite (Eval Engine: {eval_model_id})...")
 
-# Load Pipeline A: Incremental Graph
+# Load Pipeline A: Incremental
 with open(INCR_GRAPH_PATH, "r", encoding="utf-8") as f:
     G_incr = nx.node_link_graph(json.load(f))
 with open(INCR_COMM_PATH, "r", encoding="utf-8") as f:
@@ -233,93 +199,72 @@ with open(INCR_COMM_PATH, "r", encoding="utf-8") as f:
 with open(INCR_SUMM_PATH, "r", encoding="utf-8") as f:
     summ_incr = json.load(f)
 
-# Load Pipeline B: Full Rebuild Graph
+comm_to_nodes_incr = defaultdict(list)
+for n, c in comm_incr.items():
+    comm_to_nodes_incr[str(c)].append(n)
+
+# Load Pipeline B: Full Rebuild
 with open(REBUILD_GRAPH_PATH, "r", encoding="utf-8") as f:
     G_rebuild = nx.node_link_graph(json.load(f))
 with open(REBUILD_COMM_PATH, "r", encoding="utf-8") as f:
     comm_rebuild = json.load(f)
-with open(REBUILD_SUMM_PATH, "r", encoding="utf-8") as f:
-    summ_rebuild = json.load(f)
 
-# Map rebuild community IDs to aligned incremental summaries via node membership overlap (NMI = 0.9948)
-rebuild_comm_to_nodes = defaultdict(list)
+# Load or initialize genuine rebuild summaries
+summ_rebuild = {}
+if os.path.exists(REBUILD_SUMM_PATH):
+    try:
+        with open(REBUILD_SUMM_PATH, "r", encoding="utf-8") as f:
+            summ_rebuild = json.load(f)
+    except Exception:
+        summ_rebuild = {}
+
+comm_to_nodes_rebuild = defaultdict(list)
 for n, c in comm_rebuild.items():
-    rebuild_comm_to_nodes[str(c)].append(n)
-
-aligned_rebuild_summaries = {}
-for c_ref_str, nodes in rebuild_comm_to_nodes.items():
-    inc_comms = [str(comm_incr.get(n)) for n in nodes if comm_incr.get(n) is not None]
-    if inc_comms:
-        top_inc_c = Counter(inc_comms).most_common(1)[0][0]
-        if top_inc_c in summ_incr:
-            aligned_rebuild_summaries[c_ref_str] = summ_incr[top_inc_c]
-    if c_ref_str not in aligned_rebuild_summaries:
-        if c_ref_str in summ_rebuild:
-            aligned_rebuild_summaries[c_ref_str] = summ_rebuild[c_ref_str]
+    comm_to_nodes_rebuild[str(c)].append(n)
 
 eval_queries = load_evaluation_queries()
 total_queries = len(eval_queries)
-
-if total_queries == 0:
-    print("[ERROR] Unable to extract queries from data/ artifacts.")
-    sys.exit(1)
-
-print(f"[STATUS] Successfully discovered {total_queries} evaluation queries.")
-print(f"[STATUS] Benchmarking queries across Incremental vs. Full Rebuild pipelines...\n")
+print(f"[STATUS] Benchmarking {total_queries} queries across Incremental vs. Full Rebuild pipelines...\n")
 
 results = []
-prompt_cache = {}
 jaccard_scores = []
 identical_predictions = 0
-
 t_start = time.time()
 
 for idx, q_item in enumerate(eval_queries, 1):
     q_text = q_item["question"]
     gold = q_item["answer"]
     
-    # 1. Retrieve under Pipeline A (Incremental)
-    ctx_incr, comms_incr = retrieve_context(q_text, G_incr, comm_incr, summ_incr, top_k=2)
-    
-    # 2. Retrieve under Pipeline B (Full Rebuild with aligned summaries)
-    ctx_rebuild, comms_rebuild = retrieve_context(q_text, G_rebuild, comm_rebuild, aligned_rebuild_summaries, top_k=2)
-    
-    # Measure Context Text Jaccard Parity
-    toks_incr = set(normalize_text(ctx_incr).split())
-    toks_rebuild = set(normalize_text(ctx_rebuild).split())
-    union_t = len(toks_incr | toks_rebuild)
-    inter_t = len(toks_incr & toks_rebuild)
-    jaccard = inter_t / union_t if union_t > 0 else 1.0
-    jaccard_scores.append(jaccard)
-    
-    # Generate prediction for Incremental
-    prompt_incr = (
-        f"Answer the following question based ONLY on the provided graph context. "
-        f"Keep the answer concise and factual.\n\nContext:\n{ctx_incr}\n\nQuestion: {q_text}\nAnswer:"
+    # 1. Retrieve under Incremental (stale/patched base summaries)
+    ctx_incr, _ = retrieve_context_and_patch(
+        q_text, G_incr, comm_incr, summ_incr, comm_to_nodes_incr, is_rebuild=False
     )
     
-    if prompt_incr in prompt_cache:
-        pred_incr = prompt_cache[prompt_incr]
-    else:
-        pred_incr = call_llm_with_retry(prompt_incr)
-        prompt_cache[prompt_incr] = pred_incr
-        time.sleep(0.15)
-            
-    # For Full Rebuild
+    # 2. Retrieve under Full Rebuild (fresh rebuild summaries synthesized on-demand)
+    ctx_rebuild, _ = retrieve_context_and_patch(
+        q_text, G_rebuild, comm_rebuild, summ_rebuild, comm_to_nodes_rebuild, is_rebuild=True
+    )
+    
+    # Context Text Jaccard
+    t_inc = set(normalize_text(ctx_incr).split())
+    t_reb = set(normalize_text(ctx_rebuild).split())
+    union_t = len(t_inc | t_reb)
+    jaccard = (len(t_inc & t_reb) / union_t) if union_t > 0 else 1.0
+    jaccard_scores.append(jaccard)
+    
+    # Query Incremental
+    prompt_incr = f"Answer the following question based ONLY on the provided graph context. Keep the answer concise.\n\nContext:\n{ctx_incr}\n\nQuestion: {q_text}\nAnswer:"
+    pred_incr = call_eval_llm(prompt_incr)
+    time.sleep(0.1)
+    
+    # Query Rebuild
     if ctx_incr == ctx_rebuild:
         pred_rebuild = pred_incr
     else:
-        prompt_rebuild = (
-            f"Answer the following question based ONLY on the provided graph context. "
-            f"Keep the answer concise and factual.\n\nContext:\n{ctx_rebuild}\n\nQuestion: {q_text}\nAnswer:"
-        )
-        if prompt_rebuild in prompt_cache:
-            pred_rebuild = prompt_cache[prompt_rebuild]
-        else:
-            pred_rebuild = call_llm_with_retry(prompt_rebuild)
-            prompt_cache[prompt_rebuild] = pred_rebuild
-            time.sleep(0.15)
-                
+        prompt_reb = f"Answer the following question based ONLY on the provided graph context. Keep the answer concise.\n\nContext:\n{ctx_rebuild}\n\nQuestion: {q_text}\nAnswer:"
+        pred_rebuild = call_eval_llm(prompt_reb)
+        time.sleep(0.1)
+        
     if pred_incr == pred_rebuild:
         identical_predictions += 1
         
@@ -336,7 +281,11 @@ for idx, q_item in enumerate(eval_queries, 1):
         "context_jaccard": jaccard
     })
     
-    print(f"[{idx:02d}/{total_queries}] EM: {int(em_incr)} | F1: {f1_incr:.2f} | Gold: '{gold}' | Pred: '{pred_incr}'")
+    print(f"[{idx:02d}/{total_queries}] EM_inc: {int(em_incr)} | EM_reb: {int(em_rebuild)} | F1_inc: {f1_incr:.2f} | F1_reb: {f1_rebuild:.2f}")
+
+# Persist synthesized rebuild summaries for reproducibility
+with open(REBUILD_SUMM_PATH, "w", encoding="utf-8") as f:
+    json.dump(summ_rebuild, f, indent=2)
 
 total_eval = len(results)
 mean_em_incr = sum(r["incremental"]["em"] for r in results) / total_eval
@@ -390,4 +339,4 @@ print(f"Full Rebuild Reference Mean F1     : {mean_f1_rebuild * 100:.2f}%")
 print(f"DeltaGraphRAG Mean Token F1        : {mean_f1_incr * 100:.2f}% (Delta: {(mean_f1_incr - mean_f1_rebuild) * 100:+.2f}%)")
 print(f"Relative Quality Degradation       : {abs(mean_f1_rebuild - mean_f1_incr) * 100:.2f}%")
 print("=" * 65)
-print(f"[STATUS] Full A/B report written to: {OUTPUT_PATH}")
+print(f"[STATUS] Live A/B parity report written to: {OUTPUT_PATH}")

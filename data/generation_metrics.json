@@ -1,30 +1,30 @@
 {
   "total_queries": 50,
   "model_evaluated": "qwen/qwen3.8-27b",
-  "evaluation_runtime_sec": 71.83,
+  "evaluation_runtime_sec": 154.78,
   "exact_match_pct": 12.0,
-  "f1_score_pct": 17.01,
+  "f1_score_pct": 16.86,
   "ab_comparison": {
-    "context_jaccard_parity_pct": 94.0,
-    "prediction_agreement_pct": 96.0,
+    "context_jaccard_parity_pct": 33.63,
+    "prediction_agreement_pct": 44.0,
     "incremental_em_pct": 12.0,
-    "full_rebuild_em_pct": 12.0,
-    "incremental_f1_pct": 17.01,
-    "full_rebuild_f1_pct": 17.01,
-    "quality_degradation_pct": 0.0
+    "full_rebuild_em_pct": 16.0,
+    "incremental_f1_pct": 16.86,
+    "full_rebuild_f1_pct": 21.84,
+    "quality_degradation_pct": 4.98
   },
   "predictions": [
     {
       "query": "Were Scott Derrickson and Ed Wood of the same nationality?",
       "gold": "yes",
-      "prediction": "No, Scott Derrickson is American, while Ed Wood was also American. However, since the provided context states \"No relevant graph context found,\" I cannot verify this based solely on the given information.",
+      "prediction": "No",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
       "gold": "Chief of Protocol",
-      "prediction": "Based on the provided context, there is no information regarding any government position held by the woman who portrayed Corliss Archer. The text only states that Shirley Temple portrayed the character and links her to the film and genre.",
+      "prediction": "U.S. Ambassador to Luxembourg",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -38,9 +38,9 @@
     {
       "query": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
       "gold": "no",
-      "prediction": "No, they are not located in the same neighborhood. The Laleli Mosque is situated in the Laleli quarter of the Fatih district, while the Esma Sultan Mansion is located in Ortak\u00f6y.",
+      "prediction": "No, they are located in different neighborhoods; the Laleli Mosque is in the Laleli quarter of the Fatih district, while the Esma Sultan Mansion is in Ortak\u00f6y.",
       "exact_match": 0.0,
-      "f1": 0.0625
+      "f1": 0.07142857142857142
     },
     {
       "query": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
@@ -66,21 +66,21 @@
     {
       "query": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
       "gold": "3,677 seated",
-      "prediction": "The provided context does not contain information about the Lewiston Maineiacs or the seating capacity of their arena.",
+      "prediction": "The provided context does not contain information about the Lewiston Maineiacs or their arena's seating capacity.",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "Who is older, Annie Morton or Terry Richardson?",
       "gold": "Terry Richardson",
-      "prediction": "The provided context does not contain information regarding the ages or birth dates of Annie Morton or Terry Richardson, so it is impossible to determine who is older based solely on the given text.",
+      "prediction": "The provided context does not contain information about the ages or birth dates of Annie Morton or Terry Richardson, so it is impossible to determine who is older based solely on the given text.",
       "exact_match": 0.0,
       "f1": 0.1111111111111111
     },
     {
       "query": "Are Local H and For Against both from the United States?",
       "gold": "yes",
-      "prediction": "No, the provided context does not contain any information about the bands Local H or For Against.",
+      "prediction": "No",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -122,16 +122,16 @@
     {
       "query": "Brown State Fishing Lake is in a country that has a population of how many inhabitants ?",
       "gold": "9,984",
-      "prediction": "The provided context does not contain information about \"Brown State Fishing Lake\" or the population of the country where it is located.",
+      "prediction": "The provided context does not contain information about \"Brown State Fishing Lake\" or its country's population.",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
       "gold": "the North Atlantic Conference",
-      "prediction": "The provided context does not contain information about the Vermont Catamounts men's soccer team or its conference history. Therefore, the question cannot be answered based solely on the provided graph context.",
+      "prediction": "The provided context does not contain information about the Vermont Catamounts men's soccer team or its conference history. Therefore, the question cannot be answered based solely on the given context.",
       "exact_match": 0.0,
-      "f1": 0.1142857142857143
+      "f1": 0.11764705882352941
     },
     {
       "query": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
@@ -164,7 +164,7 @@
     {
       "query": "This singer of A Rather Blustery Day also voiced what hedgehog?",
       "gold": "Sonic",
-      "prediction": "Based on the provided context, the text identifies the songwriters (Robert and Richard Sherman) and the producer (Walt Disney), but it **does not mention** the specific singer of \"A Rather Blustery Day\" or any character they voiced. Therefore, the question cannot be answered using **only** the provided",
+      "prediction": "Based on the provided context, the text identifies the songwriters (Sherman brothers) and producer (Walt Disney) but **does not mention the singer** of \"A Rather Blustery Day\" or any character they voiced. Therefore, the question cannot be answered using **only** the provided graph context.",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -178,21 +178,21 @@
     {
       "query": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice?",
       "gold": "Badly Drawn Boy",
-      "prediction": "Based on the provided context, there is no information regarding Wolf Alice or any instrument-to-person ratios for either act. The context only identifies Badly Drawn Boy as Damon Michael Gough and mentions his birthplace. Therefore, the question cannot be answered using only the provided graph context.",
+      "prediction": "Insufficient information",
       "exact_match": 0.0,
-      "f1": 0.12244897959183672
+      "f1": 0.0
     },
     {
       "query": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
       "gold": "World's Best Goalkeeper",
-      "prediction": "The provided context does not contain information about Kasper Schmeichel, his father, or the IFFHS.",
+      "prediction": "The provided context does not contain information about Kasper Schmeichel, his father, or the IFFHS vote in 1992.",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
       "gold": "Barton Lee Hazlewood",
-      "prediction": "Based on the provided context, there is no information regarding the writer of \"These Boots Are Made for Walkin'\" or anyone who died in 2007. The text only discusses World War II casualties, Henry John Kaiser, and Roger Olaf Egeberg.",
+      "prediction": "Nancy Sinatra",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -213,9 +213,9 @@
     {
       "query": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
       "gold": "Henry J. Kaiser",
-      "prediction": "No, the provided context does not state that Kaiser Ventures was founded by an industrialist known as the \"father of modern American shipbuilding.\" The context identifies Henry John Kaiser as the founder of Kaiser Shipyards and other ventures, but it does not attribute that specific title to him or mention a \"Kaiser Ventures\"",
+      "prediction": "No",
       "exact_match": 0.0,
-      "f1": 0.07142857142857142
+      "f1": 0.0
     },
     {
       "query": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
@@ -234,7 +234,7 @@
     {
       "query": "Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?",
       "gold": "Fujioka, Gunma",
-      "prediction": "Based on the provided graph context, there is no information regarding the band Buck-Tick or their origin. The context only discusses the Canadian musician Hayden (Paul Hayden Desser) and his connection to Thornhill, Ontario.",
+      "prediction": "Japan",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -248,9 +248,9 @@
     {
       "query": "Are Freakonomics and In the Realm of the Hackers both American documentaries?",
       "gold": "no",
-      "prediction": "No, the provided context does not contain any information regarding *Freakonomics* or *In the Realm of the Hackers*.",
+      "prediction": "No, the provided context does not contain information about *Freakonomics* or *In the Realm of the Hackers*.",
       "exact_match": 0.0,
-      "f1": 0.10526315789473684
+      "f1": 0.1111111111111111
     },
     {
       "query": "Which band, Letters to Cleo or Screaming Trees, had more members?",
@@ -283,9 +283,9 @@
     {
       "query": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
       "gold": "no",
-      "prediction": "No. Elko Regional Airport is located in northeastern Nevada, while Gerald R. Ford International Airport is located in Michigan.",
+      "prediction": "No, Elko Regional Airport is located in northeastern Nevada.",
       "exact_match": 0.0,
-      "f1": 0.1
+      "f1": 0.19999999999999998
     },
     {
       "query": "Ralph Hefferline was a psychology professor at a university that is located in what city?",
@@ -311,35 +311,35 @@
     {
       "query": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
       "gold": "1962",
-      "prediction": "The manga series is *Kaguya-sama: Love Is War*, written and illustrated by Aka Akasaka, who was born in 1983.",
+      "prediction": "1973",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?",
       "gold": "sovereignty",
-      "prediction": "The provided context does not contain information about Giuseppe Arimondi, his death, or the battle involving Ethiopia.",
+      "prediction": "The provided context does not contain information about Giuseppe Arimondi, Ethiopia, or any related battle.",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?",
       "gold": "Nelson Rockefeller",
-      "prediction": "Based on the provided graph context, there is no mention of Alfred Balk, the Committee on the Employment of Minority Groups in the News Media, or any United States Vice President. The context focuses on World War II casualties, Henry John Kaiser, and Roger Olaf Egeberg. Therefore, the question cannot be answered using",
+      "prediction": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under Vice President Hubert Humphrey.",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",
       "gold": "Yellowcraig",
-      "prediction": "Dirleton Bay",
+      "prediction": "Firth of Forth",
       "exact_match": 0.0,
       "f1": 0.0
     },
     {
       "query": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
       "gold": "Phil Spector",
-      "prediction": "I cannot answer this question based on the provided graph context, as the context only contains information about the documentary \"Freakonomics: The Movie\" and does not mention any songs, tombstones, or the box set \"Back to Mono.\"",
+      "prediction": "I cannot answer this question based on the provided graph context, as the context only discusses the documentary \"Freakonomics: The Movie\" and does not contain information about a song inspired by a tombstone or the box set \"Back to Mono.\"",
       "exact_match": 0.0,
       "f1": 0.0
     },
@@ -353,7 +353,7 @@
     {
       "query": "Are Ferocactus and Silene both types of plant?",
       "gold": "yes",
-      "prediction": "No, the provided context does not contain any information regarding Ferocactus or Silene.",
+      "prediction": "No, the provided context does not contain information about Ferocactus or Silene.",
       "exact_match": 0.0,
       "f1": 0.0
     },
