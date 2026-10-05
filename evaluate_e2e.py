@@ -70,7 +70,7 @@ def extract_summary_text(val) -> str:
     return str(val).strip()
 
 def synthesize_rebuild_community(member_nodes: list, graph: nx.Graph) -> str:
-    """Live synthesis for a Full Rebuild reference community."""
+    """Synthesizes an independent summary directly from the full-rebuild graph."""
     subgraph = graph.subgraph(member_nodes)
     edges_desc = [f"{u} connected to {v}" for u, v in list(subgraph.edges())[:20]]
     context_str = f"Members: {', '.join(member_nodes[:20])}\nConnections:\n" + "\n".join(edges_desc)
@@ -112,14 +112,16 @@ def retrieve_context_and_patch(query: str, graph: nx.Graph, node_to_comm: dict, 
     
     contexts = []
     for cid in top_comm_ids:
-        # If running Full Rebuild and community summary does not exist, synthesize it live
-        if is_rebuild and cid not in summaries:
-            members = comm_to_nodes.get(cid, [])
+        c_str = str(cid)
+        # Synthesize independent summary for full rebuild if not already cached
+        if is_rebuild and c_str not in summaries and cid not in summaries:
+            members = comm_to_nodes.get(c_str, []) or comm_to_nodes.get(cid, [])
             if members:
-                summaries[cid] = synthesize_rebuild_community(members, graph)
+                summ_text = synthesize_rebuild_community(members, graph)
+                summaries[c_str] = summ_text
                 time.sleep(0.3)
         
-        raw = summaries.get(cid)
+        raw = summaries.get(c_str) or summaries.get(cid)
         if raw is not None:
             text = extract_summary_text(raw)
             if text:
@@ -191,7 +193,7 @@ def load_evaluation_queries() -> list:
 
 print(f"[STATUS] Initializing A/B Evaluation Suite (Eval Engine: {eval_model_id})...")
 
-# Load Pipeline A: Incremental
+# Load Pipeline A: Incremental Graph
 with open(INCR_GRAPH_PATH, "r", encoding="utf-8") as f:
     G_incr = nx.node_link_graph(json.load(f))
 with open(INCR_COMM_PATH, "r", encoding="utf-8") as f:
@@ -203,13 +205,13 @@ comm_to_nodes_incr = defaultdict(list)
 for n, c in comm_incr.items():
     comm_to_nodes_incr[str(c)].append(n)
 
-# Load Pipeline B: Full Rebuild
+# Load Pipeline B: Full Rebuild Graph
 with open(REBUILD_GRAPH_PATH, "r", encoding="utf-8") as f:
     G_rebuild = nx.node_link_graph(json.load(f))
 with open(REBUILD_COMM_PATH, "r", encoding="utf-8") as f:
     comm_rebuild = json.load(f)
 
-# Load or initialize genuine rebuild summaries
+# Load existing rebuild summaries or start fresh
 summ_rebuild = {}
 if os.path.exists(REBUILD_SUMM_PATH):
     try:
@@ -235,12 +237,12 @@ for idx, q_item in enumerate(eval_queries, 1):
     q_text = q_item["question"]
     gold = q_item["answer"]
     
-    # 1. Retrieve under Incremental (stale/patched base summaries)
+    # 1. Retrieve under Pipeline A (Incremental: base summaries with Tier 1 in-memory patches)
     ctx_incr, _ = retrieve_context_and_patch(
         q_text, G_incr, comm_incr, summ_incr, comm_to_nodes_incr, is_rebuild=False
     )
     
-    # 2. Retrieve under Full Rebuild (fresh rebuild summaries synthesized on-demand)
+    # 2. Retrieve under Pipeline B (Full Rebuild: independent summaries synthesized from G_ref)
     ctx_rebuild, _ = retrieve_context_and_patch(
         q_text, G_rebuild, comm_rebuild, summ_rebuild, comm_to_nodes_rebuild, is_rebuild=True
     )
@@ -252,12 +254,12 @@ for idx, q_item in enumerate(eval_queries, 1):
     jaccard = (len(t_inc & t_reb) / union_t) if union_t > 0 else 1.0
     jaccard_scores.append(jaccard)
     
-    # Query Incremental
+    # Inference for Incremental
     prompt_incr = f"Answer the following question based ONLY on the provided graph context. Keep the answer concise.\n\nContext:\n{ctx_incr}\n\nQuestion: {q_text}\nAnswer:"
     pred_incr = call_eval_llm(prompt_incr)
     time.sleep(0.1)
     
-    # Query Rebuild
+    # Inference for Full Rebuild
     if ctx_incr == ctx_rebuild:
         pred_rebuild = pred_incr
     else:

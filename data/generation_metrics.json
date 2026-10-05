@@ -1,16 +1,16 @@
 {
   "total_queries": 50,
   "model_evaluated": "qwen/qwen3.8-27b",
-  "evaluation_runtime_sec": 154.78,
+  "evaluation_runtime_sec": 153.26,
   "exact_match_pct": 12.0,
-  "f1_score_pct": 16.86,
+  "f1_score_pct": 16.81,
   "ab_comparison": {
     "context_jaccard_parity_pct": 33.63,
     "prediction_agreement_pct": 44.0,
     "incremental_em_pct": 12.0,
     "full_rebuild_em_pct": 16.0,
-    "incremental_f1_pct": 16.86,
-    "full_rebuild_f1_pct": 21.84,
+    "incremental_f1_pct": 16.81,
+    "full_rebuild_f1_pct": 21.79,
     "quality_degradation_pct": 4.98
   },
   "predictions": [
@@ -73,9 +73,9 @@
     {
       "query": "Who is older, Annie Morton or Terry Richardson?",
       "gold": "Terry Richardson",
-      "prediction": "The provided context does not contain information about the ages or birth dates of Annie Morton or Terry Richardson, so it is impossible to determine who is older based solely on the given text.",
+      "prediction": "Based on the provided graph context, it is not possible to determine who is older, as the text only describes the structural isolation of the nodes and does not contain any biographical data or dates of birth for Annie Morton or Terry Richardson.",
       "exact_match": 0.0,
-      "f1": 0.1111111111111111
+      "f1": 0.08888888888888888
     },
     {
       "query": "Are Local H and For Against both from the United States?",
@@ -164,7 +164,7 @@
     {
       "query": "This singer of A Rather Blustery Day also voiced what hedgehog?",
       "gold": "Sonic",
-      "prediction": "Based on the provided context, the text identifies the songwriters (Sherman brothers) and producer (Walt Disney) but **does not mention the singer** of \"A Rather Blustery Day\" or any character they voiced. Therefore, the question cannot be answered using **only** the provided graph context.",
+      "prediction": "Based on the provided context, the text identifies the songwriters (Robert and Richard Sherman) and the producer (Walt Disney), but it **does not mention** the specific singer of \"A Rather Blustery Day\" or any character they voiced. Therefore, the question cannot be answered using **only** the provided",
       "exact_match": 0.0,
       "f1": 0.0
     },

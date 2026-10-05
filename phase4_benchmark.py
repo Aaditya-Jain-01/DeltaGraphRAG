@@ -120,7 +120,7 @@ with open(BASE_SUMM_PATH, "r", encoding="utf-8") as f:
 t1_corpus = split_data.get("t1_streaming", [])
 print(f"[STATUS] Loaded {len(t1_corpus)} streaming passages (T1).")
 
-# 1. Structural Baselines
+# 1. Structural baselines
 comm_to_nodes = {}
 for n, c in node_to_comm.items():
     comm_to_nodes.setdefault(c, set()).add(n)
@@ -242,7 +242,7 @@ for doc in t1_corpus:
 
 ingress_latency = time.time() - start_ingress
 
-# 3. Drift Evaluation
+# 3. Two-Tier Perturbation Gating
 print(f"[STATUS] Evaluating structural drift (Threshold = {DRIFT_THRESHOLD*100}%)...")
 re_synthesize_queue = []
 
@@ -335,7 +335,7 @@ call_reduction_pct = (
     if measured_rebuild_calls > 0 else 0.0
 )
 
-# 6. Topological Checks
+# 6. Topological Equivalence Checks
 nodes_match = set(G.nodes()) == set(G_ref.nodes())
 edges_G = set(tuple(sorted((u, v))) for u, v in G.edges())
 edges_ref = set(tuple(sorted((u, v))) for u, v in G_ref.edges())
@@ -354,7 +354,8 @@ nmi_score = compute_nmi(labels_rebuild, labels_incremental)
 
 final_modularity = nx.community.modularity(G, comm_to_nodes.values(), weight="weight")
 
-# 7. Persist Artifacts (Incremental vs Rebuild separation)
+# 7. Persist Graph Topologies for A/B Evaluation
+# NOTE: REBUILD_SUMM_PATH is intentionally omitted here to prevent sharing incremental summaries
 print("[STATUS] Persisting graph topologies for downstream A/B evaluation...")
 with open(INCR_GRAPH_PATH, "w", encoding="utf-8") as f:
     json.dump(nx.node_link_data(G), f)
@@ -368,7 +369,7 @@ with open(REBUILD_GRAPH_PATH, "w", encoding="utf-8") as f:
 with open(REBUILD_COMM_PATH, "w", encoding="utf-8") as f:
     json.dump(ref_node_to_comm, f)
 
-# 8. Record Telemetry
+# 8. Telemetry Results with Explicit Methodology Labeling
 results = {
     "empirical_synthesis_ablation": {
         "methodology": "Actual incremental live calls vs. sampled (N=3) extrapolated full-rebuild baseline",

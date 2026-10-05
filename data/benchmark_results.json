@@ -4,10 +4,10 @@
     "full_rebuild_required_calls": 253,
     "deltagraphrag_actual_calls": 0,
     "api_call_reduction_pct": 100.0,
-    "full_rebuild_modeled_tokens": 176931,
+    "full_rebuild_modeled_tokens": 175497,
     "deltagraphrag_measured_tokens": 0,
     "token_reduction_pct": 100.0,
-    "rebuild_modeled_latency_sec": 413.66,
+    "rebuild_modeled_latency_sec": 345.99,
     "deltagraphrag_ingress_wall_sec": 0.01
   },
   "graph_verification": {
