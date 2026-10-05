@@ -1,13 +1,14 @@
 {
   "empirical_synthesis_ablation": {
+    "baseline_methodology": "Empirically sampled (N=3) and extrapolated across 253 communities",
     "full_rebuild_required_calls": 253,
     "deltagraphrag_actual_calls": 0,
     "api_call_reduction_pct": 100.0,
-    "full_rebuild_modeled_tokens": 174991,
+    "full_rebuild_modeled_tokens": 174738,
     "deltagraphrag_measured_tokens": 0,
     "token_reduction_pct": 100.0,
-    "rebuild_modeled_latency_sec": 550.81,
-    "deltagraphrag_ingress_wall_sec": 0.02
+    "rebuild_modeled_latency_sec": 391.64,
+    "deltagraphrag_ingress_wall_sec": 0.01
   },
   "graph_verification": {
     "nodes_match": true,

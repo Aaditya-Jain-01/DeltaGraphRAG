@@ -6,12 +6,11 @@ import shutil
 from collections import Counter
 import matplotlib
 
-# Headless rendering to bypass Windows Tkinter/Tcl dependencies
+# Headless rendering to bypass Tkinter / GUI thread conflicts
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Resolve base directories robustly across Windows/OneDrive environments
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 WORKSPACE_DIR = os.path.join(SCRIPT_DIR, "data")
 
@@ -19,7 +18,7 @@ bench_path = os.path.join(WORKSPACE_DIR, "benchmark_results.json")
 gen_path = os.path.join(WORKSPACE_DIR, "generation_metrics.json")
 comm_path = os.path.join(WORKSPACE_DIR, "base_communities.json")
 
-# 1. Load data artifacts
+# 1. Load telemetry artifacts
 with open(bench_path, "r", encoding="utf-8") as f:
     bench = json.load(f)
 
@@ -38,9 +37,9 @@ reduction_pct = ablation.get("api_call_reduction_pct", ablation.get("reduction_p
 fast_patches = bench.get("metrics", {}).get("fast_path_patches", 73)
 final_q = bench.get("metrics", {}).get("final_modularity", 0.9430)
 
-# 2. Setup Figure Layout (2x2 Grid)
+# 2. Setup Figure Layout (2x2 Grid with wide subplot spacing)
 fig, axes = plt.subplots(2, 2, figsize=(15, 11), dpi=300)
-plt.subplots_adjust(hspace=0.35, wspace=0.25)
+plt.subplots_adjust(hspace=0.35, wspace=0.35)
 
 # -------------------------------------------------------------
 # PLOT 1: LLM Compute & Token Efficiency Comparison
@@ -56,7 +55,7 @@ ax1.set_title(f"Compute Cost Reduction (-{reduction_pct:.1f}% Calls)", fontsize=
 ax1.set_ylim(0, max(calls) * 1.25)
 ax1.grid(axis="y", linestyle="--", alpha=0.5)
 
-# Value annotations
+# Bar count annotations
 for bar in bars:
     height = bar.get_height()
     ax1.text(
@@ -69,13 +68,15 @@ for bar in bars:
         fontweight="bold"
     )
 
+# Clean internal annotation: positioned inward at x=0.62 to prevent y-axis collision with Plot 2
 ax1.annotate(
-    f"{reduction_pct:.1f}% Savings\n(Zero-LLM Patches: {fast_patches})",
-    xy=(1, calls[1]),
-    xytext=(1.05, max(calls) * 0.22),
-    arrowprops=dict(facecolor="black", shrink=0.08, width=1.5, headwidth=6),
+    f"{reduction_pct:.1f}% Savings\n({fast_patches} In-Memory Patches)",
+    xy=(1.0, calls[1] + 12),
+    xytext=(0.62, max(calls) * 0.42),
+    arrowprops=dict(facecolor="black", shrink=0.08, width=1.4, headwidth=5),
     fontsize=10,
-    fontweight="bold"
+    fontweight="bold",
+    ha="center"
 )
 
 # -------------------------------------------------------------
@@ -86,7 +87,7 @@ f1_scores = [item["f1"] for item in gen.get("predictions", [])]
 
 mean_f1 = gen.get("f1_score_pct") or gen.get("mean_token_f1")
 if mean_f1 is None:
-    mean_f1 = round(float(np.mean(f1_scores) * 100), 2) if f1_scores else 41.09
+    mean_f1 = round(float(np.mean(f1_scores) * 100), 2) if f1_scores else 17.01
 
 bins = [0.0, 0.01, 0.35, 0.70, 0.99, 1.01]
 bin_labels = ["0.0 (Miss)", "0.01 - 0.35", "0.35 - 0.70", "0.70 - 0.99", "1.0 (Exact)"]
@@ -98,7 +99,7 @@ bars2 = ax2.bar(bin_labels, counts, color=palette, edgecolor="black", linewidth=
 ax2.set_ylabel("Query Count (N = 50)", fontsize=11, fontweight="bold")
 ax2.set_xlabel("Token F1 Score Intervals", fontsize=11, fontweight="bold")
 ax2.set_title(f"F1 Score Spread (Mean F1: {mean_f1}%)", fontsize=13, fontweight="bold")
-ax2.set_ylim(0, max(counts) * 1.2)
+ax2.set_ylim(0, max(counts) * 1.25)
 ax2.grid(axis="y", linestyle="--", alpha=0.5)
 
 for bar in bars2:
@@ -118,10 +119,21 @@ for bar in bars2:
 # -------------------------------------------------------------
 ax3 = axes[1, 0]
 
+refusal_keywords = [
+    "does not contain", "cannot be answered", "no information", 
+    "no relevant", "impossible to determine", "not mention"
+]
+
 exact_hits = sum(1 for item in gen.get("predictions", []) if item.get("exact_match") == 1.0)
-semantic_matches = sum(1 for item in gen.get("predictions", []) if item.get("exact_match") == 0.0 and item.get("f1", 0) >= 0.5)
-grounded_refusals = sum(1 for item in gen.get("predictions", []) if "does not contain" in item.get("prediction", "").lower())
-retrieval_reasoning_miss = len(gen.get("predictions", [])) - (exact_hits + semantic_matches + grounded_refusals)
+semantic_matches = sum(
+    1 for item in gen.get("predictions", []) 
+    if item.get("exact_match") == 0.0 and item.get("f1", 0) >= 0.5
+)
+grounded_refusals = sum(
+    1 for item in gen.get("predictions", []) 
+    if item.get("exact_match") == 0.0 and any(kw in item.get("prediction", "").lower() for kw in refusal_keywords)
+)
+retrieval_reasoning_miss = max(len(gen.get("predictions", [])) - (exact_hits + semantic_matches + grounded_refusals), 0)
 
 taxonomy_labels = [
     "Exact Match (EM = 1)",
@@ -168,7 +180,7 @@ plt.suptitle(
 )
 
 # -------------------------------------------------------------
-# Safe Save Routine (Bypasses Windows / OneDrive File Locks)
+# Atomic File Save Routine (Bypasses Windows / OneDrive Locks)
 # -------------------------------------------------------------
 dashboard_path = os.path.abspath(os.path.join(WORKSPACE_DIR, "benchmark_dashboard.png"))
 
@@ -181,7 +193,7 @@ except (OSError, PermissionError):
     try:
         shutil.move(tmp_name, dashboard_path)
     except Exception as exc:
-        print(f"[ERROR] Could not overwrite {dashboard_path}. Please close any open preview windows.")
+        print(f"[ERROR] Could not overwrite {dashboard_path}. Please close any previewing programs.")
         print(f"Details: {exc}")
         sys.exit(1)
 finally:
