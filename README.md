@@ -1,4 +1,3 @@
-```markdown
 # DeltaGraphRAG: Modularity-Gated Incremental Graph Updates
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
@@ -19,8 +18,6 @@ DeltaGraphRAG replaces full-graph re-indexing with a **two-tier modularity-gated
 2. **Tier 2 (Targeted Re-Synthesis)**: Live LLM community re-summarization is triggered selectively only when accumulated structural drift exceeds a 15% threshold (\(\tau = 0.15\)).
 
 In empirical evaluations against an independently summarized Full Rebuild reference baseline, DeltaGraphRAG eliminates **100.0% of streaming synthesis calls** (0 calls vs. 253 baseline calls, saving ~93,000 tokens) in exchange for a modest **5.61 percentage point Token F1 margin**, while preserving exact set-theoretic graph identity (\(V_\Delta == V_{\text{ref}}\), \(E_\Delta == E_{\text{ref}}\), \(W_\Delta == W_{\text{ref}}\)) and partition alignment (\(\text{NMI} = 0.9948\)).
-
-```
 
 ---
 
